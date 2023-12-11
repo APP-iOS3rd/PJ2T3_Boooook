@@ -8,6 +8,7 @@
 import SwiftUI
 import MapKit
 
+// Marker가 겹치는 순간 두 Marker가 합쳐져야함
 struct MainMapView: View {
     var body: some View {
 		// 37.5431887
@@ -23,33 +24,46 @@ struct MainMapView: View {
 					ZStack {
 						RoundRectBalloon()
 							.fill(.white)
-							.frame(width: 90, height: 90)
+							.frame(width: 65, height: 65)
 						
 						Image("hoon", bundle: nil)
 							.resizable()
-							.frame(width: 80, height: 80)
+							.frame(width: 60, height: 60)
 							.clipShape(.rect(cornerRadius: 8))
 					}
-					
+					.overlay {
+						NotificationCount(value: .constant(40))
+					}
 				})
 			}
+			MapCircle(center: CLLocationCoordinate2D(latitude: 37.5431887, longitude: 127.1228852), radius: CLLocationDistance(50))
+				.foregroundStyle(.orange)
 			
 			Annotation("", coordinate: CLLocationCoordinate2D(latitude: 37.5393384, longitude: 127.1263004), anchor: .bottom) {
 				Button(action: {}, label: {
 					ZStack {
 						RoundRectBalloon()
 							.fill(.white)
-							.frame(width: 90, height: 90)
+							.frame(width: 65, height: 65)
 						
 						Image("bonobono", bundle: nil)
 							.resizable()
-							.frame(width: 80, height: 80)
+							.frame(width: 60, height: 60)
 							.clipShape(.rect(cornerRadius: 8))
 					}
-					
-				}).badge(20)
+					.overlay {
+						NotificationCount(value: .constant(55))
+					}
+				})
 			}
 			
+			MapCircle(center: CLLocationCoordinate2D(latitude: 37.5393384, longitude: 127.1263004), radius: CLLocationDistance(50))
+				.foregroundStyle(.orange)
+			
+		}
+		.mapControls {
+			MapUserLocationButton()
+			MapPitchToggle()
 		}
     }
 }
