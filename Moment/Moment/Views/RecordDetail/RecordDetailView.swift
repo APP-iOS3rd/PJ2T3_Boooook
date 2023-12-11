@@ -37,6 +37,7 @@ struct RecordDetailView: View {
                         }
                     }
                     .padding(.horizontal, 20)
+                    MiniMapView(geo: geo)
                 }
 
             }
