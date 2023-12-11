@@ -19,7 +19,6 @@
 		09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CE72B26A1370073EAD5 /* Assets.xcassets */; };
 		09AB7CEB2B26A1370073EAD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CEA2B26A1370073EAD5 /* Preview Assets.xcassets */; };
 		09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CF12B26A1660073EAD5 /* Colors.xcassets */; };
-		09AB7D012B26A3980073EAD5 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D002B26A3980073EAD5 /* APIKEY.plist */; };
 		09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7D022B26A4310073EAD5 /* Bundle +.swift */; };
 		09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7D042B26A5500073EAD5 /* Font +.swift */; };
 		09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D092B26A73B0073EAD5 /* Pretendard-SemiBold.otf */; };
@@ -28,6 +27,11 @@
 		09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0D2B26A73B0073EAD5 /* Pretendard-Bold.otf */; };
 		09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */; };
 		09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */; };
+		B15D37552B26D6D90004508F /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D37542B26D6D90004508F /* RecordDataStruct.swift */; };
+		B15D37572B26D7150004508F /* ShelfRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D37562B26D7150004508F /* ShelfRecordListView.swift */; };
+		B15D37592B26D77A0004508F /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = B15D37582B26D77A0004508F /* APIKEY.plist */; };
+		B15D375B2B26D8070004508F /* ShelfRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375A2B26D8070004508F /* ShelfRecordCellView.swift */; };
+		B15D375E2B26D8760004508F /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375D2B26D8760004508F /* CustomListDivider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +48,6 @@
 		09AB7CE72B26A1370073EAD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09AB7CEA2B26A1370073EAD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09AB7CF12B26A1660073EAD5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		09AB7D002B26A3980073EAD5 /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		09AB7D022B26A4310073EAD5 /* Bundle +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle +.swift"; sourceTree = "<group>"; };
 		09AB7D042B26A5500073EAD5 /* Font +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font +.swift"; sourceTree = "<group>"; };
 		09AB7D092B26A73B0073EAD5 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -54,6 +57,11 @@
 		09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		09AB7D1A2B26A82B0073EAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B15D37542B26D6D90004508F /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
+		B15D37562B26D7150004508F /* ShelfRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordListView.swift; sourceTree = "<group>"; };
+		B15D37582B26D77A0004508F /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
+		B15D375A2B26D8070004508F /* ShelfRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordCellView.swift; sourceTree = "<group>"; };
+		B15D375D2B26D8760004508F /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +104,7 @@
 				09AB7CE72B26A1370073EAD5 /* Assets.xcassets */,
 				09AB7CF12B26A1660073EAD5 /* Colors.xcassets */,
 				09AB7D1A2B26A82B0073EAD5 /* Info.plist */,
-				09AB7D002B26A3980073EAD5 /* APIKEY.plist */,
+				B15D37582B26D77A0004508F /* APIKEY.plist */,
 				09AB7CE92B26A1370073EAD5 /* Preview Content */,
 			);
 			path = Moment;
@@ -142,6 +150,10 @@
 		09AB7CFA2B26A2690073EAD5 /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
+				B15D375C2B26D8660004508F /* Custom */,
+				B15D37532B26D6B20004508F /* DummyDataStruct */,
+				B15D37522B26D6AE0004508F /* Cell */,
+				B15D37512B26D6A10004508F /* View */,
 				09731F802B26C5A90045F6B4 /* RecordList.swift */,
 			);
 			path = RecordList;
@@ -208,6 +220,38 @@
 			path = Pretendard;
 			sourceTree = "<group>";
 		};
+		B15D37512B26D6A10004508F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B15D37562B26D7150004508F /* ShelfRecordListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B15D37522B26D6AE0004508F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B15D375A2B26D8070004508F /* ShelfRecordCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B15D37532B26D6B20004508F /* DummyDataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				B15D37542B26D6D90004508F /* RecordDataStruct.swift */,
+			);
+			path = DummyDataStruct;
+			sourceTree = "<group>";
+		};
+		B15D375C2B26D8660004508F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				B15D375D2B26D8760004508F /* CustomListDivider.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,8 +312,8 @@
 			files = (
 				09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */,
 				09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */,
-				09AB7D012B26A3980073EAD5 /* APIKEY.plist in Resources */,
 				09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */,
+				B15D37592B26D77A0004508F /* APIKEY.plist in Resources */,
 				09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */,
 				09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */,
 				09AB7D132B26A73C0073EAD5 /* Pretendard-Light.otf in Resources */,
@@ -289,10 +333,14 @@
 				09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
+				B15D375E2B26D8760004508F /* CustomListDivider.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
+				B15D37572B26D7150004508F /* ShelfRecordListView.swift in Sources */,
 				09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */,
+				B15D375B2B26D8070004508F /* ShelfRecordCellView.swift in Sources */,
+				B15D37552B26D6D90004508F /* RecordDataStruct.swift in Sources */,
 				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
 				09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */,
