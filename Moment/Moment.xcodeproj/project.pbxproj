@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F742B26C56E0045F6B4 /* NetworkTest.swift */; };
+		09731F772B26C5780045F6B4 /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F762B26C5780045F6B4 /* DataTest.swift */; };
+		09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F782B26C5830045F6B4 /* SelectBookTest.swift */; };
+		09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */; };
+		09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */; };
+		09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7E2B26C59F0045F6B4 /* MainTest.swift */; };
+		09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F802B26C5A90045F6B4 /* RecordList.swift */; };
 		09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE32B26A1350073EAD5 /* MomentApp.swift */; };
 		09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE52B26A1350073EAD5 /* ContentView.swift */; };
 		09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CE72B26A1370073EAD5 /* Assets.xcassets */; };
@@ -24,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09731F742B26C56E0045F6B4 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
+		09731F762B26C5780045F6B4 /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
+		09731F782B26C5830045F6B4 /* SelectBookTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookTest.swift; sourceTree = "<group>"; };
+		09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordTest.swift; sourceTree = "<group>"; };
+		09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingTest.swift; sourceTree = "<group>"; };
+		09731F7E2B26C59F0045F6B4 /* MainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTest.swift; sourceTree = "<group>"; };
+		09731F802B26C5A90045F6B4 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
 		09AB7CE02B26A1350073EAD5 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB7CE32B26A1350073EAD5 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
 		09AB7CE52B26A1350073EAD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +134,7 @@
 		09AB7CF92B26A2560073EAD5 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -127,6 +142,7 @@
 		09AB7CFA2B26A2690073EAD5 /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
+				09731F802B26C5A90045F6B4 /* RecordList.swift */,
 			);
 			path = RecordList;
 			sourceTree = "<group>";
@@ -134,6 +150,7 @@
 		09AB7CFB2B26A2760073EAD5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				09731F7E2B26C59F0045F6B4 /* MainTest.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -141,6 +158,7 @@
 		09AB7CFC2B26A27D0073EAD5 /* AddRecord */ = {
 			isa = PBXGroup;
 			children = (
+				09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */,
 			);
 			path = AddRecord;
 			sourceTree = "<group>";
@@ -148,6 +166,7 @@
 		09AB7CFD2B26A2A40073EAD5 /* SelectBook */ = {
 			isa = PBXGroup;
 			children = (
+				09731F782B26C5830045F6B4 /* SelectBookTest.swift */,
 			);
 			path = SelectBook;
 			sourceTree = "<group>";
@@ -155,6 +174,7 @@
 		09AB7CFE2B26A2C40073EAD5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				09731F762B26C5780045F6B4 /* DataTest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -162,6 +182,7 @@
 		09AB7CFF2B26A3180073EAD5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				09731F742B26C56E0045F6B4 /* NetworkTest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -265,9 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
+				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
+				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
+				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
+				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
 				09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */,
+				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
+				09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */,
 				09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
