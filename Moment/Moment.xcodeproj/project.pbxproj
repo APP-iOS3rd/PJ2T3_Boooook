@@ -19,7 +19,6 @@
 		09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */; };
 		09731F8E2B26D6CC0045F6B4 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */; };
 		098F93312B26DE4E005D93AB /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F93302B26DE4E005D93AB /* MiniMapView.swift */; };
-		098F934A2B2757DE005D93AB /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098F93492B2757DE005D93AB /* APIKEY.plist */; };
 		098F934E2B27596C005D93AB /* RecordDetailDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */; };
 		098F93502B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F934F2B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift */; };
 		09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE32B26A1350073EAD5 /* MomentApp.swift */; };
@@ -45,7 +44,7 @@
 
 		09D774EF2B275D9C00D45EE6 /* CameraSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */; };
 		09D774F12B275DB700D45EE6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774F02B275DB700D45EE6 /* PhotoPicker.swift */; };
-		2CA6BED32B26DF46002E3589 /* AddRecordMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */; };
+		2CA6BED32B26DF46002E3589 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED22B26DF46002E3589 /* AddRecordView.swift */; };
 		2CA6BED72B273207002E3589 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED62B273207002E3589 /* BookData.swift */; };
 		2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED82B2733E0002E3589 /* CustomTextField.swift */; };
 		7B1B0B682B26CFD200CD19AD /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B0B672B26CFD200CD19AD /* MainMapView.swift */; };
@@ -73,7 +72,6 @@
 		09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle +.swift"; sourceTree = "<group>"; };
 		09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
 		098F93302B26DE4E005D93AB /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
-		098F93492B2757DE005D93AB /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailDummyData.swift; sourceTree = "<group>"; };
 		098F934F2B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectHorizontalScrollView.swift; sourceTree = "<group>"; };
 		09AB7CE02B26A1350073EAD5 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +99,7 @@
 
 		09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSnap.swift; sourceTree = "<group>"; };
 		09D774F02B275DB700D45EE6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
-		2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordMain.swift; sourceTree = "<group>"; };
+		2CA6BED22B26DF46002E3589 /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
 		2CA6BED62B273207002E3589 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		2CA6BED82B2733E0002E3589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		7B1B0B672B26CFD200CD19AD /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
@@ -167,10 +165,12 @@
 				09AB7CE72B26A1370073EAD5 /* Assets.xcassets */,
 				09AB7CF12B26A1660073EAD5 /* Colors.xcassets */,
 				09AB7D1A2B26A82B0073EAD5 /* Info.plist */,
+
   
 				B15D37582B26D77A0004508F /* APIKEY.plist */,
 
 				098F93492B2757DE005D93AB /* APIKEY.plist */,
+
 
 				09AB7CE92B26A1370073EAD5 /* Preview Content */,
 			);
@@ -253,7 +253,7 @@
 		09AB7CFC2B26A27D0073EAD5 /* AddRecord */ = {
 			isa = PBXGroup;
 			children = (
-				2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */,
+				2CA6BED22B26DF46002E3589 /* AddRecordView.swift */,
 				2CA6BED62B273207002E3589 /* BookData.swift */,
 				098F934F2B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift */,
 				09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */,
@@ -412,9 +412,11 @@
 				09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */,
 				09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */,
 
+
 				B15D37592B26D77A0004508F /* APIKEY.plist in Resources */,
 
 				098F934A2B2757DE005D93AB /* APIKEY.plist in Resources */,
+
 
 				09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */,
 				09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */,
@@ -444,7 +446,7 @@
 				AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */,
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */,
-				2CA6BED32B26DF46002E3589 /* AddRecordMain.swift in Sources */,
+				2CA6BED32B26DF46002E3589 /* AddRecordView.swift in Sources */,
 				098F93312B26DE4E005D93AB /* MiniMapView.swift in Sources */,
 				09731F8E2B26D6CC0045F6B4 /* RecordDetailView.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
