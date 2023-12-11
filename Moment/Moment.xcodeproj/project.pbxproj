@@ -35,6 +35,8 @@
 		09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0D2B26A73B0073EAD5 /* Pretendard-Bold.otf */; };
 		09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */; };
 		09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */; };
+		09D774EF2B275D9C00D45EE6 /* CameraSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */; };
+		09D774F12B275DB700D45EE6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774F02B275DB700D45EE6 /* PhotoPicker.swift */; };
 		2CA6BED32B26DF46002E3589 /* AddRecordMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */; };
 		2CA6BED72B273207002E3589 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED62B273207002E3589 /* BookData.swift */; };
 		2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED82B2733E0002E3589 /* CustomTextField.swift */; };
@@ -80,6 +82,8 @@
 		09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		09AB7D1A2B26A82B0073EAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSnap.swift; sourceTree = "<group>"; };
+		09D774F02B275DB700D45EE6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordMain.swift; sourceTree = "<group>"; };
 		2CA6BED62B273207002E3589 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		2CA6BED82B2733E0002E3589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */,
 				2CA6BED62B273207002E3589 /* BookData.swift */,
 				098F934F2B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift */,
+				09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */,
+				09D774F02B275DB700D45EE6 /* PhotoPicker.swift */,
 			);
 			path = AddRecord;
 			sourceTree = "<group>";
@@ -391,9 +397,11 @@
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
 				09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */,
 				7B1B0B6E2B26E6CC00CD19AD /* NotificationCount.swift in Sources */,
+				09D774F12B275DB700D45EE6 /* PhotoPicker.swift in Sources */,
 				098F934E2B27596C005D93AB /* RecordDetailDummyData.swift in Sources */,
 				AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */,
 				AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */,
+				09D774EF2B275D9C00D45EE6 /* CameraSnap.swift in Sources */,
 				09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +540,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"기록에 어울리는 사진을 등록할 때 카메라를 사용합니다.\"";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "\"기록에 어울리는 사진을 라이브러리에서 사용합니다.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -562,6 +572,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"기록에 어울리는 사진을 등록할 때 카메라를 사용합니다.\"";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "\"기록에 어울리는 사진을 라이브러리에서 사용합니다.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
