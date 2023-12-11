@@ -16,6 +16,8 @@ struct PhotoData: Identifiable {
 
 struct ImageSelectHorizontalScrollView: View {
     @State private var showActionSheet: Bool = false
+    @State private var isCameraPresented = false
+    @State private var isLibraryPresented = false
     @State private var photoDummyData: [UIImage?] = [
         nil, nil, nil
     ]
@@ -51,12 +53,33 @@ struct ImageSelectHorizontalScrollView: View {
         }
         .confirmationDialog("", isPresented: $showActionSheet, titleVisibility: .hidden) {
             Button("카메라") {
+                isCameraPresented.toggle()
             }
             Button("라이브러리") {
+                isLibraryPresented.toggle()
             }
         } message: {
             Text("불러올 사진 위치를 선택해주세요")
         }
+        .sheet(isPresented: $isCameraPresented) {
+            let currentIndex = getIndex()
+            CameraSnap(selectedPhoto: $photoDummyData[currentIndex],
+                       isCameraPresented: $isCameraPresented)
+        }
+        .sheet(isPresented: $isLibraryPresented) {
+            let remainingSpaces = getRemainigSpaces()
+            PhotoPicker(selectedPhotos: $photoDummyData,
+                        isLibraryPresented: $isLibraryPresented,
+                        remainingSpaces: remainingSpaces)
+        }
+    }
+    
+    private func getIndex() -> Int {
+        return photoDummyData.firstIndex(where: { $0 == nil }) ?? 0
+    }
+    
+    private func getRemainigSpaces() -> Int {
+        return photoDummyData.filter { $0 == nil }.count
     }
 }
 
@@ -126,4 +149,3 @@ struct EmptyImageView: View {
 #Preview {
     ImageSelectHorizontalScrollView()
 }
-
