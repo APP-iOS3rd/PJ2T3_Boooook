@@ -10,7 +10,6 @@
 		09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F742B26C56E0045F6B4 /* NetworkTest.swift */; };
 		09731F772B26C5780045F6B4 /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F762B26C5780045F6B4 /* DataTest.swift */; };
 		09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F782B26C5830045F6B4 /* SelectBookTest.swift */; };
-		09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */; };
 		09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */; };
 		09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7E2B26C59F0045F6B4 /* MainTest.swift */; };
 		09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F802B26C5A90045F6B4 /* RecordList.swift */; };
@@ -24,7 +23,6 @@
 		09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CE72B26A1370073EAD5 /* Assets.xcassets */; };
 		09AB7CEB2B26A1370073EAD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CEA2B26A1370073EAD5 /* Preview Assets.xcassets */; };
 		09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CF12B26A1660073EAD5 /* Colors.xcassets */; };
-		09AB7D012B26A3980073EAD5 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D002B26A3980073EAD5 /* APIKEY.plist */; };
 		09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7D022B26A4310073EAD5 /* Bundle +.swift */; };
 		09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7D042B26A5500073EAD5 /* Font +.swift */; };
 		09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D092B26A73B0073EAD5 /* Pretendard-SemiBold.otf */; };
@@ -33,6 +31,10 @@
 		09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0D2B26A73B0073EAD5 /* Pretendard-Bold.otf */; };
 		09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */; };
 		09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */; };
+		2C6E76702B273A840021388B /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C6E766F2B273A840021388B /* APIKEY.plist */; };
+		2CA6BED32B26DF46002E3589 /* AddRecordMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */; };
+		2CA6BED72B273207002E3589 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED62B273207002E3589 /* BookData.swift */; };
+		2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED82B2733E0002E3589 /* CustomTextField.swift */; };
 		AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6742B26CFCA0066E9EB /* SearchBar.swift */; };
 		AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */; };
 		AC4CA6792B26D0210066E9EB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6782B26D0210066E9EB /* SectionHeader.swift */; };
@@ -45,7 +47,6 @@
 		09731F742B26C56E0045F6B4 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		09731F762B26C5780045F6B4 /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
 		09731F782B26C5830045F6B4 /* SelectBookTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookTest.swift; sourceTree = "<group>"; };
-		09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordTest.swift; sourceTree = "<group>"; };
 		09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
 		09731F7E2B26C59F0045F6B4 /* MainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTest.swift; sourceTree = "<group>"; };
 		09731F802B26C5A90045F6B4 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		09AB7CE72B26A1370073EAD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09AB7CEA2B26A1370073EAD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09AB7CF12B26A1660073EAD5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		09AB7D002B26A3980073EAD5 /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		09AB7D022B26A4310073EAD5 /* Bundle +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle +.swift"; sourceTree = "<group>"; };
 		09AB7D042B26A5500073EAD5 /* Font +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font +.swift"; sourceTree = "<group>"; };
 		09AB7D092B26A73B0073EAD5 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -70,6 +70,10 @@
 		09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		09AB7D1A2B26A82B0073EAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2C6E766F2B273A840021388B /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
+		2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordMain.swift; sourceTree = "<group>"; };
+		2CA6BED62B273207002E3589 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
+		2CA6BED82B2733E0002E3589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AC4CA6742B26CFCA0066E9EB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBar.swift; sourceTree = "<group>"; };
 		AC4CA6782B26D0210066E9EB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
@@ -127,7 +131,7 @@
 				09AB7CE72B26A1370073EAD5 /* Assets.xcassets */,
 				09AB7CF12B26A1660073EAD5 /* Colors.xcassets */,
 				09AB7D1A2B26A82B0073EAD5 /* Info.plist */,
-				09AB7D002B26A3980073EAD5 /* APIKEY.plist */,
+				2C6E766F2B273A840021388B /* APIKEY.plist */,
 				09AB7CE92B26A1370073EAD5 /* Preview Content */,
 			);
 			path = Moment;
@@ -159,15 +163,13 @@
 			children = (
 				09AB7D022B26A4310073EAD5 /* Bundle +.swift */,
 				09AB7D042B26A5500073EAD5 /* Font +.swift */,
-
 				AC4CA6742B26CFCA0066E9EB /* SearchBar.swift */,
 				AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */,
 				AC4CA6782B26D0210066E9EB /* SectionHeader.swift */,
-
 				09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */,
 				09731F892B26D12A0045F6B4 /* CustomButtons.swift */,
 				09731F872B26D0050045F6B4 /* BookInfoDialog.swift */,
-
+				2CA6BED82B2733E0002E3589 /* CustomTextField.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -202,7 +204,8 @@
 		09AB7CFC2B26A27D0073EAD5 /* AddRecord */ = {
 			isa = PBXGroup;
 			children = (
-				09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */,
+				2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */,
+				2CA6BED62B273207002E3589 /* BookData.swift */,
 			);
 			path = AddRecord;
 			sourceTree = "<group>";
@@ -312,8 +315,8 @@
 			files = (
 				09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */,
 				09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */,
-				09AB7D012B26A3980073EAD5 /* APIKEY.plist in Resources */,
 				09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */,
+				2C6E76702B273A840021388B /* APIKEY.plist in Resources */,
 				09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */,
 				09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */,
 				09AB7D132B26A73C0073EAD5 /* Pretendard-Light.otf in Resources */,
@@ -330,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
@@ -339,24 +341,24 @@
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */,
-
-				09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */,
+				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */,
+				2CA6BED32B26DF46002E3589 /* AddRecordMain.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
 				09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				09731F862B26C8EE0045F6B4 /* ImageDummyData.swift in Sources */,
-
+				2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
 				09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */,
+				2CA6BED72B273207002E3589 /* BookData.swift in Sources */,
 				09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */,
 				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
 				AC4CA6792B26D0210066E9EB /* SectionHeader.swift in Sources */,
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
 				09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */,
-				09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */,
 				AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */,
 				AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */,
 				09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */,
