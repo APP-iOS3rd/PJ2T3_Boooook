@@ -18,10 +18,9 @@
 		09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F892B26D12A0045F6B4 /* CustomButtons.swift */; };
 		09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */; };
 		09731F8E2B26D6CC0045F6B4 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */; };
-		09731F902B26D70F0045F6B4 /* RecordDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8F2B26D70F0045F6B4 /* RecordDummyData.swift */; };
 		098F93312B26DE4E005D93AB /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F93302B26DE4E005D93AB /* MiniMapView.swift */; };
 		098F934A2B2757DE005D93AB /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098F93492B2757DE005D93AB /* APIKEY.plist */; };
-		098F934C2B2757FC005D93AB /* ImageDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F934B2B2757FC005D93AB /* ImageDummyData.swift */; };
+		098F934E2B27596C005D93AB /* RecordDetailDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */; };
 		09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE32B26A1350073EAD5 /* MomentApp.swift */; };
 		09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE52B26A1350073EAD5 /* ContentView.swift */; };
 		09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CE72B26A1370073EAD5 /* Assets.xcassets */; };
@@ -61,10 +60,9 @@
 		09731F892B26D12A0045F6B4 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle +.swift"; sourceTree = "<group>"; };
 		09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
-		09731F8F2B26D70F0045F6B4 /* RecordDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDummyData.swift; sourceTree = "<group>"; };
 		098F93302B26DE4E005D93AB /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
 		098F93492B2757DE005D93AB /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
-		098F934B2B2757FC005D93AB /* ImageDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDummyData.swift; path = ../../../../../../../../.Trash/Booook/Moment/Moment/Views/RecordDetail/DummyData/ImageDummyData.swift; sourceTree = "<group>"; };
+		098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailDummyData.swift; sourceTree = "<group>"; };
 		09AB7CE02B26A1350073EAD5 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB7CE32B26A1350073EAD5 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
 		09AB7CE52B26A1350073EAD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,18 +109,9 @@
 				09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */,
 				09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */,
 				098F93302B26DE4E005D93AB /* MiniMapView.swift */,
-				09731F912B26D7280045F6B4 /* DummyData */,
+				098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */,
 			);
 			path = RecordDetail;
-			sourceTree = "<group>";
-		};
-		09731F912B26D7280045F6B4 /* DummyData */ = {
-			isa = PBXGroup;
-			children = (
-				09731F8F2B26D70F0045F6B4 /* RecordDummyData.swift */,
-				098F934B2B2757FC005D93AB /* ImageDummyData.swift */,
-			);
-			path = DummyData;
 			sourceTree = "<group>";
 		};
 		09AB7CD72B26A1350073EAD5 = {
@@ -172,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				09731F822B26C88F0045F6B4 /* RecordDetail */,
-				09AB7CFD2B26A2A40073EAD5 /* SelectBook */,
 				09AB7CFC2B26A27D0073EAD5 /* AddRecord */,
+				09AB7CFD2B26A2A40073EAD5 /* SelectBook */,
 				09AB7CF92B26A2560073EAD5 /* OnBoarding */,
 				09AB7CFB2B26A2760073EAD5 /* Main */,
 				09AB7CFA2B26A2690073EAD5 /* RecordList */,
@@ -375,7 +364,6 @@
 				AC4CA67B2B26D0770066E9EB /* StartButtonView.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
-				098F934C2B2757FC005D93AB /* ImageDummyData.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */,
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
@@ -399,7 +387,7 @@
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
 				09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */,
 				7B1B0B6E2B26E6CC00CD19AD /* NotificationCount.swift in Sources */,
-				09731F902B26D70F0045F6B4 /* RecordDummyData.swift in Sources */,
+				098F934E2B27596C005D93AB /* RecordDetailDummyData.swift in Sources */,
 				AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */,
 				AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */,
 				09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */,
@@ -536,7 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moment/Preview Content\"";
-				DEVELOPMENT_TEAM = T62JF6T7Q4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
@@ -566,7 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moment/Preview Content\"";
-				DEVELOPMENT_TEAM = T62JF6T7Q4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
