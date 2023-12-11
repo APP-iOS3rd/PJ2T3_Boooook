@@ -10,10 +10,18 @@
 		09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F742B26C56E0045F6B4 /* NetworkTest.swift */; };
 		09731F772B26C5780045F6B4 /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F762B26C5780045F6B4 /* DataTest.swift */; };
 		09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F782B26C5830045F6B4 /* SelectBookTest.swift */; };
-		09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */; };
-		09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */; };
+		09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */; };
 		09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7E2B26C59F0045F6B4 /* MainTest.swift */; };
 		09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F802B26C5A90045F6B4 /* RecordList.swift */; };
+		09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */; };
+		09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F872B26D0050045F6B4 /* BookInfoDialog.swift */; };
+		09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F892B26D12A0045F6B4 /* CustomButtons.swift */; };
+		09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */; };
+		09731F8E2B26D6CC0045F6B4 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */; };
+		098F93312B26DE4E005D93AB /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F93302B26DE4E005D93AB /* MiniMapView.swift */; };
+		098F934A2B2757DE005D93AB /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098F93492B2757DE005D93AB /* APIKEY.plist */; };
+		098F934E2B27596C005D93AB /* RecordDetailDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */; };
+		098F93502B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F934F2B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift */; };
 		09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE32B26A1350073EAD5 /* MomentApp.swift */; };
 		09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE52B26A1350073EAD5 /* ContentView.swift */; };
 		09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CE72B26A1370073EAD5 /* Assets.xcassets */; };
@@ -27,22 +35,47 @@
 		09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0D2B26A73B0073EAD5 /* Pretendard-Bold.otf */; };
 		09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */; };
 		09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */; };
+
 		B15D37552B26D6D90004508F /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D37542B26D6D90004508F /* RecordDataStruct.swift */; };
 		B15D37572B26D7150004508F /* ShelfRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D37562B26D7150004508F /* ShelfRecordListView.swift */; };
 		B15D37592B26D77A0004508F /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = B15D37582B26D77A0004508F /* APIKEY.plist */; };
 		B15D375B2B26D8070004508F /* ShelfRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375A2B26D8070004508F /* ShelfRecordCellView.swift */; };
 		B15D375E2B26D8760004508F /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375D2B26D8760004508F /* CustomListDivider.swift */; };
 		B15D37602B26E0470004508F /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375F2B26E0470004508F /* SectionHeader.swift */; };
+
+		09D774EF2B275D9C00D45EE6 /* CameraSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */; };
+		09D774F12B275DB700D45EE6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774F02B275DB700D45EE6 /* PhotoPicker.swift */; };
+		2CA6BED32B26DF46002E3589 /* AddRecordMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */; };
+		2CA6BED72B273207002E3589 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED62B273207002E3589 /* BookData.swift */; };
+		2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED82B2733E0002E3589 /* CustomTextField.swift */; };
+		7B1B0B682B26CFD200CD19AD /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B0B672B26CFD200CD19AD /* MainMapView.swift */; };
+		7B1B0B6A2B26D03E00CD19AD /* RoundRectBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B0B692B26D03E00CD19AD /* RoundRectBalloon.swift */; };
+		7B1B0B6E2B26E6CC00CD19AD /* NotificationCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B0B6D2B26E6CC00CD19AD /* NotificationCount.swift */; };
+		AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6742B26CFCA0066E9EB /* SearchBar.swift */; };
+		AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */; };
+		AC4CA6792B26D0210066E9EB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6782B26D0210066E9EB /* SectionHeader.swift */; };
+		AC4CA67B2B26D0770066E9EB /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */; };
+		AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67C2B26D0900066E9EB /* Onboarding.swift */; };
+		AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		09731F742B26C56E0045F6B4 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		09731F762B26C5780045F6B4 /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
 		09731F782B26C5830045F6B4 /* SelectBookTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookTest.swift; sourceTree = "<group>"; };
-		09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordTest.swift; sourceTree = "<group>"; };
-		09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingTest.swift; sourceTree = "<group>"; };
+		09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
 		09731F7E2B26C59F0045F6B4 /* MainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTest.swift; sourceTree = "<group>"; };
 		09731F802B26C5A90045F6B4 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
+		09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHorizontalScrollView.swift; sourceTree = "<group>"; };
+		09731F872B26D0050045F6B4 /* BookInfoDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoDialog.swift; sourceTree = "<group>"; };
+		09731F892B26D12A0045F6B4 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle +.swift"; sourceTree = "<group>"; };
+		09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
+		098F93302B26DE4E005D93AB /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
+		098F93492B2757DE005D93AB /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
+		098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailDummyData.swift; sourceTree = "<group>"; };
+		098F934F2B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectHorizontalScrollView.swift; sourceTree = "<group>"; };
 		09AB7CE02B26A1350073EAD5 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB7CE32B26A1350073EAD5 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
 		09AB7CE52B26A1350073EAD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,12 +91,29 @@
 		09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		09AB7D102B26A73C0073EAD5 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		09AB7D1A2B26A82B0073EAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+
 		B15D37542B26D6D90004508F /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
 		B15D37562B26D7150004508F /* ShelfRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordListView.swift; sourceTree = "<group>"; };
 		B15D37582B26D77A0004508F /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		B15D375A2B26D8070004508F /* ShelfRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordCellView.swift; sourceTree = "<group>"; };
 		B15D375D2B26D8760004508F /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
 		B15D375F2B26E0470004508F /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+
+		09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSnap.swift; sourceTree = "<group>"; };
+		09D774F02B275DB700D45EE6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordMain.swift; sourceTree = "<group>"; };
+		2CA6BED62B273207002E3589 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
+		2CA6BED82B2733E0002E3589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		7B1B0B672B26CFD200CD19AD /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
+		7B1B0B692B26D03E00CD19AD /* RoundRectBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectBalloon.swift; sourceTree = "<group>"; };
+		7B1B0B6D2B26E6CC00CD19AD /* NotificationCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCount.swift; sourceTree = "<group>"; };
+		AC4CA6742B26CFCA0066E9EB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBar.swift; sourceTree = "<group>"; };
+		AC4CA6782B26D0210066E9EB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		AC4CA67C2B26D0900066E9EB /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +127,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09731F822B26C88F0045F6B4 /* RecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				09731F8D2B26D6CC0045F6B4 /* RecordDetailView.swift */,
+				09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */,
+				098F93302B26DE4E005D93AB /* MiniMapView.swift */,
+				098F934D2B27596C005D93AB /* RecordDetailDummyData.swift */,
+			);
+			path = RecordDetail;
+			sourceTree = "<group>";
+		};
 		09AB7CD72B26A1350073EAD5 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +167,11 @@
 				09AB7CE72B26A1370073EAD5 /* Assets.xcassets */,
 				09AB7CF12B26A1660073EAD5 /* Colors.xcassets */,
 				09AB7D1A2B26A82B0073EAD5 /* Info.plist */,
+  
 				B15D37582B26D77A0004508F /* APIKEY.plist */,
+
+				098F93492B2757DE005D93AB /* APIKEY.plist */,
+
 				09AB7CE92B26A1370073EAD5 /* Preview Content */,
 			);
 			path = Moment;
@@ -123,8 +188,9 @@
 		09AB7CF62B26A1B80073EAD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				09AB7CFD2B26A2A40073EAD5 /* SelectBook */,
+				09731F822B26C88F0045F6B4 /* RecordDetail */,
 				09AB7CFC2B26A27D0073EAD5 /* AddRecord */,
+				09AB7CFD2B26A2A40073EAD5 /* SelectBook */,
 				09AB7CF92B26A2560073EAD5 /* OnBoarding */,
 				09AB7CFB2B26A2760073EAD5 /* Main */,
 				09AB7CFA2B26A2690073EAD5 /* RecordList */,
@@ -137,7 +203,17 @@
 			children = (
 				09AB7D022B26A4310073EAD5 /* Bundle +.swift */,
 				09AB7D042B26A5500073EAD5 /* Font +.swift */,
+
 				B15D375F2B26E0470004508F /* SectionHeader.swift */,
+
+				AC4CA6742B26CFCA0066E9EB /* SearchBar.swift */,
+				AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */,
+				AC4CA6782B26D0210066E9EB /* SectionHeader.swift */,
+				09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */,
+				09731F892B26D12A0045F6B4 /* CustomButtons.swift */,
+				09731F872B26D0050045F6B4 /* BookInfoDialog.swift */,
+				2CA6BED82B2733E0002E3589 /* CustomTextField.swift */,
+
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -145,7 +221,10 @@
 		09AB7CF92B26A2560073EAD5 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */,
+				09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */,
+				AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */,
+				AC4CA67C2B26D0900066E9EB /* Onboarding.swift */,
+				AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -165,6 +244,7 @@
 		09AB7CFB2B26A2760073EAD5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7B1B0B662B26CFA100CD19AD /* MainMap */,
 				09731F7E2B26C59F0045F6B4 /* MainTest.swift */,
 			);
 			path = Main;
@@ -173,7 +253,11 @@
 		09AB7CFC2B26A27D0073EAD5 /* AddRecord */ = {
 			isa = PBXGroup;
 			children = (
-				09731F7A2B26C58E0045F6B4 /* AddRecordTest.swift */,
+				2CA6BED22B26DF46002E3589 /* AddRecordMain.swift */,
+				2CA6BED62B273207002E3589 /* BookData.swift */,
+				098F934F2B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift */,
+				09D774EE2B275D9C00D45EE6 /* CameraSnap.swift */,
+				09D774F02B275DB700D45EE6 /* PhotoPicker.swift */,
 			);
 			path = AddRecord;
 			sourceTree = "<group>";
@@ -223,6 +307,7 @@
 			path = Pretendard;
 			sourceTree = "<group>";
 		};
+
 		B15D37512B26D6A10004508F /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +338,16 @@
 				B15D375D2B26D8760004508F /* CustomListDivider.swift */,
 			);
 			path = Custom;
+
+		7B1B0B662B26CFA100CD19AD /* MainMap */ = {
+			isa = PBXGroup;
+			children = (
+				7B1B0B672B26CFD200CD19AD /* MainMapView.swift */,
+				7B1B0B692B26D03E00CD19AD /* RoundRectBalloon.swift */,
+				7B1B0B6D2B26E6CC00CD19AD /* NotificationCount.swift */,
+			);
+			path = MainMap;
+      
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +411,11 @@
 				09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */,
 				09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */,
 				09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */,
+
 				B15D37592B26D77A0004508F /* APIKEY.plist in Resources */,
+
+				098F934A2B2757DE005D93AB /* APIKEY.plist in Resources */,
+
 				09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */,
 				09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */,
 				09AB7D132B26A73C0073EAD5 /* Pretendard-Light.otf in Resources */,
@@ -333,21 +432,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */,
+				7B1B0B6A2B26D03E00CD19AD /* RoundRectBalloon.swift in Sources */,
+				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
+				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
+				AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
+				AC4CA67B2B26D0770066E9EB /* StartButtonView.swift in Sources */,
+				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
+				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
+				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
+				AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */,
+				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
+				09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */,
+				2CA6BED32B26DF46002E3589 /* AddRecordMain.swift in Sources */,
+				098F93312B26DE4E005D93AB /* MiniMapView.swift in Sources */,
+				09731F8E2B26D6CC0045F6B4 /* RecordDetailView.swift in Sources */,
+				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
+				09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
 				B15D375E2B26D8760004508F /* CustomListDivider.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
+				2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
+
 				B15D37572B26D7150004508F /* ShelfRecordListView.swift in Sources */,
+
+				7B1B0B682B26CFD200CD19AD /* MainMapView.swift in Sources */,
+				09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */,
+				2CA6BED72B273207002E3589 /* BookData.swift in Sources */,
+
 				09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */,
 				B15D375B2B26D8070004508F /* ShelfRecordCellView.swift in Sources */,
 				B15D37552B26D6D90004508F /* RecordDataStruct.swift in Sources */,
 				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
+
 				B15D37602B26E0470004508F /* SectionHeader.swift in Sources */,
+
+				098F93502B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift in Sources */,
+				AC4CA6792B26D0210066E9EB /* SectionHeader.swift in Sources */,
+
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
-				09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */,
+				09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */,
+				7B1B0B6E2B26E6CC00CD19AD /* NotificationCount.swift in Sources */,
+				09D774F12B275DB700D45EE6 /* PhotoPicker.swift in Sources */,
+				098F934E2B27596C005D93AB /* RecordDetailDummyData.swift in Sources */,
+				AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */,
+				AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */,
+				09D774EF2B275D9C00D45EE6 /* CameraSnap.swift in Sources */,
 				09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,9 +614,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moment/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"기록에 어울리는 사진을 등록할 때 카메라를 사용합니다.\"";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "\"기록에 어울리는 사진을 라이브러리에서 사용합니다.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,9 +646,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moment/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"기록에 어울리는 사진을 등록할 때 카메라를 사용합니다.\"";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "\"기록에 어울리는 사진을 라이브러리에서 사용합니다.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

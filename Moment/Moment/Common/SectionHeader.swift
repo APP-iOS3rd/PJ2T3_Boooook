@@ -2,8 +2,10 @@
 //  SectionHeader.swift
 //  Moment
 //
-//  Created by 홍세희 on 2023/12/11.
+//  Created by 백대홍 on 12/11/23.
 //
+
+
 
 import SwiftUI
 
