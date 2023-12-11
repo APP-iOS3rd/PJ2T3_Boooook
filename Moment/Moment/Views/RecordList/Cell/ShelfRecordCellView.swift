@@ -35,7 +35,6 @@ struct ShelfRecordCellView: View {
                         .foregroundStyle(Color.black)
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)
-                        
                 }
             }
         }
