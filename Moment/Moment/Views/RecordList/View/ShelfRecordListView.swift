@@ -12,9 +12,25 @@ struct ShelfRecordListView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: -20) {
+                    Text("2023")
+                        .padding()
                     CustomListDivider()
                     ForEach(bookData) { bookdata in
                         NavigationLink(destination: Text("테스트 이동 뷰입니다.")) {
+                            //RecordYearView(bookdata: bookdata)
+                            ShelfRecordCellView(bookdata: bookdata)
+                        }
+                        CustomListDivider()
+                    }
+                }
+                
+                VStack(alignment: .leading, spacing: -20) {
+                    Text("2023")
+                        .padding()
+                    CustomListDivider()
+                    ForEach(bookData) { bookdata in
+                        NavigationLink(destination: Text("테스트 이동 뷰입니다.")) {
+                            //RecordYearView(bookdata: bookdata)
                             ShelfRecordCellView(bookdata: bookdata)
                         }
                         CustomListDivider()

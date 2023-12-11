@@ -43,7 +43,24 @@ struct ShelfRecordCellView: View {
     }
 }
 
-#Preview {
-    ShelfRecordCellView(bookdata: RecordDataStruct(date: testDate, image: "roofi", contents: "줄거리입니다.. 예.. 트렌드 코리아.."))
+struct RecordYearView: View {
+    var bookdata: RecordDataStruct
+    var body: some View {
+        Text(bookdata.changeYearToString())
+            .foregroundColor(Color.mainBrown)
+            .multilineTextAlignment(.leading)
+            .padding(.horizontal, 10)
+            .background(Color.offBrown)
+            .cornerRadius(10)
+            .fixedSize(horizontal: false, vertical: false)
+    }
 }
+
+//#Preview {
+//    ShelfRecordCellView(bookdata: RecordDataStruct(date: testDate, image: "roofi", contents: "줄거리입니다.. 예.. 트렌드 코리아.."))
+//}
+
+//#Preview {
+//    RecordYearView(bookdata: RecordDataStruct(date: testDate, image: "roofi", contents: "줄거리입니다.. 예.. 트렌드 코리아.."))
+//}
 

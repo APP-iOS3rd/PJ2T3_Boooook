@@ -32,6 +32,7 @@
 		B15D37592B26D77A0004508F /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = B15D37582B26D77A0004508F /* APIKEY.plist */; };
 		B15D375B2B26D8070004508F /* ShelfRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375A2B26D8070004508F /* ShelfRecordCellView.swift */; };
 		B15D375E2B26D8760004508F /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375D2B26D8760004508F /* CustomListDivider.swift */; };
+		B15D37602B26E0470004508F /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D375F2B26E0470004508F /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		B15D37582B26D77A0004508F /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		B15D375A2B26D8070004508F /* ShelfRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordCellView.swift; sourceTree = "<group>"; };
 		B15D375D2B26D8760004508F /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
+		B15D375F2B26E0470004508F /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				09AB7D022B26A4310073EAD5 /* Bundle +.swift */,
 				09AB7D042B26A5500073EAD5 /* Font +.swift */,
+				B15D375F2B26E0470004508F /* SectionHeader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				B15D375B2B26D8070004508F /* ShelfRecordCellView.swift in Sources */,
 				B15D37552B26D6D90004508F /* RecordDataStruct.swift in Sources */,
 				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
+				B15D37602B26E0470004508F /* SectionHeader.swift in Sources */,
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
 				09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */,
 				09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */,
