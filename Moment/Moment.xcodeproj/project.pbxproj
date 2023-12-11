@@ -39,6 +39,10 @@
 		AC4CA67B2B26D0770066E9EB /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */; };
 		AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67C2B26D0900066E9EB /* Onboarding.swift */; };
 		AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */; };
+		B15D376C2B2703450004508F /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D376B2B2703450004508F /* CustomListDivider.swift */; };
+		B15D376E2B2703B90004508F /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D376D2B2703B90004508F /* RecordDataStruct.swift */; };
+		B15D37702B271C330004508F /* MapToRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D376F2B271C330004508F /* MapToRecordListView.swift */; };
+		B15D37722B271C410004508F /* MapToRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D37712B271C410004508F /* MapToRecordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		AC4CA67C2B26D0900066E9EB /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		B15D376B2B2703450004508F /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
+		B15D376D2B2703B90004508F /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
+		B15D376F2B271C330004508F /* MapToRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToRecordListView.swift; sourceTree = "<group>"; };
+		B15D37712B271C410004508F /* MapToRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToRecordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,15 +167,12 @@
 			children = (
 				09AB7D022B26A4310073EAD5 /* Bundle +.swift */,
 				09AB7D042B26A5500073EAD5 /* Font +.swift */,
-
 				AC4CA6742B26CFCA0066E9EB /* SearchBar.swift */,
 				AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */,
 				AC4CA6782B26D0210066E9EB /* SectionHeader.swift */,
-
 				09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */,
 				09731F892B26D12A0045F6B4 /* CustomButtons.swift */,
 				09731F872B26D0050045F6B4 /* BookInfoDialog.swift */,
-
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -186,6 +191,10 @@
 		09AB7CFA2B26A2690073EAD5 /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
+				B15D37662B26FDDC0004508F /* View */,
+				B15D37652B26FDD40004508F /* Cell */,
+				B15D37642B26FDCA0004508F /* DummyDataStruct */,
+				B15D37632B26FDC30004508F /* Custom */,
 				09731F802B26C5A90045F6B4 /* RecordList.swift */,
 			);
 			path = RecordList;
@@ -250,6 +259,38 @@
 				09AB7D0F2B26A73B0073EAD5 /* Pretendard-Thin.otf */,
 			);
 			path = Pretendard;
+			sourceTree = "<group>";
+		};
+		B15D37632B26FDC30004508F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				B15D376B2B2703450004508F /* CustomListDivider.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		B15D37642B26FDCA0004508F /* DummyDataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				B15D376D2B2703B90004508F /* RecordDataStruct.swift */,
+			);
+			path = DummyDataStruct;
+			sourceTree = "<group>";
+		};
+		B15D37652B26FDD40004508F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B15D37712B271C410004508F /* MapToRecordCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B15D37662B26FDDC0004508F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B15D376F2B271C330004508F /* MapToRecordListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
@@ -339,8 +379,7 @@
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */,
-
-				09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */,
+				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
 				09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */,
@@ -348,9 +387,12 @@
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				09731F862B26C8EE0045F6B4 /* ImageDummyData.swift in Sources */,
-
+				B15D376E2B2703B90004508F /* RecordDataStruct.swift in Sources */,
+				B15D376C2B2703450004508F /* CustomListDivider.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
+				B15D37702B271C330004508F /* MapToRecordListView.swift in Sources */,
 				09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */,
+				B15D37722B271C410004508F /* MapToRecordCell.swift in Sources */,
 				09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */,
 				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
 				AC4CA6792B26D0210066E9EB /* SectionHeader.swift in Sources */,
