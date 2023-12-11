@@ -11,52 +11,37 @@ struct MainShelfView: View {
     @State var selectedOption = 0
     
     var body: some View {
-        VStack(spacing: 16) {
-            SearchBar()
-            
-            SegmentBar(preselectedIndex: 0)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                if selectedOption == 0 {
-                    NoContentView()
-                    HStack {
-                        Spacer()
-                        
-                        Button {
-                            // Just Design example
-                        } label: {
-                            Image(systemName: "plus")
-                            .font(.system(size: 30))
-                        .fontWeight(.medium)
-                        }
-                        .buttonStyle(.circled(color: .lightBrown, size: 30))
-                    }
-                    .padding()
-                } else if selectedOption == 1 {
+        ZStack(alignment:.bottomTrailing) {
+            VStack(spacing: 16) {
+                SearchBar()
+                
+                SegmentBar(preselectedIndex: 0)
+                
+                ScrollView(.vertical, showsIndicators: false) {
                     
-                    ZStack {
-                        
-                        VStack {
-                            ContentShelfView()
-                            HStack {
-                                Spacer()
-                                
-                                Button {
-                                    // Just Design example
-                                } label: {
-                                    Image(systemName: "plus")
-                                    .font(.system(size: 30))
-                                .fontWeight(.medium)
-                                }
-                                .buttonStyle(.circled(color: .lightBrown, size: 30))
-                            }
+                    if selectedOption == 0 {
+                        NoContentView()
                             .padding()
-                        }
+                    } else if selectedOption == 1 {
+                        ContentShelfView()
                     }
                 }
             }
+            .padding()
+            
+            ZStack(alignment:.bottomTrailing) {
+                Button {
+                    // Just Design example
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 30))
+                        .fontWeight(.medium)
+                }
+                .buttonStyle(.circled(color: .lightBrown, size: 30))
+            }
+            .padding()
+            
         }
-        .padding()
     }
 }
 
