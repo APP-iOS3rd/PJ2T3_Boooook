@@ -31,7 +31,7 @@ struct ImageSelectHorizontalScrollView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(.gray1)
             }
-            .padding(.horizontal, 20)
+
             ScrollView(.horizontal) {
                 HStack(spacing: 10) {
                     ForEach($photoDummyData.indices, id: \.self) { index in
@@ -47,7 +47,6 @@ struct ImageSelectHorizontalScrollView: View {
                         }
                     }
                 }
-                .padding(.horizontal, 20)
             }
             .scrollIndicators(.hidden)
         }

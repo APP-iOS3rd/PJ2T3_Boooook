@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddRecordMain: View {
+struct AddRecordView: View {
     
     // 책 정보
     private let bookInfo = BookData.bookDummyData
@@ -86,6 +86,9 @@ struct AddRecordMain: View {
                                 .stroke(Color.lightBrown)
                         )
                     
+                    ImageSelectHorizontalScrollView()
+                        .padding(.vertical)
+                    
                     // MARK: 저장 버튼
                     Button {
                         
@@ -94,6 +97,7 @@ struct AddRecordMain: View {
                             .font(.regular16)
                     }
                     .buttonStyle(.customProminent(color: .offBrown))
+                    
 
                 }
                 .padding(20)
@@ -116,5 +120,5 @@ extension View {
 }
 
 #Preview {
-    AddRecordMain()
+    AddRecordView()
 }
