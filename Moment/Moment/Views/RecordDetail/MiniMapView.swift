@@ -1,5 +1,5 @@
 //
-//  LocationMapView.swift
+//  MiniMapView.swift
 //  Moment
 //
 //  Created by phang on 12/11/23.
@@ -15,7 +15,7 @@ extension CLLocationCoordinate2D {
     )
 }
 
-struct LocationMapView: View {
+struct MiniMapView: View {
     @State private var region = MapCameraPosition.region(
         MKCoordinateRegion(center: .locationDummyData,
                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -39,6 +39,6 @@ struct LocationMapView: View {
 
 #Preview {
     GeometryReader { geo in
-        LocationMapView(geo: geo)
+        MiniMapView(geo: geo)
     }
 }
