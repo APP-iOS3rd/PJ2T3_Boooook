@@ -45,12 +45,15 @@ struct MarkerButton: View {
 			ZStack {
 				RoundRectBalloon()
 					.fill(.white)
-					.frame(width: 200, height: 200)
+					.frame(width: 90, height: 90)
 				
 				Image("bonobono", bundle: nil)
 					.resizable()
-					.frame(width: 190, height: 190)
+					.frame(width: 80, height: 80)
 					.clipShape(.rect(cornerRadius: 8))
+			}
+			.overlay {
+				NotificationCount(value: .constant(100))	
 			}
 		}
 	}
