@@ -14,6 +14,9 @@
 		09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */; };
 		09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7E2B26C59F0045F6B4 /* MainTest.swift */; };
 		09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F802B26C5A90045F6B4 /* RecordList.swift */; };
+		09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F872B26D0050045F6B4 /* BookInfoDialog.swift */; };
+		09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F892B26D12A0045F6B4 /* CustomButtons.swift */; };
+		09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */; };
 		09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE32B26A1350073EAD5 /* MomentApp.swift */; };
 		09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB7CE52B26A1350073EAD5 /* ContentView.swift */; };
 		09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7CE72B26A1370073EAD5 /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		09731F7C2B26C5980045F6B4 /* OnBoardingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingTest.swift; sourceTree = "<group>"; };
 		09731F7E2B26C59F0045F6B4 /* MainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTest.swift; sourceTree = "<group>"; };
 		09731F802B26C5A90045F6B4 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
+		09731F872B26D0050045F6B4 /* BookInfoDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoDialog.swift; sourceTree = "<group>"; };
+		09731F892B26D12A0045F6B4 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle +.swift"; sourceTree = "<group>"; };
 		09AB7CE02B26A1350073EAD5 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB7CE32B26A1350073EAD5 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
 		09AB7CE52B26A1350073EAD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 			children = (
 				09AB7D022B26A4310073EAD5 /* Bundle +.swift */,
 				09AB7D042B26A5500073EAD5 /* Font +.swift */,
+				09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */,
+				09731F892B26D12A0045F6B4 /* CustomButtons.swift */,
+				09731F872B26D0050045F6B4 /* BookInfoDialog.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -288,13 +297,16 @@
 			files = (
 				09731F7D2B26C5980045F6B4 /* OnBoardingTest.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
+				09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
+				09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */,
 				09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */,
 				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
 				09AB7CE42B26A1350073EAD5 /* MomentApp.swift in Sources */,
+				09731F8A2B26D12A0045F6B4 /* CustomButtons.swift in Sources */,
 				09731F7B2B26C58E0045F6B4 /* AddRecordTest.swift in Sources */,
 				09AB7D032B26A4310073EAD5 /* Bundle +.swift in Sources */,
 			);
