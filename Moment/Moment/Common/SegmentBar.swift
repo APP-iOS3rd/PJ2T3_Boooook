@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SegmentBar: View {
     @State var preselectedIndex: Int
-    var options: [String]
+    var options: [String] = ["책장으로 보기", "지도로 보기"]
     let selectedColor = Color.mainBrown
     let deselectedColor = Color.offBrown
     
@@ -41,7 +41,7 @@ struct SegmentBar: View {
                 }
             }
         }
-        .frame(width: 387, height: 40)
+        .frame(width: 370, height: 40)
         .cornerRadius(20)
     }
 }
