@@ -18,6 +18,8 @@ struct AddRecordView: View {
     @State var paragraph: String = ""
     @State var page: Int? = nil
     @State var plot: String = ""
+    // Alert
+    @State var showingAlert: Bool = false
     
     var body: some View {
         ScrollView() {
@@ -91,12 +93,20 @@ struct AddRecordView: View {
                     
                     // MARK: 저장 버튼
                     Button {
-                        
+                        showingAlert.toggle()
                     } label: {
                         Text("기록 저장하기")
                             .font(.regular16)
                     }
                     .buttonStyle(.customProminent(color: .offBrown))
+                    .alert("기록할까요?", isPresented: $showingAlert) {
+                        Button("아니요") {}
+                        Button("네") {
+                            
+                        }
+                    } message: {
+                        Text("기록은 수정할 수 없어요...🥲")
+                    }
                     
 
                 }
