@@ -19,10 +19,10 @@ struct NetworkTest: View {
             
             List(searchResults, id: \.self) { book in
                 
+                
                 HStack {
-                    Image(book.image)
-                        .resizable()
-                        .frame(width: 50, height: 50)
+                    fetchImage(url: book.image)
+                    
                     VStack(alignment: .leading) {
                         
                         Text(book.title)
@@ -37,6 +37,8 @@ struct NetworkTest: View {
         .padding()
     }
     
+
+
     private func searchBooks() {
         Task {
             do {
@@ -47,6 +49,14 @@ struct NetworkTest: View {
                 print("Unexpected error: \(error.localizedDescription)")
             }
         }
+    }
+    func fetchImage(url: String) -> some View {
+        AsyncImage(url: URL(string: url)) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: 75, height: 105)
     }
 }
 
