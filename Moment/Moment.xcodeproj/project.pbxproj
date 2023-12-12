@@ -48,6 +48,10 @@
 		AC4CA67B2B26D0770066E9EB /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */; };
 		AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67C2B26D0900066E9EB /* Onboarding.swift */; };
 		AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */; };
+		B1C938572B27E24F006EFB70 /* ShelfRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */; };
+		B1C938592B27E294006EFB70 /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938582B27E294006EFB70 /* CustomListDivider.swift */; };
+		B1C9385B2B27E2C6006EFB70 /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */; };
+		B1C9385D2B27E2E8006EFB70 /* ShelfRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +98,10 @@
 		AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		AC4CA67C2B26D0900066E9EB /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordCellView.swift; sourceTree = "<group>"; };
+		B1C938582B27E294006EFB70 /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
+		B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
+		B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +211,10 @@
 		09AB7CFA2B26A2690073EAD5 /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
+				B1C938552B27E1DE006EFB70 /* View */,
+				B1C938542B27E1D3006EFB70 /* DummyDataStruct */,
+				B1C938532B27E1CA006EFB70 /* Custom */,
+				B1C938522B27E166006EFB70 /* Cell */,
 				09731F802B26C5A90045F6B4 /* RecordList.swift */,
 			);
 			path = RecordList;
@@ -282,6 +294,38 @@
 				7B1B0B6D2B26E6CC00CD19AD /* NotificationCount.swift */,
 			);
 			path = MainMap;
+			sourceTree = "<group>";
+		};
+		B1C938522B27E166006EFB70 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B1C938532B27E1CA006EFB70 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				B1C938582B27E294006EFB70 /* CustomListDivider.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		B1C938542B27E1D3006EFB70 /* DummyDataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */,
+			);
+			path = DummyDataStruct;
+			sourceTree = "<group>";
+		};
+		B1C938552B27E1DE006EFB70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,22 +408,26 @@
 				7B1B0B6A2B26D03E00CD19AD /* RoundRectBalloon.swift in Sources */,
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
+				B1C9385B2B27E2C6006EFB70 /* RecordDataStruct.swift in Sources */,
 				AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
 				AC4CA67B2B26D0770066E9EB /* StartButtonView.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
+				B1C938592B27E294006EFB70 /* CustomListDivider.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */,
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */,
 				2CA6BED32B26DF46002E3589 /* AddRecordView.swift in Sources */,
 				098F93312B26DE4E005D93AB /* MiniMapView.swift in Sources */,
+				B1C938572B27E24F006EFB70 /* ShelfRecordCellView.swift in Sources */,
 				09731F8E2B26D6CC0045F6B4 /* RecordDetailView.swift in Sources */,
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
 				09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
+				B1C9385D2B27E2E8006EFB70 /* ShelfRecordListView.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
