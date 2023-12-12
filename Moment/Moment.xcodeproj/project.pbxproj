@@ -48,17 +48,10 @@
 		AC4CA67B2B26D0770066E9EB /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */; };
 		AC4CA67D2B26D0900066E9EB /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67C2B26D0900066E9EB /* Onboarding.swift */; };
 		AC4CA67F2B26D0A50066E9EB /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */; };
-
-		B15D376C2B2703450004508F /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D376B2B2703450004508F /* CustomListDivider.swift */; };
-		B15D376E2B2703B90004508F /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D376D2B2703B90004508F /* RecordDataStruct.swift */; };
-		B15D37702B271C330004508F /* MapToRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D376F2B271C330004508F /* MapToRecordListView.swift */; };
-		B15D37722B271C410004508F /* MapToRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D37712B271C410004508F /* MapToRecordCell.swift */; };
-
 		B1C938572B27E24F006EFB70 /* ShelfRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */; };
 		B1C938592B27E294006EFB70 /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938582B27E294006EFB70 /* CustomListDivider.swift */; };
 		B1C9385B2B27E2C6006EFB70 /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */; };
 		B1C9385D2B27E2E8006EFB70 /* ShelfRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,17 +98,10 @@
 		AC4CA67A2B26D0770066E9EB /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		AC4CA67C2B26D0900066E9EB /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		AC4CA67E2B26D0A50066E9EB /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
-
-		B15D376B2B2703450004508F /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
-		B15D376D2B2703B90004508F /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
-		B15D376F2B271C330004508F /* MapToRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToRecordListView.swift; sourceTree = "<group>"; };
-		B15D37712B271C410004508F /* MapToRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToRecordCell.swift; sourceTree = "<group>"; };
-
 		B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordCellView.swift; sourceTree = "<group>"; };
 		B1C938582B27E294006EFB70 /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
 		B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
 		B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordListView.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,10 +192,7 @@
 				09731F8B2B26D1500045F6B4 /* ButtonStyle +.swift */,
 				09731F892B26D12A0045F6B4 /* CustomButtons.swift */,
 				09731F872B26D0050045F6B4 /* BookInfoDialog.swift */,
-
-
 				2CA6BED82B2733E0002E3589 /* CustomTextField.swift */,
-
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -228,17 +211,10 @@
 		09AB7CFA2B26A2690073EAD5 /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
-
-				B15D37662B26FDDC0004508F /* View */,
-				B15D37652B26FDD40004508F /* Cell */,
-				B15D37642B26FDCA0004508F /* DummyDataStruct */,
-				B15D37632B26FDC30004508F /* Custom */,
-
 				B1C938552B27E1DE006EFB70 /* View */,
 				B1C938542B27E1D3006EFB70 /* DummyDataStruct */,
 				B1C938532B27E1CA006EFB70 /* Custom */,
 				B1C938522B27E166006EFB70 /* Cell */,
-
 				09731F802B26C5A90045F6B4 /* RecordList.swift */,
 			);
 			path = RecordList;
@@ -310,36 +286,6 @@
 			path = Pretendard;
 			sourceTree = "<group>";
 		};
-
-		B15D37632B26FDC30004508F /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				B15D376B2B2703450004508F /* CustomListDivider.swift */,
-			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
-		B15D37642B26FDCA0004508F /* DummyDataStruct */ = {
-			isa = PBXGroup;
-			children = (
-				B15D376D2B2703B90004508F /* RecordDataStruct.swift */,
-			);
-			path = DummyDataStruct;
-			sourceTree = "<group>";
-		};
-		B15D37652B26FDD40004508F /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				B15D37712B271C410004508F /* MapToRecordCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		B15D37662B26FDDC0004508F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B15D376F2B271C330004508F /* MapToRecordListView.swift */,
-
 		7B1B0B662B26CFA100CD19AD /* MainMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,7 +324,6 @@
 			isa = PBXGroup;
 			children = (
 				B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */,
-
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,10 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-
 				7B1B0B6A2B26D03E00CD19AD /* RoundRectBalloon.swift in Sources */,
-
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				B1C9385B2B27E2C6006EFB70 /* RecordDataStruct.swift in Sources */,
@@ -487,21 +429,11 @@
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
 				B1C9385D2B27E2E8006EFB70 /* ShelfRecordListView.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
-
-				09731F862B26C8EE0045F6B4 /* ImageDummyData.swift in Sources */,
-				B15D376E2B2703B90004508F /* RecordDataStruct.swift in Sources */,
-				B15D376C2B2703450004508F /* CustomListDivider.swift in Sources */,
-				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
-				B15D37702B271C330004508F /* MapToRecordListView.swift in Sources */,
-				09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */,
-				B15D37722B271C410004508F /* MapToRecordCell.swift in Sources */,
-
 				2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
 				7B1B0B682B26CFD200CD19AD /* MainMapView.swift in Sources */,
 				09731F882B26D0050045F6B4 /* BookInfoDialog.swift in Sources */,
 				2CA6BED72B273207002E3589 /* BookData.swift in Sources */,
-
 				09AB7D052B26A5500073EAD5 /* Font +.swift in Sources */,
 				09731F7F2B26C59F0045F6B4 /* MainTest.swift in Sources */,
 				098F93502B275B6C005D93AB /* ImageSelectHorizontalScrollView.swift in Sources */,
