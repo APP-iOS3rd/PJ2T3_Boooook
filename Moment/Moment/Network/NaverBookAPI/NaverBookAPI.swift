@@ -1,10 +1,3 @@
-//
-//  NaverBookAPI.swift
-//  Moment
-//
-//  Created by 홍세희 on 2023/12/12.
-//
-
 import SwiftUI
 
 struct BookList: Decodable {
@@ -13,8 +6,6 @@ struct BookList: Decodable {
     let display: Int
     let items: [Book]
 }
-
-
 
 struct Book: Codable, Hashable {
     let title: String
@@ -27,22 +18,19 @@ struct Book: Codable, Hashable {
 class BookAPI: ObservableObject {
     static let shared = BookAPI()
     private init() { }
-    //@Published var posts = [Atricle]()
     
-    
-
-    func fetchData(queryValue: String) async {
-        
+    func fetchData(queryValue: String) async throws -> [Book] {
         let clientID = Bundle.main.bookID
         let clientSecret = Bundle.main.bookSECRET
             
-        
         let urlString = "https://openapi.naver.com/v1/search/book.json?query=\(queryValue)"
         
-        guard let queryURL = URL(string: urlString) else { return }
+        guard let queryURL = URL(string: urlString) else {
+            throw NetworkError.invalidURL
+        }
+        
         
         var request = URLRequest(url: queryURL)
-        
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(clientID, forHTTPHeaderField: "X-Naver-Client-Id")
@@ -51,16 +39,14 @@ class BookAPI: ObservableObject {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("Error: Invalid response from server.")
-                return
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw NetworkError.invalidResponse
             }
 
-            let str = String(decoding: data, as: UTF8.self)
-            print(str)
-            
+            let json = try JSONDecoder().decode(BookList.self, from: data)
+            return json.items
         } catch {
-            print("Error: \(error.localizedDescription)")
+            throw NetworkError.invalidData
         }
     }
 }
