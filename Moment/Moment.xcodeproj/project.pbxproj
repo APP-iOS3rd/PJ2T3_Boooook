@@ -52,6 +52,7 @@
 		B1C938592B27E294006EFB70 /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938582B27E294006EFB70 /* CustomListDivider.swift */; };
 		B1C9385B2B27E2C6006EFB70 /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */; };
 		B1C9385D2B27E2E8006EFB70 /* ShelfRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */; };
+		B1C9385F2B27F010006EFB70 /* MapToRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385E2B27F010006EFB70 /* MapToRecordListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		B1C938582B27E294006EFB70 /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
 		B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
 		B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordListView.swift; sourceTree = "<group>"; };
+		B1C9385E2B27F010006EFB70 /* MapToRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToRecordListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				B1C9385C2B27E2E8006EFB70 /* ShelfRecordListView.swift */,
+				B1C9385E2B27F010006EFB70 /* MapToRecordListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				B1C938592B27E294006EFB70 /* CustomListDivider.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				AC4CA6752B26CFCA0066E9EB /* SearchBar.swift in Sources */,
+				B1C9385F2B27F010006EFB70 /* MapToRecordListView.swift in Sources */,
 				09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */,
 				09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */,
 				2CA6BED32B26DF46002E3589 /* AddRecordView.swift in Sources */,
