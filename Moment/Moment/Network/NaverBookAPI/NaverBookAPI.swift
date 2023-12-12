@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct BookList: Codable {
+struct BookList: Decodable {
     let total: Int
     let start: Int
     let display: Int
     let items: [Book]
 }
+
+
 
 struct Book: Codable, Hashable {
     let title: String
@@ -27,22 +29,14 @@ class BookAPI: ObservableObject {
     private init() { }
     //@Published var posts = [Atricle]()
     
-    private var clientID: String? {
-        get {
-            Bundle.main.bookID
-        }
-    }
     
-    private var clientSecret: String? {
-        get {
-            Bundle.main.bookSECRET
-        }
-    }
 
     func fetchData(queryValue: String) async {
-        guard let clientID = clientID else { return }
-        guard let clientSecret = clientSecret else { return }
-
+        
+        let clientID = Bundle.main.bookID
+        let clientSecret = Bundle.main.bookSECRET
+            
+        
         let urlString = "https://openapi.naver.com/v1/search/book.json?query=\(queryValue)"
         
         guard let queryURL = URL(string: urlString) else { return }
