@@ -31,6 +31,25 @@ struct MiniMapView: View {
                 }
             }
         }
+        .overlay(alignment: .bottomTrailing) {
+            Button {
+                //
+                region = MapCameraPosition.region(
+                    MKCoordinateRegion(center: .locationDummyData,
+                                       span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                )
+            } label: {
+                ZStack {
+                    Circle()
+                        .fill(.gray4.opacity(0.8))
+                        .frame(width: 40)
+                    Image(systemName: "location")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.darkBrown)
+                }
+            }
+            .padding([.bottom, .trailing])
+        }
         .frame(height: max(geo.size.height * 0.2, 0))
         .clipShape(.rect(cornerRadius: 10))
         .padding(20)
