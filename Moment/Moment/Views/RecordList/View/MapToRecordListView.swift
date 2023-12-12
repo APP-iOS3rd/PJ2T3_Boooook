@@ -13,7 +13,7 @@ struct MapToRecordListView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                ForEach(0..<bookTitle.count) { index in
+                ForEach(bookTitle.indices, id: \.self) { index in
                     VStack(alignment: .leading, spacing: -20) {
                         Text(bookTitle[index])
                             .foregroundColor(Color.darkBrown)
