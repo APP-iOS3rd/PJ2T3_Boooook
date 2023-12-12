@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct AddRecordView: View {
-    
-    // 책 정보
-    private let bookInfo = BookData.bookDummyData
+    @State private var showPickerMap: Bool = false
     // 사용자 위치 정보
     @State private var place: String = "부산광역시 수영구 민락수변로 12-1 (민락동)"
     // TextField 입력 정보
@@ -22,8 +20,9 @@ struct AddRecordView: View {
     @State private var photoData: [UIImage?] = [
         nil, nil, nil
     ]
-    
-    var dataIsEmpty: Bool {
+    // 책 정보
+    private let bookInfo = BookData.bookDummyData
+    private var dataIsEmpty: Bool {
         if [placeAlias, paragraph, plot].contains("") || page == nil || photoData[0] == nil {
             return true
         } else {
@@ -68,10 +67,14 @@ struct AddRecordView: View {
                                 .font(.regular14)
                             Spacer()
                             Button {
-                                
+                                showPickerMap.toggle()
                             } label: {
-                                Image(systemName: "location")
+                                Image(systemName: "map")
                                     .foregroundStyle(.lightBrown)
+                            }
+                            .sheet(isPresented: $showPickerMap) {
+                                LocationPickerMapView(showPickerMap: $showPickerMap,
+                                                      locationAddress: $place)
                             }
                         }
                         .padding(10)
