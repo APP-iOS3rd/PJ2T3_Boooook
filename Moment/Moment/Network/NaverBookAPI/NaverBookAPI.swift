@@ -39,7 +39,7 @@ class BookAPI: ObservableObject {
         }
     }
 
-    func fetchData(queryValue: String) {
+    func fetchData(queryValue: String) async {
         guard let clientID = clientID else { return }
         guard let clientSecret = clientSecret else { return }
 
@@ -47,7 +47,6 @@ class BookAPI: ObservableObject {
         
         guard let queryURL = URL(string: urlString) else { return }
         
-        let session = URLSession(configuration: .default)
         var request = URLRequest(url: queryURL)
         
         request.httpMethod = "GET"
@@ -55,43 +54,19 @@ class BookAPI: ObservableObject {
         request.addValue(clientID, forHTTPHeaderField: "X-Naver-Client-Id")
         request.addValue(clientSecret, forHTTPHeaderField: "X-Naver-Client-Secret")
         
-        //MARK: 어싱크 어웨잇으로
-        let task = session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-
-            guard let response = response as? HTTPURLResponse else {
-                // 정상적으로 값이 오지 않았을 때 처리
-                print("1")
-                return
-            }
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
             
-            guard response.statusCode == 200 else {
-                print("\(response.statusCode)")
-                return
-            }
-
-            guard let data = data else {
-                print("No data received")
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("Error: Invalid response from server.")
                 return
             }
 
             let str = String(decoding: data, as: UTF8.self)
             print(str)
-//            do {
-//                let json = try JSONDecoder().decode(Results.self, from: data)
-//                print(json.weather.count)
-//                DispatchQueue.main.async {
-//                    self.weatherREsults = json
-//                    self.posts = json.weather
-//                }
-//            } catch let error {
-//                print(error.localizedDescription)
-//            }
+            
+        } catch {
+            print("Error: \(error.localizedDescription)")
         }
-        task.resume()
-        }
+    }
 }
-

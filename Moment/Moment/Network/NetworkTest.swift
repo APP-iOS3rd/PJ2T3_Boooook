@@ -13,8 +13,8 @@ struct NetworkTest: View {
         VStack {
             Text("Hello, World!")
         }
-        .onAppear() {
-            network.fetchData(queryValue: "주식")
+        .task {
+            await network.fetchData(queryValue: "개발")
         }
     }
 }
