@@ -18,17 +18,15 @@ struct ImageSelectHorizontalScrollView: View {
     @State private var showActionSheet: Bool = false
     @State private var isCameraPresented = false
     @State private var isLibraryPresented = false
-    @State private var photoDummyData: [UIImage?] = [
-        nil, nil, nil
-    ]
+    @Binding var photoDummyData: [UIImage?]
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .lastTextBaseline) {
                 Text("사진 등록")
-                    .font(.system(size: 16))
+                    .font(.regular16)
                 Text("(최대 3장)")
-                    .font(.system(size: 14))
+                    .font(.regular14)
                     .foregroundStyle(.gray1)
             }
 
@@ -138,13 +136,13 @@ struct EmptyImageView: View {
                         .frame(width: 40)
                         .foregroundStyle(Color.gray2)
                     Text("사진을 등록하세요!")
-                        .font(.system(size: 14))
+                        .font(.regular14)
                         .foregroundStyle(Color.gray1)
                 }
             }
     }
 }
 
-#Preview {
-    ImageSelectHorizontalScrollView()
-}
+//#Preview {
+//    ImageSelectHorizontalScrollView(photodummyData: [nil, nil, nil])
+//}
