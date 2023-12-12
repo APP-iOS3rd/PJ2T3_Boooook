@@ -33,7 +33,6 @@ struct MiniMapView: View {
         }
         .overlay(alignment: .bottomTrailing) {
             Button {
-                //
                 region = MapCameraPosition.region(
                     MKCoordinateRegion(center: .locationDummyData,
                                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
