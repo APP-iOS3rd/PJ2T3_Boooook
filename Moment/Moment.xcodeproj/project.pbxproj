@@ -53,6 +53,8 @@
 		AC72AD1B2B27ED260082A9DB /* NoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72AD1A2B27ED260082A9DB /* NoContentView.swift */; };
 		AC72AD1D2B27ED4E0082A9DB /* CustomShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72AD1C2B27ED4E0082A9DB /* CustomShelf.swift */; };
 		AC72AD1F2B27ED750082A9DB /* ContentShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72AD1E2B27ED750082A9DB /* ContentShelfView.swift */; };
+		AC72AD282B2843260082A9DB /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC72AD272B2843260082A9DB /* APIKEY.plist */; };
+		AC72AD2A2B284FC90082A9DB /* NetworkErrorCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72AD292B284FC90082A9DB /* NetworkErrorCase.swift */; };
 		B1C938572B27E24F006EFB70 /* ShelfRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */; };
 		B1C938592B27E294006EFB70 /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938582B27E294006EFB70 /* CustomListDivider.swift */; };
 		B1C9385B2B27E2C6006EFB70 /* RecordDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */; };
@@ -60,6 +62,7 @@
 		B1C9385F2B27F010006EFB70 /* MapToRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9385E2B27F010006EFB70 /* MapToRecordListView.swift */; };
 		B1C938632B27F66F006EFB70 /* SelectedBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938622B27F66F006EFB70 /* SelectedBookCell.swift */; };
 		B1C938652B27F6A0006EFB70 /* SelectedBookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938642B27F6A0006EFB70 /* SelectedBookListView.swift */; };
+		B1C9387C2B28401F006EFB70 /* NaverBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9387B2B28401F006EFB70 /* NaverBookAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +114,8 @@
 		AC72AD1A2B27ED260082A9DB /* NoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentView.swift; sourceTree = "<group>"; };
 		AC72AD1C2B27ED4E0082A9DB /* CustomShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShelf.swift; sourceTree = "<group>"; };
 		AC72AD1E2B27ED750082A9DB /* ContentShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentShelfView.swift; sourceTree = "<group>"; };
+		AC72AD272B2843260082A9DB /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
+		AC72AD292B284FC90082A9DB /* NetworkErrorCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorCase.swift; sourceTree = "<group>"; };
 		B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordCellView.swift; sourceTree = "<group>"; };
 		B1C938582B27E294006EFB70 /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
 		B1C9385A2B27E2C6006EFB70 /* RecordDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataStruct.swift; sourceTree = "<group>"; };
@@ -118,6 +123,7 @@
 		B1C9385E2B27F010006EFB70 /* MapToRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToRecordListView.swift; sourceTree = "<group>"; };
 		B1C938622B27F66F006EFB70 /* SelectedBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBookCell.swift; sourceTree = "<group>"; };
 		B1C938642B27F6A0006EFB70 /* SelectedBookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBookListView.swift; sourceTree = "<group>"; };
+		B1C9387B2B28401F006EFB70 /* NaverBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverBookAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 				09AB7CE72B26A1370073EAD5 /* Assets.xcassets */,
 				09AB7CF12B26A1660073EAD5 /* Colors.xcassets */,
 				09AB7D1A2B26A82B0073EAD5 /* Info.plist */,
+				AC72AD272B2843260082A9DB /* APIKEY.plist */,
 				09AB7CE92B26A1370073EAD5 /* Preview Content */,
 			);
 			path = Moment;
@@ -280,7 +287,9 @@
 		09AB7CFF2B26A3180073EAD5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B1C9387A2B283FF8006EFB70 /* NaverBookAPI */,
 				09731F742B26C56E0045F6B4 /* NetworkTest.swift */,
+				AC72AD292B284FC90082A9DB /* NetworkErrorCase.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -376,6 +385,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B1C9387A2B283FF8006EFB70 /* NaverBookAPI */ = {
+			isa = PBXGroup;
+			children = (
+				B1C9387B2B28401F006EFB70 /* NaverBookAPI.swift */,
+			);
+			path = NaverBookAPI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,6 +454,7 @@
 				09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */,
 				09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */,
 				09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */,
+				AC72AD282B2843260082A9DB /* APIKEY.plist in Resources */,
 				09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */,
 				09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */,
 				09AB7D132B26A73C0073EAD5 /* Pretendard-Light.otf in Resources */,
@@ -480,7 +498,9 @@
 				09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */,
 				09731F792B26C5830045F6B4 /* SelectBookTest.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
+				AC72AD2A2B284FC90082A9DB /* NetworkErrorCase.swift in Sources */,
 				B1C9385D2B27E2E8006EFB70 /* ShelfRecordListView.swift in Sources */,
+				B1C9387C2B28401F006EFB70 /* NaverBookAPI.swift in Sources */,
 				B1C938632B27F66F006EFB70 /* SelectedBookCell.swift in Sources */,
 				09731F752B26C56E0045F6B4 /* NetworkTest.swift in Sources */,
 				2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */,

@@ -13,7 +13,7 @@ struct MainShelfView: View {
     var body: some View {
         ZStack(alignment:.bottomTrailing) {
             VStack(spacing: 16) {
-                SearchBar()
+                //SearchBar()
 
                 SegmentBar(preselectedIndex: 0)
 
