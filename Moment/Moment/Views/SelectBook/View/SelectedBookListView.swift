@@ -11,8 +11,8 @@ struct SelectedBookListView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: -30) {
-                SearchBar()
-                    .padding(20)
+//                SearchBar()
+//                    .padding(20)
                 VStack(alignment: .leading, spacing: -30) {
                     Text("기록한 책")
                         .font(Font.semibold18)
