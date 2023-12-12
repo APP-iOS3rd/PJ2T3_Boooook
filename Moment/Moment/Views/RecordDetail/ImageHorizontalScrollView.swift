@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ImageHorizontalScrollView: View {
     let geo: GeometryProxy
-    let photos: [ImageData] = ImageData.imageDummyData
+    let photos: [ImageData]
     
     var body: some View {
         ScrollView(.horizontal) {
@@ -34,6 +34,6 @@ struct ImageHorizontalScrollView: View {
 
 #Preview {
     GeometryReader { geo in
-        ImageHorizontalScrollView(geo: geo)
+        ImageHorizontalScrollView(geo: geo, photos: ImageData.imageDummyData)
     }
 }

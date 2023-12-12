@@ -2,7 +2,7 @@
 //  RecordDataStruct.swift
 //  Moment
 //
-//  Created by 홍세희 on 2023/12/11.
+//  Created by 홍세희 on 2023/12/12.
 //
 
 import Foundation
