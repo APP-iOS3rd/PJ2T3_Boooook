@@ -70,7 +70,7 @@ struct SelectedBooktoAPIView: View {
                             ScrollView {
                                 VStack(alignment: .leading, spacing: -30) {
                                     ForEach(searchResults, id: \.self) { bookInfo in
-                                        NavigationLink(destination: Text("태스트용")) {
+                                        NavigationLink(destination: AddRecordView(bookInfo: bookInfo)) {
                                             SelectedBookCell(bookInfo: bookInfo)
                                         }
                                         CustomListDivider()
