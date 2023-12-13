@@ -346,11 +346,11 @@ struct UserData {
                      commentary: "호로로로로로로로로로ㅗㄹㄹ", bookISBN: "4"),
 		],
 		bookList: [
-			MyBook(bookISBN: "1", theCoverOfBook: "dummyBookImage01", title: "햄버거", author: "이창준", publisher: "한빛미디어", plot: ""),
-			MyBook(bookISBN: "2", theCoverOfBook: "bono", title: "피자", author: "김민재", publisher: "우렁찬", plot: ""),
-			MyBook(bookISBN: "3", theCoverOfBook: "roofi", title: "치킨", author: "정인선", publisher: "신호등", plot: ""),
-			MyBook(bookISBN: "4", theCoverOfBook: "hoon", title: "파스타", author: "백대홍", publisher: "RGB", plot: ""),
-			MyBook(bookISBN: "5", theCoverOfBook: "bookex1", title: "샌드위치", author: "밥세희", publisher: "Apple", plot: "")
+			MyBook(bookISBN: "1", theCoverOfBook: "dummyBookImage01", title: "햄버거", author: "이창준", publisher: "한빛미디어", plot: "이게 줄거리다 인마"),
+			MyBook(bookISBN: "2", theCoverOfBook: "bono", title: "피자", author: "김민재", publisher: "우렁찬", plot: "나 졸려...그거 아니야 따라해 잠온다."),
+			MyBook(bookISBN: "3", theCoverOfBook: "roofi", title: "치킨", author: "정인선", publisher: "신호등", plot: "나 오늘 커피 무려 32잔 마셨어"),
+			MyBook(bookISBN: "4", theCoverOfBook: "hoon", title: "파스타", author: "백대홍", publisher: "RGB", plot: "히히"),
+			MyBook(bookISBN: "5", theCoverOfBook: "bookex1", title: "샌드위치", author: "밥세희", publisher: "Apple", plot: "줄거리쓰라니까 쓰는데 할 말이 없다")
 		])
 }
 
