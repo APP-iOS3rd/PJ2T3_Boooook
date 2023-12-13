@@ -1,19 +1,19 @@
 import SwiftUI
 
-struct BookList: Decodable {
-    let total: Int
-    let start: Int
-    let display: Int
-    let items: [Book]
-}
-
-struct Book: Codable, Hashable {
-    let title: String
-    let image: String
-    let author: String
-    let publisher: String
-    let description: String
-}
+//struct BookList: Decodable {
+//    let total: Int
+//    let start: Int
+//    let display: Int
+//    let items: [Book]
+//}
+//
+//struct Book: Codable, Hashable {
+//    let title: String
+//    let image: String
+//    let author: String
+//    let publisher: String
+//    let description: String
+//}
 
 class BookAPI: ObservableObject {
     static let shared = BookAPI()
