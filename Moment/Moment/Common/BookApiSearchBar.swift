@@ -1,16 +1,19 @@
 //
-//  SearchBar.swift
+//  BookApiSearchBar.swift
 //  Moment
 //
-//  Created by 백대홍 on 12/11/23.
+//  Created by 홍세희 on 2023/12/13.
 //
 
 import SwiftUI
 
 struct BookApiSearchBar: View {
-    @State var searchBookText = ""
+    @Binding var searchBookText: String
     @StateObject var network = BookAPI.shared
     @Binding var searchResults: [Book]
+    @Binding var showBool: Bool
+    @Binding var noResults: Bool
+
     
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
@@ -22,18 +25,25 @@ struct BookApiSearchBar: View {
             TextField("책 제목", text: $searchBookText)
                 .textInputAutocapitalization(.never)
             
+
+            if !searchBookText.isEmpty {
+                Button(action: {
+                    searchBookText = ""
+                }, label: {
+                    Image(systemName: "xmark.circle")
+                        .foregroundStyle(.darkBrown)
+                })
+                .padding(.horizontal, 10)
+            }
+            
             Button(action: searchBooks) {
                 Text("검색")
                     .frame(width: 100,height: 40)
                     .background(Color.mainBrown)
                     .foregroundColor(Color.white)
-    //                    .cornerRadius(10)
                     .clipShape(.rect(bottomTrailingRadius: 10, topTrailingRadius: 10))
-                    
             }
         }
-//        .padding(.horizontal, 8)
-//        .padding(.vertical, 7)
         .frame(height: 40, alignment: .leading)
         .background(.white)
         .cornerRadius(10)
@@ -47,19 +57,26 @@ struct BookApiSearchBar: View {
         Task {
             do {
                 searchResults = try await network.fetchData(queryValue: searchBookText)
+                showBool = true
+                noResults = searchResults.isEmpty
             } catch let error as NetworkError {
                 print("Network error: \(error.errorMessage)")
+                showBool = false
+                noResults = true
             } catch {
                 print("Unexpected error: \(error.localizedDescription)")
+                showBool = false
+                noResults = true
             }
         }
     }
 }
 
-struct BookApiSearchBar_Previews: PreviewProvider {
-    @State static var results: [Book] = []
+//struct BookApiSearchBar_Previews: PreviewProvider {
+//    @State static var results: [Book] = []
+//
+//    static var previews: some View {
+//        BookApiSearchBar()
+//    }
+//}
 
-    static var previews: some View {
-        BookApiSearchBar(searchResults: $results)
-    }
-}
