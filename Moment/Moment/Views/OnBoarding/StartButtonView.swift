@@ -13,7 +13,6 @@ struct StartButtonView: View {
     var body: some View {
         Button {
             isOnboarding = false
-            // navigation 이동 추가
         } label: {
             HStack(spacing: 8) {
                 Text("시작하기")
