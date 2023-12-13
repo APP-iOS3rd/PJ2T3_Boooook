@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MapToRecordListView: View {
+	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let bookISBNList: [String]
     let recordList: [MyRecord]
     let localName: String // 지역명 (네비 타이틀)
@@ -22,15 +23,32 @@ struct MapToRecordListView: View {
                         .padding(20)
                     ForEach(bookRecordList, id: \.id) { record in
                         CustomListDivider()
-                        NavigationLink(destination: Text("테스트 이동 뷰입니다.")) {
-                            ShelfRecordCellView(recordId: record.id)
-                        }
+						NavigationLink {
+							RecordDetailView(recordID: record.id)
+						} label: {
+							ShelfRecordCellView(recordId: record.id)
+						}
                     }
                 }
             }
         }
-        .navigationTitle(localName)
         .navigationBarTitleDisplayMode(.inline)
+		.navigationBarBackButtonHidden(true)
+		.toolbar {
+			ToolbarItem(placement: .topBarLeading) {
+				Button {
+					self.presentationMode.wrappedValue.dismiss()
+				} label: {
+					 Image(systemName: "chevron.left")
+						.aspectRatio(contentMode: .fit)
+				}
+			}
+			ToolbarItem(placement: .principal) {
+				Text(localName)
+					.fontWeight(.semibold)
+					.foregroundStyle(Color.darkBrown)
+			}
+		}
     }
 }
 

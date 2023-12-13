@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddRecordView: View {
+	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var showPickerMap: Bool = false
     // 사용자 위치 정보
     @State private var place: String = "부산광역시 수영구 민락수변로 12-1 (민락동)"
@@ -39,6 +40,8 @@ struct AddRecordView: View {
                 // MARK: - 책 정보
                 Text(bookInfo.title)
                     .font(.bold20)
+					.lineLimit(2)
+					.padding(.horizontal, 20)
                 
                 fetchImage(url: bookInfo.theCoverOfBook)
                 
@@ -121,22 +124,28 @@ struct AddRecordView: View {
                     .alert("기록할까요?", isPresented: $showingAlert) {
                         Button("아니요") {}
                         Button("네") {
-                            
                         }
                     } message: {
                         Text("기록은 수정할 수 없어요...🥲")
                     }
-                    
-                    
                 }
                 .padding(20)
             }
-            
-            
         }
         .onTapGesture {
             hideKeyboard()
         }
+		.navigationBarBackButtonHidden(true)
+		.toolbar {
+			ToolbarItem(placement: .topBarLeading) {
+				Button {
+					self.presentationMode.wrappedValue.dismiss()
+				} label: {
+					 Image(systemName: "chevron.left")
+						.aspectRatio(contentMode: .fit)
+				}
+			}
+		}
     }
     func fetchImage(url: String) -> some View {
         AsyncImage(url: URL(string: url)) { image in

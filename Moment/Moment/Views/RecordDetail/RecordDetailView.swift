@@ -6,79 +6,104 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct RecordDetailView: View {
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-//    @State private var showingAlert = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var showingAlert = false
     private let recordData = RecordData.recordDummyData
-    
+	let recordID: UUID
+	var recordInfo: MyRecord? {
+		UserData.mangjaeData.recordList.first { $0.id == recordID }
+	}
     var body: some View {
         GeometryReader { geo in
             ScrollView {
-                VStack(alignment: .leading) {
-                    ImageHorizontalScrollView(geo: geo, photos: recordData.photos)
-                    Group {
-                        Text("\(recordData.page)페이지")
-                            .font(.light14)
-                        Text(recordData.paragraph)
-                            .font(.medium20)
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom, 20)
-                        Text(recordData.commentary)
-                            .font(.regular16)
-                            .padding(.bottom, 20)
-                        Text("오후 4시 11분")
-                            .font(.light14)
-                        HStack(spacing: 0) {
-                            Text(recordData.location)
-                                .font(.semibold16)
-                            Text(" 에서의 기록이에요")
-                                .font(.regular16)
-                        }
-                    }
-                    .padding(.horizontal, 20)
-                    MiniMapView(geo: geo)
-                }
-
+				if let recordInfo = recordInfo {
+					VStack(alignment: .leading) {
+						ImageHorizontalScrollView(geo: geo, photos: recordData.photos)
+						Group {
+							Text("\(recordInfo.page)페이지")
+								.font(.light14)
+							Text(recordInfo.paragraph)
+								.font(.medium20)
+								.multilineTextAlignment(.center)
+								.padding(.bottom, 20)
+							Text(recordInfo.commentary)
+								.font(.regular16)
+								.padding(.bottom, 20)
+							Text(formattedTimeToString(timeString: recordInfo.time))
+								.font(.light14)
+							HStack(spacing: 0) {
+								Text(recordInfo.myLocation)
+									.font(.semibold16)
+								Text(" 에서의 기록이에요")
+									.font(.regular16)
+							}
+						}
+						.padding(.horizontal, 20)
+						MiniMapView(coordinate: CLLocationCoordinate2D(latitude: recordInfo.latitude, longitude: recordInfo.longitude), locationName: recordInfo.myLocation, geo: geo)
+					}
+				}
             }
             .scrollIndicators(.hidden)
-//            .navigationBarBackButtonHidden(true)
-//            .toolbar {
-//                ToolbarItem(placement: .topBarLeading) {
-//                    Button {
-//                        self.presentationMode.wrappedValue.dismiss()
-//                    } label: {
-//                         Image(systemName: "chevron.left")
-//                            .aspectRatio(contentMode: .fit)
-//                    }
-//                }
-//                ToolbarItem(placement: .principal) {
-//                     Text("2023년 12월 06일")
-//                        .fontWeight(.semibold)
-//                        .foregroundStyle(Color.darkBrown)
-//                }
-//                ToolbarItem(placement: .topBarTrailing) {
-//                    Button {
-//                        showingAlert.toggle()
-//                    } label: {
-//                         Image(systemName: "trash")
-//                            .aspectRatio(contentMode: .fit)
-//                    }
-//                }
-//            }
-//            .alert("기록을 삭제할까요?", isPresented: $showingAlert) {
-//                Button("삭제", role: .destructive) {
-//                    showingAlert = false
-//                    // TODO: 데이터 삭제, 화면 이동
-//                }
-//                Button("돌아가기", role: .cancel) {
-//                    showingAlert = false
-//                }
-//            }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                         Image(systemName: "chevron.left")
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
+                ToolbarItem(placement: .principal) {
+					if let recordInfo = recordInfo {
+						Text("\(String(recordInfo.year))년 \(recordInfo.monthAndDay)")
+							.fontWeight(.semibold)
+							.foregroundStyle(Color.darkBrown)
+					}
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingAlert.toggle()
+                    } label: {
+                         Image(systemName: "trash")
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
+            }
+            .alert("기록을 삭제할까요?", isPresented: $showingAlert) {
+                Button("삭제", role: .destructive) {
+                    showingAlert = false
+                    // TODO: 데이터 삭제, 화면 이동
+                }
+                Button("돌아가기", role: .cancel) {
+                    showingAlert = false
+                }
+            }
         }
     }
+	
+	func formattedTimeToString(timeString: String) -> String {
+		let hour = Int(timeString.prefix(2)) ?? 0
+		let minute = Int(timeString.suffix(2)) ?? 0
+		var result = ""
+		switch hour {
+		case 0:
+			result += "오전 12시"
+		case 1...11:
+			result += "오전 \(hour)시"
+		case 12:
+			result += "오후 \(hour)시"
+		default:
+			result += "오후 \(hour - 12)시"
+		}
+		
+		return result + " \(minute)분"
+	}
 }
 
-#Preview {
-    RecordDetailView()
-}
+//#Preview {
+//    RecordDetailView()
+//}
