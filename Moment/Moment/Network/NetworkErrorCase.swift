@@ -20,7 +20,7 @@ enum NetworkError: Error {
         case .invalidResponse:
             return "Invaild response"
         case .invalidData:
-            return "The data recived is wrong."
+            return "해당하는 책이 없습니다."
         }
     }
 }

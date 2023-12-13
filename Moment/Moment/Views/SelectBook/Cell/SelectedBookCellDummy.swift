@@ -1,24 +1,26 @@
 //
-//  SelectedBookCell.swift
+//  SelectedBookCellDummy.swift
 //  Moment
 //
-//  Created by 홍세희 on 2023/12/12.
+//  Created by 홍세희 on 2023/12/13.
 //
 
 import SwiftUI
 
-struct SelectedBookCell: View {
-    var bookInfo: Book
+struct SelectedBookDummyCell: View {
+    var bookInfo: BookInfoStruct
     var body: some View {
         VStack(spacing: 20) {
             HStack(alignment: .top) {
-                fetchImage(url: bookInfo.image)
-                VStack(alignment: .leading, spacing: 5) {
+                Image(bookInfo.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 70, height: 87)
+                VStack(alignment: .leading, spacing: 10) {
                     Text(bookInfo.title)
                         .font(Font.medium16)
                         .foregroundStyle(Color.black)
                         .multilineTextAlignment(.leading)
-                        .lineLimit(3)
                     
                     VStack(alignment: .leading) {
                         Text(bookInfo.author)
@@ -26,23 +28,13 @@ struct SelectedBookCell: View {
                     }
                     .font(Font.medium14)
                     .foregroundStyle(Color.gray)
-                    .lineLimit(1)
                 }
             }
         }
         .padding(30)
     }
-    
-    func fetchImage(url: String) -> some View {
-        AsyncImage(url: URL(string: url)) { image in
-            image.resizable()
-        } placeholder: {
-            ProgressView()
-        }
-        .frame(width: 70, height: 87)
-    }
 }
 
-
-
-
+#Preview {
+    SelectedBookDummyCell(bookInfo: BookInfoStruct(image: "bookex1", title: "마흔에 읽는 쇼펜하우어 마흔에 읽는 쇼펜하우어 마흔에 읽는 쇼펜하우어", author: "강용수 (지은이)", publisher: "유노북스"))
+}
