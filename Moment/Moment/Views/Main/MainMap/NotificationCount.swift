@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NotificationCount: View {
 	
-	@Binding var value: Int
+	let value: Int
 	@State var foreground: Color = .white
 	@State var background: Color = .blue
 	
@@ -50,5 +50,5 @@ struct NotificationCount: View {
 }
 
 #Preview {
-	NotificationCount(value: .constant(200))
+	NotificationCount(value: 200)
 }

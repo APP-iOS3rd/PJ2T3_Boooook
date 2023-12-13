@@ -7,67 +7,54 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
-// Marker가 겹치는 순간 두 Marker가 합쳐져야함
+// AddRecordView에서 현재 위치를 저장 시
+// LocalName enum 형태의 값으로 저장 후
+// 그 값을 가져와ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ라.
 struct MainMapView: View {
-    var body: some View {
-		// 37.5431887
-		// 127.1228852
-		
-		// 37.5393384
-		// 127.1263004
-		
-		// 37.54443, 127.1242
-		Map(interactionModes: .all) {
-			Annotation("", coordinate: CLLocationCoordinate2D(latitude: 37.5431887, longitude: 127.1228852), anchor: .bottom) {
-				Button(action: {}, label: {
-					ZStack {
-						RoundRectBalloon()
-							.fill(.white)
-							.frame(width: 65, height: 65)
-						
-						Image("hoon", bundle: nil)
-							.resizable()
-							.frame(width: 60, height: 60)
-							.clipShape(.rect(cornerRadius: 8))
+	@StateObject var mainMapVM = MainMapVM()
+	
+	var body: some View {
+		NavigationStack {
+			Map(bounds: .init(MapCameraBounds(maximumDistance: 1600000)), interactionModes: .all) {
+				// 딕셔너리가 비어있지 않을 때
+				if !mainMapVM.dict.isEmpty {
+					// 딕셔너리의 키값으로 배열을 매핑 후 순회
+					ForEach(mainMapVM.dict.map { $0.key }, id: \.self) { local in
+						if let data = mainMapVM.dict[local]?.first, let count = mainMapVM.dict[local]?.count {
+							Annotation("", coordinate: local.coodinate, anchor: .bottom) {
+								NavigationLink {
+									Text(data.localName.rawValue)
+								} label: {
+									ZStack {
+										RoundRectBalloon()
+											.fill(.white)
+											.frame(width: 65, height: 65)
+										
+										Image(data.imageNames, bundle: nil)
+											.resizable()
+											.frame(width: 60, height: 60)
+											.clipShape(.rect(cornerRadius: 8))
+									}
+									.overlay {
+										NotificationCount(value: count)
+									}
+								}
+							}
+						}
 					}
-					.overlay {
-						NotificationCount(value: .constant(40))
-					}
-				})
+				}
 			}
-			MapCircle(center: CLLocationCoordinate2D(latitude: 37.5431887, longitude: 127.1228852), radius: CLLocationDistance(50))
-				.foregroundStyle(.orange)
-			
-			Annotation("", coordinate: CLLocationCoordinate2D(latitude: 37.5393384, longitude: 127.1263004), anchor: .bottom) {
-				Button(action: {}, label: {
-					ZStack {
-						RoundRectBalloon()
-							.fill(.white)
-							.frame(width: 65, height: 65)
-						
-						Image("bonobono", bundle: nil)
-							.resizable()
-							.frame(width: 60, height: 60)
-							.clipShape(.rect(cornerRadius: 8))
-					}
-					.overlay {
-						NotificationCount(value: .constant(55))
-					}
-				})
+			.onAppear {
+				Task {
+					await mainMapVM.fetchLocalData()
+				}
 			}
-			
-			MapCircle(center: CLLocationCoordinate2D(latitude: 37.5393384, longitude: 127.1263004), radius: CLLocationDistance(50))
-				.foregroundStyle(.orange)
-			
 		}
-		.mapControls {
-			MapUserLocationButton()
-			MapPitchToggle()
-		}
-    }
+	}
 }
 
 #Preview {
-    MainMapView()
+	MainMapView()
 }
