@@ -27,7 +27,7 @@ struct ContentShelfView: View {
 								.frame(width: 130, height: 170)
 						})
 						CustomShelf()
-							.fill(.lightBrown)
+                            .fill(.offBrown)
 							.frame(width: 150, height: 180)
 					}
 				}

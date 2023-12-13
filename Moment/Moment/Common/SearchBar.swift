@@ -31,8 +31,8 @@ struct SearchBar: View {
 				Button(action: {
 					searchText = ""
 				}, label: {
-					Image(systemName: "xmark.circle")
-						.foregroundStyle(.darkBrown)
+					Image(systemName: "xmark")
+						.foregroundStyle(.mainBrown)
 				})
 				.padding(.horizontal, 10)
 			}
