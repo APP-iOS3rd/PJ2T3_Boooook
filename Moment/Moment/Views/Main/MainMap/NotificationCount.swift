@@ -19,7 +19,7 @@ struct NotificationCount: View {
     var body: some View {
 		ZStack {
 			Capsule()
-				.fill(background)
+				.fill(.darkBrown)
 				.frame(width: 25 * widthMultiplier(), height: 25)
 				.position(x: x, y: y)
 			if value < 100 {

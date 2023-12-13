@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ShelfRecordListView: View {
+	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let bookISBN: String
     var bookRecordList: [MyRecord] {
         UserData.mangjaeData.recordList.filter { $0.bookISBN == self.bookISBN }
@@ -28,16 +29,40 @@ struct ShelfRecordListView: View {
                         .padding(20)
                     ForEach(bookRecordList, id: \.id) { record in
                         CustomListDivider()
-                        NavigationLink(destination: Text("테스트 이동 뷰입니다.")) {
-                            ShelfRecordCellView(recordId: record.id)
-                        }
+						NavigationLink {
+							RecordDetailView(recordID: record.id)
+						} label: {
+							ShelfRecordCellView(recordId: record.id)
+						}
+
                     }
                 }
                 
             }
         }
-        .navigationTitle(bookTitle)
-        .navigationBarTitleDisplayMode(.inline)
+		.navigationBarBackButtonHidden(true)
+		.toolbar {
+			ToolbarItem(placement: .topBarLeading) {
+				Button {
+					self.presentationMode.wrappedValue.dismiss()
+				} label: {
+					 Image(systemName: "chevron.left")
+						.aspectRatio(contentMode: .fit)
+				}
+			}
+			ToolbarItem(placement: .principal) {
+				Text(bookTitle)
+					.fontWeight(.semibold)
+					.foregroundStyle(Color.darkBrown)
+			}
+			ToolbarItem(placement: .topBarTrailing) {
+				Button {
+				} label: {
+					 Image(systemName: "info.circle")
+						.aspectRatio(contentMode: .fit)
+				}
+			}
+		}
     }
 }
 

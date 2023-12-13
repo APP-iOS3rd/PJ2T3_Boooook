@@ -8,23 +8,22 @@
 import SwiftUI
 import MapKit
 
-// MARK: - Location
-extension CLLocationCoordinate2D {
-    static let locationDummyData = CLLocationCoordinate2D(
-        latitude: 37.5100, longitude: 126.9956
-    )
-}
-
 struct MiniMapView: View {
-    @State private var region = MapCameraPosition.region(
-        MKCoordinateRegion(center: .locationDummyData,
-                           span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-    )
+	let coordinate: CLLocationCoordinate2D
+	let locationName: String
+	@State var region: MapCameraPosition
     let geo: GeometryProxy
-    
+	init(coordinate: CLLocationCoordinate2D, locationName: String, geo: GeometryProxy) {
+		self.coordinate = coordinate
+		self.locationName = locationName
+		self._region = State(initialValue: MapCameraPosition.region(
+			MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))
+		)
+		self.geo = geo
+	}
     var body: some View {
         Map(position: $region) {
-            Annotation("My Record", coordinate: .locationDummyData) {
+			Annotation(locationName, coordinate: self.coordinate) {
                 ZStack {
                     Circle()
                         .fill(Color.pink)
@@ -34,7 +33,7 @@ struct MiniMapView: View {
         .overlay(alignment: .bottomTrailing) {
             Button {
                 region = MapCameraPosition.region(
-                    MKCoordinateRegion(center: .locationDummyData,
+					MKCoordinateRegion(center: self.coordinate,
                                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
                 )
             } label: {
@@ -55,8 +54,8 @@ struct MiniMapView: View {
     }
 }
 
-#Preview {
-    GeometryReader { geo in
-        MiniMapView(geo: geo)
-    }
-}
+//#Preview {
+//    GeometryReader { geo in
+//        MiniMapView(geo: geo)
+//    }
+//}

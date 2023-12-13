@@ -52,6 +52,7 @@ struct MainView: View {
 				}
 			}
 		}
+		.tint(.darkBrown)
 	}
 	
 	func recordSearch(bookSearch: () -> [MyBook]) -> [MyRecord] {
