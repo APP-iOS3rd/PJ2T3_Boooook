@@ -8,40 +8,29 @@
 import SwiftUI
 
 struct MainShelfView: View {
-    @State var selectedOption = 0
-
+    let booooook: Bool = false
+    
     var body: some View {
-        ZStack(alignment:.bottomTrailing) {
-            VStack(spacing: 16) {
-                //SearchBar()
-
-                SegmentBar(preselectedIndex: 0)
-
+        ZStack(alignment: .bottomTrailing) {
+            if !booooook {
+                NoContentView()
+                    .padding()
+            } else {
                 ScrollView(.vertical, showsIndicators: false) {
-
-                    if selectedOption == 0 {
-                        NoContentView()
-                            .padding()
-                    } else if selectedOption == 1 {
-                        ContentShelfView()
-                    }
+                    ContentShelfView()
                 }
             }
-            .padding()
-
-            ZStack(alignment:.bottomTrailing) {
-                Button {
-                    // Just Design example
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 30))
-                        .fontWeight(.medium)
-                }
-                .buttonStyle(.circled(color: .lightBrown, size: 30))
+            Button {
+                // Just Design example
+            } label: {
+                Image(systemName: "plus")
+                    .font(.system(size: 30))
+                    .fontWeight(.medium)
             }
-            .padding()
-
+            .buttonStyle(.circled(color: .lightBrown, size: 30))
+            .padding([.bottom, .trailing], 30)
         }
+        .ignoresSafeArea()
     }
 }
 
