@@ -23,6 +23,9 @@ struct SearchBar: View {
 			TextField("책 제목", text: $searchText)
 				.textInputAutocapitalization(.never)
 				.focused($isSearchFocused)
+                .onSubmit {
+                    isTapButton = true
+                }
 			
 			if !searchText.isEmpty {
 				Button(action: {

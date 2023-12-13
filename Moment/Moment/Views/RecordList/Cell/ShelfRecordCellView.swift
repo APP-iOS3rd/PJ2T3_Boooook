@@ -8,57 +8,57 @@
 import SwiftUI
 
 struct ShelfRecordCellView: View {
-    var bookdata: RecordDataStruct
+    let recordId: UUID
+    var recordData: MyRecord? {
+        return UserData.mangjaeData.recordList.first { $0.id == self.recordId }
+    }
+    
     var body: some View {
         VStack(spacing: 20) {
             HStack(alignment: .top) {
-                Image(bookdata.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 90, height: 90)
-                    .clipShape(
-                        .rect(topLeadingRadius: 10.0, bottomLeadingRadius: 10.0, bottomTrailingRadius: 10.0, topTrailingRadius: 10.0)
-                    )
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack(alignment: .bottom) {
-                        Text(bookdata.changeDayToString())
-                            .font(Font.medium16)
-                            .foregroundStyle(Color.darkBrown)
-                        Text(bookdata.changeTimeToString())
-                            .font(Font.medium14)
-                            .foregroundStyle(Color.darkBrown)
+                if let recordData = self.recordData {
+    //                Image(recordData.photos?.first) -> 추후에 이미지 데이터로 받을 예정
+                    Image("bono") // 임시 이미지
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 90, height: 90)
+                        .clipShape(
+                            .rect(topLeadingRadius: 10.0, bottomLeadingRadius: 10.0, bottomTrailingRadius: 10.0, topTrailingRadius: 10.0)
+                        )
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack(alignment: .bottom) {
+                            Text(recordData.monthAndDay)
+                                .font(.medium16)
+                                .foregroundStyle(Color.darkBrown)
+                            Text(formattedTimeToTimeZone(timeString: recordData.time))
+                                .font(.medium14)
+                                .foregroundStyle(Color.darkBrown)
+                                .foregroundStyle(Color.black)
+                        }
+                        Text("“" + recordData.paragraph + "“")
+                            .font(.regular16)
                             .foregroundStyle(Color.black)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(2)
                     }
-                    Text("“" + bookdata.contents + "“")
-                        .font(Font.regular16)
-                        .font(.system(size: 16.0))
-                        .foregroundStyle(Color.black)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(2)
                 }
             }
         }
         .padding()
+        
     }
-}
-
-struct RecordYearView: View {
-    var bookdata: RecordDataStruct
-    var body: some View {
-        Text(bookdata.changeYearToString())
-            .foregroundColor(Color.mainBrown)
-            .multilineTextAlignment(.leading)
-            .padding(.horizontal, 10)
-            .background(Color.offBrown)
-            .cornerRadius(10)
-            .fixedSize(horizontal: false, vertical: false)
+    
+    func formattedTimeToTimeZone(timeString: String) -> String {
+        switch Int(timeString.prefix(2)) ?? 0 {
+        case 0...5: return "새벽"
+        case 6...11: return "아침"
+        case 12...16: return "낮"
+        case 17...23: return "밤"
+        default: return "새벽"
+        }
     }
 }
 
 //#Preview {
 //    ShelfRecordCellView(bookdata: RecordDataStruct(date: testDate, image: "roofi", contents: "줄거리입니다.. 예.. 트렌드 코리아.."))
-//}
-
-//#Preview {
-//    RecordYearView(bookdata: RecordDataStruct(date: testDate, image: "roofi", contents: "줄거리입니다.. 예.. 트렌드 코리아.."))
 //}
