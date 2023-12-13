@@ -9,10 +9,16 @@ import SwiftUI
 
 @main
 struct MomentApp: App {
+    @State private var isLoading = true
+    
     var body: some Scene {
         WindowGroup {
 //            SelectedBooktoAPIView()
-            ContentView()
+            if isLoading {
+                SplashView(isActive: $isLoading)
+            } else {
+                ContentView()
+            }
         }
     }
 }
