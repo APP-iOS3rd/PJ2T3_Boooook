@@ -21,7 +21,8 @@ struct AddRecordView: View {
         nil, nil, nil
     ]
     // 책 정보
-    private let bookInfo = BookData.bookDummyData
+    let bookInfo: SelectedBook
+    
     private var dataIsEmpty: Bool {
         if [placeAlias, paragraph, plot].contains("") || page == nil || photoData[0] == nil {
             return true
@@ -32,20 +33,14 @@ struct AddRecordView: View {
     
     // Alert
     @State private var showingAlert: Bool = false
-    
     var body: some View {
         ScrollView() {
-            
             VStack {
-                
                 // MARK: - 책 정보
                 Text(bookInfo.title)
                     .font(.bold20)
                 
-                Image(bookInfo.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150, height: 220)
+                fetchImage(url: bookInfo.theCoverOfBook)
                 
                 Text(bookInfo.author)
                     .font(.regular16)
@@ -118,8 +113,9 @@ struct AddRecordView: View {
                             showingAlert.toggle()
                         }
                     } label: {
-                        Text("기록 저장하기")
+                        Text(dataIsEmpty ? "아직 다 작성되지 않았어요" : "기록 저장하기")
                             .font(.regular16)
+                            
                     }
                     .buttonStyle(.customProminent(color: dataIsEmpty ? .gray3 : .lightBrown))
                     .alert("기록할까요?", isPresented: $showingAlert) {
@@ -142,6 +138,14 @@ struct AddRecordView: View {
             hideKeyboard()
         }
     }
+    func fetchImage(url: String) -> some View {
+        AsyncImage(url: URL(string: url)) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: 70, height: 87)
+    }
 }
 
 
@@ -152,6 +156,6 @@ extension View {
   }
 }
 
-#Preview {
-    AddRecordView()
-}
+//#Preview {
+//    AddRecordView()
+//}
