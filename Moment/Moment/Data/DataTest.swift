@@ -370,7 +370,7 @@ struct MyRecord: Identifiable, Hashable {
 	var bookISBN: String
 }
 
-struct MyBook: Hashable {
+struct MyBook: Hashable, SelectedBook {
 	var bookISBN: String
 	var theCoverOfBook: String
 	var title: String

@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+protocol SelectedBook {
+    var title: String { get }
+    var theCoverOfBook: String { get }
+    var author: String { get }
+    var publisher: String { get }
+    var plot: String { get }
+    var bookISBN: String { get }
+}
+
 struct BookList: Decodable {
     let total: Int
     let start: Int
@@ -14,12 +23,22 @@ struct BookList: Decodable {
     let items: [Book]
 }
 
-struct Book: Codable, Hashable {
+struct Book: Codable, Hashable, SelectedBook {
     let title: String
-    let image: String
+    let theCoverOfBook: String
     let author: String
     let publisher: String
-    let description: String
+    let plot: String
+    let bookISBN: String
+    
+    enum CodingKeys: String, CodingKey {
+        case theCoverOfBook = "image"
+        case plot = "description"
+        case bookISBN = "isbn"
+        case title
+        case author
+        case publisher
+    }
 }
 struct SelectedBooktoAPIView: View {
     @StateObject var network = BookAPI.shared
@@ -41,9 +60,9 @@ struct SelectedBooktoAPIView: View {
                         VStack {
                             ScrollView {
                                 VStack(alignment: .leading, spacing: -30) {
-                                    ForEach(bookInfo) { bookInfo in
-                                        NavigationLink(destination: Text("test")) {
-                                            SelectedBookDummyCell(bookInfo: bookInfo)
+                                    ForEach(UserData.mangjaeData.bookList, id: \.self) { book in
+                                        NavigationLink(destination: AddRecordView(bookInfo: book)) {
+                                            SelectedBookDummyCell(bookInfo: book)
                                         }
                                         CustomListDivider()
                                     }
@@ -69,9 +88,9 @@ struct SelectedBooktoAPIView: View {
                         VStack {
                             ScrollView {
                                 VStack(alignment: .leading, spacing: -30) {
-                                    ForEach(searchResults, id: \.self) { bookInfo in
-                                        NavigationLink(destination: AddRecordView(bookInfo: bookInfo)) {
-                                            SelectedBookCell(bookInfo: bookInfo)
+                                    ForEach(searchResults, id: \.self) { book in
+                                        NavigationLink(destination: AddRecordView(bookInfo: book)) {
+                                            SelectedBookCell(bookInfo: book)
                                         }
                                         CustomListDivider()
                                     }

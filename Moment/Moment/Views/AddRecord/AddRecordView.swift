@@ -21,7 +21,8 @@ struct AddRecordView: View {
         nil, nil, nil
     ]
     // 책 정보
-    @State var bookInfo: Book
+    let bookInfo: SelectedBook
+    
     private var dataIsEmpty: Bool {
         if [placeAlias, paragraph, plot].contains("") || page == nil || photoData[0] == nil {
             return true
@@ -39,7 +40,7 @@ struct AddRecordView: View {
                 Text(bookInfo.title)
                     .font(.bold20)
                 
-                fetchImage(url: bookInfo.image)
+                fetchImage(url: bookInfo.theCoverOfBook)
                 
                 Text(bookInfo.author)
                     .font(.regular16)

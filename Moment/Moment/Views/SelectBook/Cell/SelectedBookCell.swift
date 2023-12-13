@@ -11,9 +11,9 @@ struct SelectedBookCell: View {
     var bookInfo: Book
     var body: some View {
         VStack(spacing: 20) {
-            HStack(alignment: .top) {
-                fetchImage(url: bookInfo.image)
-                VStack(alignment: .leading, spacing: 5) {
+            HStack(alignment: .top, spacing: 20) {
+                fetchImage(url: bookInfo.theCoverOfBook)
+                VStack(alignment: .leading, spacing: 10) {
                     Text(bookInfo.title)
                         .font(Font.medium16)
                         .foregroundStyle(Color.black)
@@ -36,10 +36,12 @@ struct SelectedBookCell: View {
     func fetchImage(url: String) -> some View {
         AsyncImage(url: URL(string: url)) { image in
             image.resizable()
+                .aspectRatio(contentMode: .fill)
         } placeholder: {
             ProgressView()
         }
         .frame(width: 70, height: 87)
+        .clipped()
     }
 }
 

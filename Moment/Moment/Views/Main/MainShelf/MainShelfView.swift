@@ -20,8 +20,10 @@ struct MainShelfView: View {
                     ContentShelfView(bookList: $bookList)
                 }
             }
-            Button {
+            NavigationLink {
                 // SelectView 이동
+                SelectedBooktoAPIView()
+                
             } label: {
                 Image(systemName: "plus")
                     .font(.system(size: 30))
