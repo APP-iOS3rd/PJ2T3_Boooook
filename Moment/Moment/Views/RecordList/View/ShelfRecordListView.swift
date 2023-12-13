@@ -16,9 +16,9 @@ struct ShelfRecordListView: View {
     var recordYearList: [Int] {
         Set(bookRecordList.map { $0.year }).sorted { $0 > $1 }
     }
-    var bookTitle: String {
-        UserData.mangjaeData.bookList.first { $0.bookISBN == bookISBN }?.title ?? ""
-    }
+	var bookData: MyBook? {
+		UserData.mangjaeData.bookList.first { $0.bookISBN == bookISBN }
+	}
 	
 	@State var showDialog = false
     
@@ -43,7 +43,9 @@ struct ShelfRecordListView: View {
 				}
 			}
 			if showDialog {
-				BookInfodialog(isActive: $showDialog)
+				if let bookData = bookData {
+					BookInfodialog(isActive: $showDialog, bookInfo: bookData)
+				}
 			}
 		}
 		.navigationBarBackButtonHidden(true)
@@ -57,9 +59,11 @@ struct ShelfRecordListView: View {
 				}
 			}
 			ToolbarItem(placement: .principal) {
-				Text(bookTitle)
-					.fontWeight(.semibold)
-					.foregroundStyle(Color.darkBrown)
+				if let bookData = bookData {
+					Text(bookData.title)
+						.fontWeight(.semibold)
+						.foregroundStyle(Color.darkBrown)
+				}
 			}
 			ToolbarItem(placement: .topBarTrailing) {
 				Button {
