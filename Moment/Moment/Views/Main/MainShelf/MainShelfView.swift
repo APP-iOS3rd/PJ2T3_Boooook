@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MainShelfView: View {
-    let booooook: Bool = false
+	@Binding var bookList: [MyBook]
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            if !booooook {
+			if bookList.isEmpty {
                 NoContentView()
                     .padding()
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
-                    ContentShelfView()
+                    ContentShelfView(bookList: $bookList)
                 }
             }
             Button {
@@ -35,5 +35,5 @@ struct MainShelfView: View {
 }
 
 #Preview {
-    MainShelfView()
+	MainShelfView(bookList: .constant(UserData.mangjaeData.bookList))
 }
