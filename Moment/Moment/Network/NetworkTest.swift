@@ -15,7 +15,7 @@ struct NetworkTest: View {
     var body: some View {
         VStack {
             
-            SearchBar(searchBookText: searchBookText, searchResults: $searchResults)
+            BookApiSearchBar(searchBookText: searchBookText, searchResults: $searchResults)
             
             List(searchResults, id: \.self) { book in
                 

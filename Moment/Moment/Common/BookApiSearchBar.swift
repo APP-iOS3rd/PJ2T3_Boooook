@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchBar: View {
+struct BookApiSearchBar: View {
     @State var searchBookText = ""
     @StateObject var network = BookAPI.shared
     @Binding var searchResults: [Book]
@@ -16,6 +16,7 @@ struct SearchBar: View {
         HStack(alignment: .center, spacing: 0) {
             Image(systemName: "magnifyingglass")
                 .foregroundStyle(Color.secondary)
+                .padding(.leading)
             
             Spacer()
             TextField("책 제목", text: $searchBookText)
@@ -23,23 +24,24 @@ struct SearchBar: View {
             
             Button(action: searchBooks) {
                 Text("검색")
-                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                    .frame(width: 100,height: 50)
+                    .frame(width: 100,height: 40)
                     .background(Color.mainBrown)
                     .foregroundColor(Color.white)
-                    .cornerRadius(20)
+    //                    .cornerRadius(10)
+                    .clipShape(.rect(bottomTrailingRadius: 10, topTrailingRadius: 10))
+                    
             }
-            .padding(.leading)
         }
-        .padding(.horizontal, 8)
-        .padding(.vertical, 7)
+//        .padding(.horizontal, 8)
+//        .padding(.vertical, 7)
         .frame(height: 40, alignment: .leading)
         .background(.white)
         .cornerRadius(10)
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 15)
                 .stroke(Color.mainBrown, lineWidth: 2)
         )
+        
     }
     private func searchBooks() {
         Task {
@@ -54,6 +56,10 @@ struct SearchBar: View {
     }
 }
 
-//#Preview {
-//    SearchBar()
-//}
+struct BookApiSearchBar_Previews: PreviewProvider {
+    @State static var results: [Book] = []
+
+    static var previews: some View {
+        BookApiSearchBar(searchResults: $results)
+    }
+}
