@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct OnboardingCardView: View {
-    var onboarding: Onboarding
-       
-       @State private var isAnimating: Bool = false
+    @State private var isAnimating: Bool = false
+    var onboarding: OnboardingData
+    
     var body: some View {
         VStack(alignment: .center) {
             Text(onboarding.title)
@@ -28,5 +28,5 @@ struct OnboardingCardView: View {
 }
 
 #Preview {
-    OnboardingCardView(onboarding: Onboarding(title: "앱이름과 함께\n기억 속에 남겨두고 싶은\n책의 내용을 기록해보세요.", image: "Group 331"))
+    OnboardingCardView(onboarding: OnboardingData(title: "모멘트와 함께\n기억 속에 남겨두고 싶은\n책의 내용을 기록해보세요.", image: "Group 331"))
 }
