@@ -8,34 +8,32 @@
 import SwiftUI
 
 struct MapToRecordListView: View {
-    //MARK: 연도 어떻게 받아올지 고민해보기
-    var bookTitle: [String] = ["아메리칸 프로메테우스", "미움받을 용기"]
+    let bookISBNList: [String]
+    let recordList: [MyRecord]
+    let localName: String // 지역명 (네비 타이틀)
+    
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                ForEach(bookTitle.indices, id: \.self) { index in
-                    VStack(alignment: .leading, spacing: -20) {
-                        Text(bookTitle[index])
-                            .foregroundColor(Color.darkBrown)
-                            .multilineTextAlignment(.leading)
-                            .padding(.horizontal, 10)
-                            .background(Color.offBrown)
-                            .cornerRadius(10)
-                            .fixedSize(horizontal: false, vertical: false)
-                            .padding(20)
-                        ForEach(bookData) { bookdata in
-                            CustomListDivider()
-                            NavigationLink(destination: Text("테스트 이동 뷰입니다.")) {
-                                ShelfRecordCellView(bookdata: bookdata)
-                            }
+        ScrollView {
+            ForEach(bookISBNList, id: \.self) { isbn in
+                let bookRecordList = recordList.filter { $0.bookISBN == isbn }
+                let bookTitle = UserData.mangjaeData.bookList.first { $0.bookISBN == isbn }?.title
+                VStack(alignment: .leading, spacing: -20) {
+                    RecordBookTitleView(title: bookTitle ?? "")
+                        .padding(20)
+                    ForEach(bookRecordList, id: \.id) { record in
+                        CustomListDivider()
+                        NavigationLink(destination: Text("테스트 이동 뷰입니다.")) {
+                            ShelfRecordCellView(recordId: record.id)
                         }
                     }
                 }
             }
         }
+        .navigationTitle(localName)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#Preview {
-    MapToRecordListView()
-}
+//#Preview {
+//    MapToRecordListView(recordList: UserData.mangjaeData.recordList, localName: "서울특별시")
+//}

@@ -22,18 +22,21 @@ struct MainMapView: View {
 			if !mainMapVM.dict.isEmpty {
 				// 딕셔너리의 키값으로 배열을 매핑 후 순회
 				ForEach(mainMapVM.dict.map { $0.key }, id: \.self) { local in
-					if let data = mainMapVM.dict[local]?.first, let count = mainMapVM.dict[local]?.count {
+					if let data = mainMapVM.dict[local]?.first,
+                       let count = mainMapVM.dict[local]?.count,
+                       let bookRecordList = mainMapVM.dict[local] {
+                        let bookISBNList = Set(bookRecordList.map { $0.bookISBN }).map { $0 }
 						Annotation("", coordinate: local.coodinate, anchor: .bottom) {
-
 							NavigationLink {
-								Text(data.localName)
+                                MapToRecordListView(bookISBNList: bookISBNList,
+                                                    recordList: bookRecordList,
+                                                    localName: local.rawValue)
 							} label: {
 								ZStack {
 									RoundRectBalloon()
 										.fill(.white)
 										.frame(width: 65, height: 65)
-									
-									Image(systemName: "square.and.arrow.up.circle")
+									Image(systemName: "square.and.arrow.up.circle") // data.photos.first 를 보여주는게 맞음
 										.resizable()
 										.frame(width: 60, height: 60)
 										.clipShape(.rect(cornerRadius: 8))

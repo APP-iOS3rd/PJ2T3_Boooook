@@ -21,7 +21,7 @@ struct MainShelfView: View {
                 }
             }
             Button {
-                // Just Design example
+                // SelectView 이동
             } label: {
                 Image(systemName: "plus")
                     .font(.system(size: 30))
