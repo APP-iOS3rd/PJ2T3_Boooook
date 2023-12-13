@@ -37,7 +37,7 @@ struct CustomShelf: Shape {
                 }
                 Spacer()
                 ZStack {
-                    Image("bonobono", bundle: nil)
+                    Image("bono", bundle: nil)
                         .resizable()
                         .frame(width: 130, height: 170)
                     

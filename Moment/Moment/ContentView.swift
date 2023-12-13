@@ -15,7 +15,7 @@ struct ContentView: View {
         if isOnboarding {
             OnboardingMainView()
         } else {
-            MainShelfView()
+            MainView()
         }
     }
 }

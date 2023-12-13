@@ -26,6 +26,7 @@ enum LocalName: String, CaseIterable {
 	case gyeongsangbuk_do = "경상북도"
 	case gyeongsangnam_do = "경상남도"
 	case jeju = "제주특별자치도"
+	case defaultCase = "없음"
 	
 	var coodinate: CLLocationCoordinate2D {
 		switch self {
@@ -63,6 +64,8 @@ enum LocalName: String, CaseIterable {
 			return CLLocationCoordinate2D(latitude: 35.369563, longitude: 128.2570135)
 		case .jeju:
 			return CLLocationCoordinate2D(latitude: 33.3846216, longitude: 126.5534925)
+		case .defaultCase:
+			return CLLocationCoordinate2D(latitude: 37.5518911, longitude: 126.9917937)
 		}
 	}
 }

@@ -8,36 +8,32 @@
 import SwiftUI
 
 struct ContentShelfView: View {
-    var body: some View {
-        VStack {
-            VStack {
-                ForEach(0...3, id: \.self) { _ in
-                    HStack {
-                        ZStack {
-                            Image("bookex1", bundle: nil)
-                                .resizable()
-                                .frame(width: 130, height: 170)
-                            CustomShelf()
-                                .fill(.lightBrown)
-                                .frame(width: 150, height: 180)
-                        }
-                        Spacer()
-                        ZStack {
-                            Image("dummyBookImage01", bundle: nil)
-                                .resizable()
-                                .frame(width: 130, height: 170)
-                            CustomShelf()
-                                .fill(.lightBrown)
-                                .frame(width: 150, height: 180)
-                        }
-                    }
-                }
-                .padding(.vertical)
-            }
-        }
-    }
+	@Binding var bookList: [MyBook]
+	@State private var columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
+	var body: some View {
+		ScrollView {
+			LazyVGrid(columns: columns, spacing: 60) {
+				ForEach(bookList, id: \.self) { book in
+					ZStack {
+						Button(action: {
+							
+						}, label: {
+							Image(book.theCoverOfBook)
+								.resizable()
+								.frame(width: 130, height: 170)
+						})
+						CustomShelf()
+							.fill(.lightBrown)
+							.frame(width: 150, height: 180)
+					}
+				}
+			}
+		}
+		.padding(.horizontal)
+		.padding(.top, 20)
+	}
 }
 
 #Preview {
-    ContentShelfView()
+	ContentShelfView(bookList: .constant(UserData.mangjaeData.bookList))
 }
