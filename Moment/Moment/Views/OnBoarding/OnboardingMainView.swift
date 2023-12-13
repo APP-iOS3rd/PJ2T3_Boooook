@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct OnboardingMainView: View {
-    var onboardings: [Onboarding] = onboardingsData
+    var onboardings: [OnboardingData] = OnboardingData.onboardingsData
+    
     var body: some View {
         VStack {
             TabView {
