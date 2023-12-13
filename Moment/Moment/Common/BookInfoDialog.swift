@@ -34,7 +34,12 @@ struct BookInfodialog: View {
                         .font(.bold20)
                     Spacer()
                     Button {
-                        closeDialog()
+						withAnimation(.spring()) {
+							offset = 1000
+						}
+						DispatchQueue.main.asyncAfter(deadline: .now() + CATransaction.animationDuration()) {
+							isActive = false
+						}
                     } label: {
                         Image(systemName: "xmark")
                             .frame(width: 24, height: 24)
@@ -76,13 +81,6 @@ struct BookInfodialog: View {
             }
         }
         .ignoresSafeArea()
-    }
-    
-    private func closeDialog() {
-        withAnimation(.spring()) {
-            offset = 1000
-            isActive = false
-        }
     }
 }
 

@@ -19,27 +19,33 @@ struct ShelfRecordListView: View {
     var bookTitle: String {
         UserData.mangjaeData.bookList.first { $0.bookISBN == bookISBN }?.title ?? ""
     }
+	
+	@State var showDialog = false
     
     var body: some View {
-        ScrollView {
-            ForEach(recordYearList, id: \.self) { year in
-                let bookRecordList = bookRecordList.filter { $0.year == year }
-                VStack(alignment: .leading, spacing: -20) {
-                    RecordYearView(year: year)
-                        .padding(20)
-                    ForEach(bookRecordList, id: \.id) { record in
-                        CustomListDivider()
-						NavigationLink {
-							RecordDetailView(recordID: record.id)
-						} label: {
-							ShelfRecordCellView(recordId: record.id)
+		ZStack {
+			ScrollView {
+				ForEach(recordYearList, id: \.self) { year in
+					let bookRecordList = bookRecordList.filter { $0.year == year }
+					VStack(alignment: .leading, spacing: -20) {
+						RecordYearView(year: year)
+							.padding(20)
+						ForEach(bookRecordList, id: \.id) { record in
+							CustomListDivider()
+							NavigationLink {
+								RecordDetailView(recordID: record.id)
+							} label: {
+								ShelfRecordCellView(recordId: record.id)
+							}
+							
 						}
-
-                    }
-                }
-                
-            }
-        }
+					}
+				}
+			}
+			if showDialog {
+				BookInfodialog(isActive: $showDialog)
+			}
+		}
 		.navigationBarBackButtonHidden(true)
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
@@ -57,6 +63,7 @@ struct ShelfRecordListView: View {
 			}
 			ToolbarItem(placement: .topBarTrailing) {
 				Button {
+					showDialog = true
 				} label: {
 					 Image(systemName: "info.circle")
 						.aspectRatio(contentMode: .fit)
