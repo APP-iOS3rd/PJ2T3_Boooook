@@ -13,6 +13,7 @@ struct BookApiSearchBar: View {
     @Binding var searchResults: [Book]
     @Binding var showBool: Bool
     @Binding var noResults: Bool
+
     
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
@@ -24,6 +25,7 @@ struct BookApiSearchBar: View {
             TextField("책 제목", text: $searchBookText)
                 .textInputAutocapitalization(.never)
             
+
             if !searchBookText.isEmpty {
                 Button(action: {
                     searchBookText = ""

@@ -2,7 +2,7 @@
 //  SearchBar.swift
 //  Moment
 //
-//  Created by 백대홍 on 12/11/23.
+//  Created by 백대홍 on 12/13/23.
 //
 
 import SwiftUI
