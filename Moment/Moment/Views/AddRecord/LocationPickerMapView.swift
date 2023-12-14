@@ -9,7 +9,10 @@ import SwiftUI
 
 struct LocationPickerMapView: View {
     @Binding var showPickerMap: Bool
-    @Binding var locationAddress: String
+    @Binding var latitude: Double
+    @Binding var longitude: Double
+    @Binding var localName: String
+    @Binding var place: String
     @StateObject private var locationManager = LocationManager()
 
     var body: some View {
@@ -42,11 +45,14 @@ struct LocationPickerMapView: View {
                 .padding([.bottom, .trailing])
             }
             VStack(alignment: .leading, spacing: 30) {
-                Text(locationManager.currentPlace)
+                Text(locationManager.place)
                     .font(.bold20)
                 Button {
                     if !locationManager.isChanging {
-                        self.locationAddress = locationManager.currentPlace
+                        self.latitude = locationManager.latitude
+                        self.longitude = locationManager.longitude
+                        self.localName = locationManager.localName
+                        self.place = locationManager.place
                     }
                     self.showPickerMap = false
                 } label: {
@@ -81,5 +87,9 @@ struct MapBalloon: Shape {
 }
 
 #Preview {
-    LocationPickerMapView(showPickerMap: .constant(true), locationAddress: .constant(""))
+    LocationPickerMapView(showPickerMap: .constant(true),
+                          latitude: .constant(23.12432),
+                          longitude: .constant(120.12414),
+                          localName: .constant("서울특별시"),
+                          place: .constant("어딘가 어딘가 어디"))
 }
