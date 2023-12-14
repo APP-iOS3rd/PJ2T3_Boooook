@@ -23,7 +23,10 @@ struct PickerMap: UIViewRepresentable {
 class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocationManagerDelegate {
     @Published var mapView: MKMapView = .init()
     @Published var isChanging: Bool = false
-    @Published var currentPlace: String = ""
+    @Published var latitude: Double = 0
+    @Published var longitude: Double = 0
+    @Published var localName: String = ""
+    @Published var place: String = ""
     private var manager: CLLocationManager = .init()
     private var currentGeoPoint: CLLocationCoordinate2D?
     
@@ -80,6 +83,8 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
             }
             self.currentGeoPoint = location.coordinate
             self.mapViewFocusChange()
+            self.latitude = location.coordinate.latitude
+            self.longitude = location.coordinate.longitude
             self.convertLocationToAddress(location: location)
         }
     }
@@ -102,7 +107,8 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
                 return
             }
             guard let placemark = placemarks?.first else { return }
-            self.currentPlace = "\(placemark.country ?? "") \(placemark.locality ?? "") \(placemark.name ?? "")"
+            self.place = "\(placemark.country ?? "") \(placemark.locality ?? "") \(placemark.name ?? "")"
+            self.localName = placemark.administrativeArea ?? ""
         }
     }
 }
