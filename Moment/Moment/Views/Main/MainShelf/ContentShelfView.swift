@@ -17,19 +17,28 @@ struct ContentShelfView: View {
     
 	var body: some View {
 		ScrollView {
-			LazyVGrid(columns: columns, spacing: 60) {
+			LazyVGrid(columns: columns, spacing: 50) {
 				ForEach(bookList, id: \.self) { book in
-					ZStack {
+                    ZStack(alignment: .bottom) {
 						Button(action: {
                             bookISBN = book.bookISBN
                             showShelfToList = true
 						}, label: {
 							fetchImage(url: book.theCoverOfBook)
+                                .padding(.bottom, 10)
 						})
-						CustomShelf()
+                        .zIndex(1)
+                        
+                        CustomShelfUP()
                             .fill(.offBrown)
-							.frame(width: 150, height: 180)
+                            .frame(width: 160)
+                            .padding(.bottom, 5)
+                        CustomShelfDOWN()
+                            .fill(.mainBrown)
+                            .frame(width: 160)
+                            .shadow(radius: 5, x: 0, y: 1)
 					}
+                    .padding(.top, 10)
 				}
 			}
 		}
@@ -49,7 +58,6 @@ struct ContentShelfView: View {
 		} placeholder: {
 			ProgressView()
 		}
-		.frame(width: 70, height: 87)
 	}
 }
 

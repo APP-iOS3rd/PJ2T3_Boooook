@@ -88,8 +88,8 @@ struct MainView: View {
 		return result
 	}
 }
-//
-//#Preview {
-//	MainView()
-//}
+
+#Preview {
+	MainView()
+}
 

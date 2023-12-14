@@ -27,7 +27,7 @@ struct SelectedBooktoAPIView: View {
 				.padding(20)
 			VStack(alignment: .leading, spacing: -30) {
 				if searchBookText == "" {
-					Text("기록된 책 목록")
+                    Text(bookList.count == 0 ? "" : "기록된 책 목록")
 						.font(Font.semibold18)
 						.padding(30)
 					VStack {
