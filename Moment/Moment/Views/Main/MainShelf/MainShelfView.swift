@@ -20,10 +20,11 @@ struct MainShelfView: View {
         ZStack(alignment: .bottomTrailing) {
             if bookList.isEmpty {
                 NoContentView()
-                    .padding()
+                    .padding([.horizontal, .bottom])
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     ContentShelfView(bookList: $bookList)
+                        .padding(.bottom, 40)
                 }
             }
             

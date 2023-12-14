@@ -41,7 +41,7 @@ class MomentRecord: Identifiable {
 }
 
 @Model
-class MomentBook: SelectedBook {
+class MomentBook: SelectedBook, Hashable {
 	var bookISBN: String
 	var theCoverOfBook: String
 	var title: String
