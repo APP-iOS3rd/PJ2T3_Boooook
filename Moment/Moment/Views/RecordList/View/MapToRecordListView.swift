@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MapToRecordListView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     let bookISBNList: [String]
     let recordList: [MyRecord]
     let localName: String // 지역명 (네비 타이틀)
@@ -37,7 +37,7 @@ struct MapToRecordListView: View {
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
 				Button {
-					self.presentationMode.wrappedValue.dismiss()
+					dismiss()
 				} label: {
 					 Image(systemName: "chevron.left")
 						.aspectRatio(contentMode: .fit)

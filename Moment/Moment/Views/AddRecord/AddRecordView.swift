@@ -1,15 +1,7 @@
-//
-//  AddRecordMain.swift
-//  Moment
-//
-//  Created by 정인선 on 12/11/23.
-//
-
 import SwiftUI
 import MapKit
 
 struct AddRecordView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var showPickerMap: Bool = false
     // 사용자 위치 정보
     @State private var latitude: Double = 0
@@ -25,9 +17,12 @@ struct AddRecordView: View {
     @State private var photoData: [UIImage?] = [
         nil, nil, nil
     ]
+//    @Binding var path: NavigationPath
+//    @State private var navigationPath = NavigationPath()
+    @State var showMainView: Bool = false
     // 책 정보
     let bookInfo: SelectedBook
-    
+    @EnvironmentObject var router: Router
     private var dataIsEmpty: Bool {
         if [placeAlias, paragraph, plot].contains("") || page == nil || photoData[0] == nil {
             return true
@@ -44,8 +39,6 @@ struct AddRecordView: View {
                 // MARK: - 책 정보
                 Text(bookInfo.title)
                     .font(.bold20)
-					.lineLimit(2)
-					.padding(.horizontal, 20)
                 
                 fetchImage(url: bookInfo.theCoverOfBook)
                 
@@ -129,7 +122,12 @@ struct AddRecordView: View {
                     .buttonStyle(.customProminent(color: dataIsEmpty ? .gray3 : .lightBrown))
                     .alert("기록할까요?", isPresented: $showingAlert) {
                         Button("아니요") {}
-                        Button("네") {
+                        Button {
+                            divideRecordTime()
+                            showMainView = true
+                            router.clear()
+                        } label: {
+                            Text("네")
                         }
                     } message: {
                         Text("기록은 수정할 수 없어요...🥲")
@@ -138,25 +136,31 @@ struct AddRecordView: View {
                 .padding(20)
             }
         }
+
+        .navigationDestination(isPresented: $showMainView, destination: {
+            MainView()
+        })
+
         .onAppear {
             Task {
                 await fetchLocation()
             }
         }
+
         .onTapGesture {
             hideKeyboard()
         }
-		.navigationBarBackButtonHidden(true)
-		.toolbar {
-			ToolbarItem(placement: .topBarLeading) {
-				Button {
-					self.presentationMode.wrappedValue.dismiss()
-				} label: {
-					 Image(systemName: "chevron.left")
-						.aspectRatio(contentMode: .fit)
-				}
-			}
-		}
+    }
+    
+    func divideRecordTime() {
+//        let dividedTime = DivideTimeStruct.init(date: Date())
+//        UserData.mangjaeData.recordList[0].year = dividedTime.changeYearToString()
+//        UserData.mangjaeData.recordList[0].monthAndDay = dividedTime.changeDayToString()
+//        UserData.mangjaeData.recordList[0].time = dividedTime.changeTimeToString()
+//        //망재 데이터에 임의로 추가하게끔
+//        //UserData.mangjaeData.recordList[0].commentary = "dhkdkdkdkdkdkr"
+//
+//        print(UserData.mangjaeData.recordList[0])
     }
     
     func getLocationManager() async -> CLLocationManager {
@@ -197,8 +201,37 @@ struct AddRecordView: View {
         }
         .frame(width: 70, height: 87)
     }
+    
 }
 
+//MARK: RecordDataStruct - 더미데이터 삭제할 때 그쪽의 구조 지우기
+//struct DivideTimeStruct {
+//    var date: Date
+//
+//    func changeDayToString() -> String {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MM월 dd일"
+//        let changeDateFormatting = formatter.string(from: date)
+//
+//        return changeDateFormatting
+//    }
+//
+//    func changeYearToString() -> Int {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "YYYY"
+//        let changeDateFormatting = formatter.string(from: date)
+//
+//        return Int(changeDateFormatting) ?? 2023
+//    }
+//
+//    func changeTimeToString() -> String {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "HHmm"
+//        let changeDivideFormatting = formatter.string(from: date)
+//
+//        return changeDivideFormatting
+//    }
+//}
 
 // MARK: - 키보드 내리기
 extension View {

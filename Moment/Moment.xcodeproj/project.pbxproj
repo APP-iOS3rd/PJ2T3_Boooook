@@ -60,6 +60,7 @@
 		AC72AD1D2B27ED4E0082A9DB /* CustomShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72AD1C2B27ED4E0082A9DB /* CustomShelf.swift */; };
 		AC72AD1F2B27ED750082A9DB /* ContentShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72AD1E2B27ED750082A9DB /* ContentShelfView.swift */; };
 		AC72AD2A2B284FC90082A9DB /* NetworkErrorCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72AD292B284FC90082A9DB /* NetworkErrorCase.swift */; };
+		ACB0F0E22B2AD6A000DB0DA7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F0E12B2AD6A000DB0DA7 /* Router.swift */; };
 		ACF5657E2B29469400B1E150 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5657D2B29469400B1E150 /* SearchBar.swift */; };
 		B1C938572B27E24F006EFB70 /* ShelfRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */; };
 		B1C938592B27E294006EFB70 /* CustomListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C938582B27E294006EFB70 /* CustomListDivider.swift */; };
@@ -128,6 +129,7 @@
 		AC72AD1C2B27ED4E0082A9DB /* CustomShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShelf.swift; sourceTree = "<group>"; };
 		AC72AD1E2B27ED750082A9DB /* ContentShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentShelfView.swift; sourceTree = "<group>"; };
 		AC72AD292B284FC90082A9DB /* NetworkErrorCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorCase.swift; sourceTree = "<group>"; };
+		ACB0F0E12B2AD6A000DB0DA7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		ACF5657D2B29469400B1E150 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B1C938562B27E24F006EFB70 /* ShelfRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfRecordCellView.swift; sourceTree = "<group>"; };
 		B1C938582B27E294006EFB70 /* CustomListDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListDivider.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				2CA6BED82B2733E0002E3589 /* CustomTextField.swift */,
 				B1C9388C2B294AC3006EFB70 /* BookApiSearchBar.swift */,
 				ACF5657D2B29469400B1E150 /* SearchBar.swift */,
+				ACB0F0E12B2AD6A000DB0DA7 /* Router.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				B1C9388B2B29491A006EFB70 /* SelectedBookCellDummy.swift in Sources */,
 				B1C9387C2B28401F006EFB70 /* NaverBookAPI.swift in Sources */,
 				B1C938632B27F66F006EFB70 /* SelectedBookCell.swift in Sources */,
+				ACB0F0E22B2AD6A000DB0DA7 /* Router.swift in Sources */,
 				2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */,
 				09731F812B26C5A90045F6B4 /* RecordList.swift in Sources */,
 				09D774FD2B283C7500D45EE6 /* LocationPickerMapView.swift in Sources */,
