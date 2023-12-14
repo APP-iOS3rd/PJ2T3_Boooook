@@ -14,9 +14,9 @@ struct MainView: View {
 	@State var bookList: [MyBook] = UserData.mangjaeData.bookList
 	@State var recordList: [MyRecord] = UserData.mangjaeData.recordList
 	@FocusState var isSearchFocused: Bool
-
+    @State private var navigationPath = NavigationPath()
 	var body: some View {
-		NavigationStack {
+		NavigationStack(path: $navigationPath) {
 			VStack(spacing: 0) {
 				if selectedOption == 0 {
 					VStack(spacing: 20) {
@@ -51,6 +51,7 @@ struct MainView: View {
 					bookList = UserData.mangjaeData.bookList
 				}
 			}
+            .navigationBarBackButtonHidden(true)
 		}
 		.tint(.darkBrown)
 	}

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddRecordView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     @State private var showPickerMap: Bool = false
     // 사용자 위치 정보
     @State private var place: String = "부산광역시 수영구 민락수변로 12-1 (민락동)"
@@ -21,9 +21,10 @@ struct AddRecordView: View {
     @State private var photoData: [UIImage?] = [
         nil, nil, nil
     ]
+    
     // 책 정보
     let bookInfo: SelectedBook
-    
+    @State private var navigationPath = NavigationPath()
     private var dataIsEmpty: Bool {
         if [placeAlias, paragraph, plot].contains("") || page == nil || photoData[0] == nil {
             return true
@@ -40,8 +41,8 @@ struct AddRecordView: View {
                 // MARK: - 책 정보
                 Text(bookInfo.title)
                     .font(.bold20)
-					.lineLimit(2)
-					.padding(.horizontal, 20)
+                    .lineLimit(2)
+                    .padding(.horizontal, 20)
                 
                 fetchImage(url: bookInfo.theCoverOfBook)
                 
@@ -105,7 +106,7 @@ struct AddRecordView: View {
                         )
                         .textInputAutocapitalization(.never)
                         .keyboardType(.default)
-                
+                    
                     ImageSelectHorizontalScrollView(photoDummyData: $photoData)
                         .padding(.vertical)
                     
@@ -118,34 +119,40 @@ struct AddRecordView: View {
                     } label: {
                         Text(dataIsEmpty ? "아직 다 작성되지 않았어요" : "기록 저장하기")
                             .font(.regular16)
-                            
+                        
                     }
                     .buttonStyle(.customProminent(color: dataIsEmpty ? .gray3 : .lightBrown))
                     .alert("기록할까요?", isPresented: $showingAlert) {
                         Button("아니요") {}
-                        Button("네") {
+                        NavigationLink {
+                            MainView()
+                        } label: {
+                            Text("네")
                         }
+                        
+                        
                     } message: {
                         Text("기록은 수정할 수 없어요...🥲")
                     }
                 }
                 .padding(20)
             }
+            .navigationBarBackButtonHidden(true)
         }
         .onTapGesture {
             hideKeyboard()
         }
-		.navigationBarBackButtonHidden(true)
-		.toolbar {
-			ToolbarItem(placement: .topBarLeading) {
-				Button {
-					self.presentationMode.wrappedValue.dismiss()
-				} label: {
-					 Image(systemName: "chevron.left")
-						.aspectRatio(contentMode: .fit)
-				}
-			}
-		}
+        
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+        }
     }
     func fetchImage(url: String) -> some View {
         AsyncImage(url: URL(string: url)) { image in
@@ -160,9 +167,9 @@ struct AddRecordView: View {
 
 // MARK: - 키보드 내리기
 extension View {
-  func hideKeyboard() {
-    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-  }
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }
 
 //#Preview {

@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct RecordDetailView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     @State private var showingAlert = false
     private let recordData = RecordData.recordDummyData
 	let recordID: UUID
@@ -51,7 +51,7 @@ struct RecordDetailView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        self.presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     } label: {
                          Image(systemName: "chevron.left")
                             .aspectRatio(contentMode: .fit)

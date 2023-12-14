@@ -41,7 +41,8 @@ struct Book: Codable, Hashable, SelectedBook {
 	}
 }
 struct SelectedBooktoAPIView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @Environment(\.dismiss) private var dismiss
 	@StateObject var network = BookAPI.shared
 	@State private var searchResults: [Book] = []
 	@State private var searchBookText = ""
@@ -104,7 +105,7 @@ struct SelectedBooktoAPIView: View {
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
 				Button {
-					self.presentationMode.wrappedValue.dismiss()
+					dismiss()
 				} label: {
 					 Image(systemName: "chevron.left")
 						.aspectRatio(contentMode: .fit)
