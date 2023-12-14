@@ -61,7 +61,9 @@ struct SelectedBooktoAPIView: View {
 						ScrollView {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(UserData.mangjaeData.bookList, id: \.self) { book in
-									NavigationLink(destination: AddRecordView(bookInfo: book)) {
+                                    NavigationLink{
+                                        AddRecordView(bookInfo: book)
+                                    } label: {
 										SelectedBookDummyCell(bookInfo: book)
 									}
 									CustomListDivider()
@@ -89,7 +91,9 @@ struct SelectedBooktoAPIView: View {
 						ScrollView {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(searchResults, id: \.self) { book in
-									NavigationLink(destination: AddRecordView(bookInfo: book)) {
+                                    NavigationLink {
+                                        AddRecordView(bookInfo: book)
+                                    } label: {
 										SelectedBookCell(bookInfo: book)
 									}
 									CustomListDivider()
