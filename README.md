@@ -77,3 +77,11 @@
 
 ![337shots_so](https://github.com/APP-iOS3rd/PJ2T3_Boooook/assets/75058050/0b67ec17-8bdf-4947-85c2-47c047f2da49)
 
+
+---
+
+
+### 앱 개발 환경
+- Xcode Version 15.1 (15A507)
+- SwiftUI, iOS 17.0
+
