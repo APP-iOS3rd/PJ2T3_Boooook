@@ -24,6 +24,9 @@ struct BookApiSearchBar: View {
             Spacer()
             TextField("책 제목", text: $searchBookText)
                 .textInputAutocapitalization(.never)
+                .onSubmit {
+                    searchBooks()
+                }
             
 
             if !searchBookText.isEmpty {

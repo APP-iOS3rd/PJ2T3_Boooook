@@ -15,6 +15,8 @@ struct ContentShelfView: View {
 	
 	@Binding var bookList: [MomentBook]
     
+    let geo: GeometryProxy
+    
 	var body: some View {
 		ScrollView {
 			LazyVGrid(columns: columns, spacing: 50) {
@@ -31,11 +33,11 @@ struct ContentShelfView: View {
                         
                         CustomShelfUP()
                             .fill(.offBrown)
-                            .frame(width: 160)
+                            .frame(width: (geo.size.width - 80) / 2)
                             .padding(.bottom, 5)
                         CustomShelfDOWN()
                             .fill(.mainBrown)
-                            .frame(width: 160)
+                            .frame(width: (geo.size.width - 80) / 2)
                             .shadow(radius: 5, x: 0, y: 1)
 					}
                     .padding(.top, 10)
@@ -53,7 +55,8 @@ struct ContentShelfView: View {
 		AsyncImage(url: URL(string: url)) { image in
 			image
 				.resizable()
-				.frame(width: 130, height: 170)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: (geo.size.width - 140) / 2)
 				.shadow(radius: 5, x: 5, y: -2)
 		} placeholder: {
 			ProgressView()

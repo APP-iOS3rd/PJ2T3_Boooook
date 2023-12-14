@@ -15,6 +15,8 @@ struct MainShelfView: View {
 	@State var showShlefListView: Bool = false
 	
     @FocusState var isSearchFocused: Bool
+    
+    let geo: GeometryProxy
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -23,7 +25,7 @@ struct MainShelfView: View {
                     .padding([.horizontal, .bottom])
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
-                    ContentShelfView(bookList: $bookList)
+                    ContentShelfView(bookList: $bookList, geo: geo)
                         .padding(.bottom, 40)
                 }
             }
@@ -41,8 +43,9 @@ struct MainShelfView: View {
                 SelectedBooktoAPIView()
             }
             .onDisappear {
-                recordSearchText = ""
-                isSearchFocused = false
+                // TODO: 서치바에서 검색한 상태에서 add하고 나와서 list 갔다 왔을 때 서치바 텍스트 안 지워짐 ?
+//                recordSearchText = ""
+//                isSearchFocused = false
             }
         }
         .ignoresSafeArea()

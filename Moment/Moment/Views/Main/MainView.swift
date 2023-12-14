@@ -23,54 +23,59 @@ struct MainView: View {
     @StateObject var router = Router()
 
 	var body: some View {
-		NavigationStack(path: $router.path) {
-			VStack(spacing: 0) {
-				if selectedOption == 0 {
-					VStack(spacing: 20) {
-						SearchBar(searchText: $recordSearchText,
-								  isTapButton: $isTapSearchButton,
-								  isSearchFocused: _isSearchFocused)
-						.padding(.horizontal)
-						SegmentBar(preselectedIndex: $selectedOption)
-
-                        MainShelfView(bookList: $mainBookList, recordSearchText: $recordSearchText, isSearchFocused: _isSearchFocused)
-					}
-				} else if selectedOption == 1 {
-					ZStack(alignment: .top) {
-						MainMapView(recordList: $mainRecordList)
-						VStack(spacing: 20) {
-							SearchBar(searchText: $recordSearchText,
-									  isTapButton: $isTapSearchButton,
-									  isSearchFocused: _isSearchFocused)
-							.padding(.horizontal)
-							SegmentBar(preselectedIndex: $selectedOption)
-						}
-					}
-				}
-			}
-			.onChange(of: isTapSearchButton) {
-				if isTapSearchButton && !recordSearchText.isEmpty {
-					mainRecordList = recordSearch(bookSearch: bookSearch)
-				}
-			}
-			.onChange(of: recordSearchText) {
-				if !isSearchFocused && recordSearchText.isEmpty {
-					mainRecordList = recordList
-					mainBookList = bookList
-				}
-			}
-			.onChange(of: recordList) {
-				mainBookList = bookList
-				mainRecordList = recordList
-			}
-            .navigationBarBackButtonHidden(true)
-		}
-        .environmentObject(router)
-		.tint(.darkBrown)
-		.onAppear {
-			mainBookList = bookList
-			mainRecordList = recordList
-		}
+        GeometryReader { geo in
+            NavigationStack(path: $router.path) {
+                VStack(spacing: 0) {
+                    if selectedOption == 0 {
+                        VStack(spacing: 20) {
+                            SearchBar(searchText: $recordSearchText,
+                                      isTapButton: $isTapSearchButton,
+                                      isSearchFocused: _isSearchFocused)
+                            .padding(.horizontal)
+                            SegmentBar(preselectedIndex: $selectedOption, geo: geo)
+                            
+                            MainShelfView(bookList: $mainBookList, recordSearchText: $recordSearchText, isSearchFocused: _isSearchFocused, geo: geo)
+                        }
+                    } else if selectedOption == 1 {
+                        ZStack(alignment: .top) {
+                            MainMapView(recordList: $mainRecordList)
+                            VStack(spacing: 20) {
+                                SearchBar(searchText: $recordSearchText,
+                                          isTapButton: $isTapSearchButton,
+                                          isSearchFocused: _isSearchFocused)
+                                .padding(.horizontal)
+                                SegmentBar(preselectedIndex: $selectedOption, geo: geo)
+                            }
+                        }
+                    }
+                }
+                .onChange(of: isTapSearchButton) {
+                    if isTapSearchButton && !recordSearchText.isEmpty {
+                        mainRecordList = recordSearch(bookSearch: bookSearch)
+                    }
+                }
+                .onChange(of: recordSearchText) {
+                    if !isSearchFocused && recordSearchText.isEmpty {
+                        mainRecordList = recordList
+                        mainBookList = bookList
+                    }
+                }
+                .onChange(of: recordList) {
+                    mainBookList = bookList
+                    mainRecordList = recordList
+                }
+                .navigationBarBackButtonHidden(true)
+            }
+            .environmentObject(router)
+            .tint(.darkBrown)
+            .onAppear {
+                mainBookList = bookList
+                mainRecordList = recordList
+            }
+            .onTapGesture {
+                hideKeyboard()
+            }
+        }
 	}
 	
 	func recordSearch(bookSearch: () -> [MomentBook]) -> [MomentRecord] {

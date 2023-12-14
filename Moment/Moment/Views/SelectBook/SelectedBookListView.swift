@@ -20,6 +20,7 @@ struct SelectedBooktoAPIView: View {
 	@State private var searchBookText = ""
 	@State var showBool = false
 	@State var noResults = false
+    @State var isRecord = false
 	
 	var body: some View {
 		VStack(spacing: -30) {
@@ -35,7 +36,7 @@ struct SelectedBooktoAPIView: View {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(bookList, id: \.self) { book in
 									NavigationLink{
-										AddRecordView(bookInfo: book)
+										AddRecordView(isRecord: $isRecord, bookInfo: book)
 									} label: {
 										SelectedBookCell(bookInfo: book)
 									}
@@ -65,7 +66,7 @@ struct SelectedBooktoAPIView: View {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(searchResults, id: \.self) { book in
 									NavigationLink {
-										AddRecordView(bookInfo: book)
+                                        AddRecordView(isRecord: $isRecord, bookInfo: book)
 									} label: {
 										SelectedBookCell(bookInfo: book)
 									}
@@ -77,6 +78,12 @@ struct SelectedBooktoAPIView: View {
 				}
 			}
 		}
+        .onChange(of: isRecord) {
+            if isRecord {
+                searchBookText = ""
+                isRecord = false
+            }
+        }
 		.navigationBarBackButtonHidden(true)
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {

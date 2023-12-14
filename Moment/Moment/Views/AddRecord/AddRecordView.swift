@@ -27,7 +27,8 @@ struct AddRecordView: View {
 	@State private var time: String = ""
 
     @State var showMainView: Bool = false
-
+    @Binding var isRecord: Bool
+    
     // 책 정보
     let bookInfo: SelectedBook
     @EnvironmentObject var router: Router
@@ -134,6 +135,7 @@ struct AddRecordView: View {
                     .alert("기록할까요?", isPresented: $showingAlert) {
                         Button("아니요") {}
                         Button("네") {
+                            isRecord = true
 							Task {
 								await swiftDataInsert()
 							}
@@ -284,13 +286,6 @@ struct FormattedTime {
 		let changeDivideFormatting = formatter.string(from: date)
 		return changeDivideFormatting
 	}
-}
-
-// MARK: - 키보드 내리기
-extension View {
-  func hideKeyboard() {
-    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-  }
 }
 
 //#Preview {

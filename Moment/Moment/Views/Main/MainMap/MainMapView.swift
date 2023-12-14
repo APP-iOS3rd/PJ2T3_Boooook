@@ -17,9 +17,12 @@ struct MainMapView: View {
 	@Binding var recordList: [MomentRecord]
 	@State var dict: [LocalName: [MomentRecord]] = [:]
 	let localNames = LocalName.allCases
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.358391, longitude: 127.859669),
+                                                   span: MKCoordinateSpan(latitudeDelta: 6, longitudeDelta: 6))
 	
 	var body: some View {
-		Map(bounds: .init(MapCameraBounds(maximumDistance: 1600000)), interactionModes: .all) {
+        Map(initialPosition: MapCameraPosition.region(region),
+            bounds: .init(MapCameraBounds(maximumDistance: 1600000)), interactionModes: .all) {
 			// 딕셔너리가 비어있지 않을 때
 			if !dict.isEmpty {
 				// 딕셔너리의 키값으로 배열을 매핑 후 순회
@@ -83,7 +86,6 @@ struct MainMapView: View {
 					result.append(record)
 				}
 			}
-			print("디스패치큐우", dict)
 		}
 	}
 }

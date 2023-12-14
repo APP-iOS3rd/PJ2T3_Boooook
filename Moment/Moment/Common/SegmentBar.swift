@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SegmentBar: View {
     @Binding var preselectedIndex: Int
+    let geo: GeometryProxy
     var options: [String] = ["책장으로 보기", "지도로 보기"]
     let selectedColor = Color.mainBrown
     let deselectedColor = Color.offBrown
@@ -41,11 +42,11 @@ struct SegmentBar: View {
                 }
             }
         }
-        .frame(width: 370, height: 40)
+        .frame(width: geo.size.width - 40, height: 40)
         .cornerRadius(20)
     }
 }
 
-#Preview {
-    SegmentBar(preselectedIndex: .constant(0), options: ["책장으로 보기", "지도로 보기"])
-}
+//#Preview {
+//    SegmentBar(preselectedIndex: .constant(0), options: ["책장으로 보기", "지도로 보기"])
+//}
