@@ -13,6 +13,7 @@ struct RecordDetailView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var showingAlert = false
+    @State private var goMainView = false
 	
 	@Environment(\.modelContext) private var modelContext
 	@Query var recordList: [MomentRecord]
@@ -91,20 +92,23 @@ struct RecordDetailView: View {
             .alert("기록을 삭제할까요?", isPresented: $showingAlert) {
                 Button("삭제", role: .destructive) {
                     showingAlert = false
-                    // TODO: 데이터 삭제, 화면 이동
-//					if let recordInfo = recordInfo {
-//						if isLastBook, let book = book {
-//							modelContext.delete(recordInfo.self)
-//							modelContext.delete(book.self)
-//						} else {
-//							modelContext.delete(recordInfo.self)
-//						}
-//					}
-//					self.presentationMode.wrappedValue.dismiss()
+					if let recordInfo = recordInfo {
+						if isLastBook, let book = book {
+							modelContext.delete(recordInfo.self)
+							modelContext.delete(book.self)
+						} else {
+							modelContext.delete(recordInfo.self)
+                            dismiss()
+						}
+                        goMainView = true
+                    }
                 }
                 Button("돌아가기", role: .cancel) {
                     showingAlert = false
                 }
+            }
+            .navigationDestination(isPresented: $goMainView) {
+                MainView()
             }
         }
     }
