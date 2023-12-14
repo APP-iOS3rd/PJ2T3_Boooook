@@ -6,25 +6,37 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ShelfRecordCellView: View {
+	@Query var recordList: [MomentRecord]
+	
     let recordId: UUID
-    var recordData: MyRecord? {
-        return UserData.mangjaeData.recordList.first { $0.id == self.recordId }
+    var recordData: MomentRecord? {
+        recordList.first { $0.id == self.recordId }
     }
     
     var body: some View {
         VStack(spacing: 20) {
             HStack(alignment: .top) {
                 if let recordData = self.recordData {
-    //                Image(recordData.photos?.first) -> 추후에 이미지 데이터로 받을 예정
-                    Image("bono") // 임시 이미지
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 90, height: 90)
-                        .clipShape(
-                            .rect(topLeadingRadius: 10.0, bottomLeadingRadius: 10.0, bottomTrailingRadius: 10.0, topTrailingRadius: 10.0)
-                        )
+					if let photoData = recordData.photos.first, let uiImage = UIImage(data: photoData) {
+						Image(uiImage: uiImage)
+							.resizable()
+							.aspectRatio(contentMode: .fill)
+							.frame(width: 90, height: 90)
+							.clipShape(
+								.rect(topLeadingRadius: 10.0, bottomLeadingRadius: 10.0, bottomTrailingRadius: 10.0, topTrailingRadius: 10.0)
+							)
+					} else {
+						Image("defaultImage") // 임시 이미지
+							.resizable()
+							.aspectRatio(contentMode: .fill)
+							.frame(width: 90, height: 90)
+							.clipShape(
+								.rect(topLeadingRadius: 10.0, bottomLeadingRadius: 10.0, bottomTrailingRadius: 10.0, topTrailingRadius: 10.0)
+							)
+					}
                     VStack(alignment: .leading, spacing: 10) {
                         HStack(alignment: .bottom) {
                             Text(recordData.monthAndDay)

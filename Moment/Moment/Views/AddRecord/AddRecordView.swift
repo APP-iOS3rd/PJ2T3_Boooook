@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import MapKit
 
 struct AddRecordView: View {
@@ -14,27 +15,34 @@ struct AddRecordView: View {
     // 사용자 위치 정보
     @State private var latitude: Double = 0
     @State private var longitude: Double = 0
-    @State private var localName: String = ""
-    @State private var place: String = ""
+    @State private var localName: String = "" // 민재가 쓸 데이터
+    @State private var place: String = "" // real 주소
     // TextField 입력 정보
-    @State private var placeAlias: String = ""
+    @State private var myLocation: String = ""
     @State private var paragraph: String = ""
-    @State private var page: Int? = nil
-    @State private var plot: String = ""
+    @State private var page: Int?
+    @State private var commentary: String = ""
     // Photos
     @State private var photoData: [UIImage?] = [
         nil, nil, nil
     ]
+	//
+	@State private var year: Int = 0
+	@State private var monthAndDay: String = ""
+	@State private var time: String = ""
     // 책 정보
     let bookInfo: SelectedBook
     
     private var dataIsEmpty: Bool {
-        if [placeAlias, paragraph, plot].contains("") || page == nil || photoData[0] == nil {
+        if [myLocation, paragraph, commentary].contains("") || page == nil || photoData[0] == nil {
             return true
         } else {
             return false
         }
     }
+	
+	@Environment(\.modelContext) private var modelContext
+	@Query private var bookList: [MomentBook]
     
     // Alert
     @State private var showingAlert: Bool = false
@@ -85,7 +93,7 @@ struct AddRecordView: View {
                         .padding(10)
                     }
                     
-                    TextField("위치를 기억할 이름을 지어주세요.", text: $placeAlias)
+                    TextField("위치를 기억할 이름을 지어주세요.", text: $myLocation)
                         .textFieldStyle(BorderedTextFieldStyle())
                         .padding(.bottom, 20)
                         .textInputAutocapitalization(.never)
@@ -102,7 +110,7 @@ struct AddRecordView: View {
                         .textFieldStyle(BorderedTextFieldStyle())
                         .keyboardType(.asciiCapableNumberPad)
                     
-                    TextEditor(text: $plot)
+                    TextEditor(text: $commentary)
                         .font(.regular14)
                         .padding(5)
                         .frame(height: 200)
@@ -130,6 +138,9 @@ struct AddRecordView: View {
                     .alert("기록할까요?", isPresented: $showingAlert) {
                         Button("아니요") {}
                         Button("네") {
+							Task {
+								await swiftDataInsert()
+							}
                         }
                     } message: {
                         Text("기록은 수정할 수 없어요...🥲")
@@ -138,11 +149,9 @@ struct AddRecordView: View {
                 .padding(20)
             }
         }
-        .onAppear {
-            Task {
-                await fetchLocation()
-            }
-        }
+		.task {
+			await fetchLocation()
+		}
         .onTapGesture {
             hideKeyboard()
         }
@@ -178,8 +187,8 @@ struct AddRecordView: View {
             let placemarks = try await geocoder.reverseGeocodeLocation(cllocation, preferredLocale: locale)
             if let address = placemarks.last {
                 DispatchQueue.main.async {
-                    self.place += address.country ?? ""
-                    self.place += address.locality ?? ""
+                    self.place += "\(address.country ?? "") "
+                    self.place += "\(address.locality ?? "") "
                     self.place += address.name ?? ""
                     self.localName = address.administrativeArea ?? ""
                 }
@@ -197,6 +206,77 @@ struct AddRecordView: View {
         }
         .frame(width: 70, height: 87)
     }
+	
+	private func imageToData() async -> [Data] {
+		var imageDatas: [Data] = []
+		for photo in photoData {
+			if let photo = photo?.resize(newWidth: 300) {
+				print(photo)
+				if let jpegData = photo.jpegData(compressionQuality: 1.0) {
+					print(jpegData)
+					imageDatas.append(jpegData)
+				} else if let pngData = photo.pngData() {
+					imageDatas.append(pngData)
+					print(pngData)
+				}
+			}
+		}
+		return imageDatas
+	}
+	
+	private func swiftDataInsert() async {
+		var imageData: [Data] = []
+		imageData = await imageToData()
+		
+		formattedDateToCustom()
+		
+		var flag = false
+		for book in bookList {
+			if book.bookISBN == bookInfo.bookISBN {
+				flag = true
+				break
+			}
+		}
+		if flag {
+			modelContext.insert(MomentRecord(latitude: latitude, longitude: longitude, localName: localName, myLocation: myLocation, year: year, monthAndDay: monthAndDay, time: time, paragraph: paragraph, page: page ?? 0, commentary: commentary, photos: imageData, bookISBN: bookInfo.bookISBN))
+		} else {
+			modelContext.insert(MomentBook(bookISBN: bookInfo.bookISBN, theCoverOfBook: bookInfo.theCoverOfBook, title: bookInfo.title, author: bookInfo.author, publisher: bookInfo.publisher, plot: bookInfo.plot))
+			
+			modelContext.insert(MomentRecord(latitude: latitude, longitude: longitude, localName: localName, myLocation: myLocation, year: year, monthAndDay: monthAndDay, time: time, paragraph: paragraph, page: page ?? 0, commentary: commentary, photos: imageData, bookISBN: bookInfo.bookISBN))
+		}
+	}
+	
+	func formattedDateToCustom() {
+		let dividedTime = FormattedTime.init(date: Date())
+		year = dividedTime.formattedYearToInt()
+		monthAndDay = dividedTime.formattedDayToString()
+		time = dividedTime.formattedTimeToString()
+	}
+}
+
+struct FormattedTime {
+	var date: Date
+	
+	func formattedYearToInt() -> Int {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "YYYY"
+		let changeDateFormatting = formatter.string(from: date)
+		return Int(changeDateFormatting) ?? 2023
+	}
+	
+	func formattedDayToString() -> String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "MM월 dd일"
+		let changeDateFormatting = formatter.string(from: date)
+		return changeDateFormatting
+	}
+	
+	func formattedTimeToString() -> String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "HHmm"
+		let changeDivideFormatting = formatter.string(from: date)
+		return changeDivideFormatting
+	}
 }
 
 

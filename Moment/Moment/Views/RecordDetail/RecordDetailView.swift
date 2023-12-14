@@ -7,21 +7,36 @@
 
 import SwiftUI
 import MapKit
+import SwiftData
 
 struct RecordDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+	
     @State private var showingAlert = false
-    private let recordData = RecordData.recordDummyData
+	
+	@Environment(\.modelContext) private var modelContext
+	@Query var recordList: [MomentRecord]
+	@Query var bookList: [MomentBook]
+	
 	let recordID: UUID
-	var recordInfo: MyRecord? {
-		UserData.mangjaeData.recordList.first { $0.id == recordID }
+	var recordInfo: MomentRecord? {
+		recordList.first { $0.id == recordID }
 	}
+	
+	var book: MomentBook? {
+		bookList.first { $0.bookISBN == recordInfo?.bookISBN }
+	}
+	
+	var isLastBook: Bool {
+		recordList.filter { $0.bookISBN == bookList.first { $0.bookISBN == recordInfo?.bookISBN }?.bookISBN }.count == 1
+	}
+	
     var body: some View {
         GeometryReader { geo in
             ScrollView {
 				if let recordInfo = recordInfo {
 					VStack(alignment: .leading) {
-						ImageHorizontalScrollView(geo: geo, photos: recordData.photos)
+						ImageHorizontalScrollView(geo: geo, photos: recordInfo.photos)
 						Group {
 							Text("\(recordInfo.page)페이지")
 								.font(.light14)
@@ -77,6 +92,15 @@ struct RecordDetailView: View {
                 Button("삭제", role: .destructive) {
                     showingAlert = false
                     // TODO: 데이터 삭제, 화면 이동
+//					if let recordInfo = recordInfo {
+//						if isLastBook, let book = book {
+//							modelContext.delete(recordInfo.self)
+//							modelContext.delete(book.self)
+//						} else {
+//							modelContext.delete(recordInfo.self)
+//						}
+//					}
+//					self.presentationMode.wrappedValue.dismiss()
                 }
                 Button("돌아가기", role: .cancel) {
                     showingAlert = false

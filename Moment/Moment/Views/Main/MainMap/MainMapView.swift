@@ -8,23 +8,23 @@
 import SwiftUI
 import MapKit
 import CoreLocation
+import SwiftData
 
 // AddRecordView에서 현재 위치를 저장 시
 // LocalName enum 형태의 값으로 저장 후
 // 그 값을 가져와ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ라.
 struct MainMapView: View {
-	@StateObject var mainMapVM = MainMapVM()
-	@Binding var recordList: [MyRecord]
+	@Binding var recordList: [MomentRecord]
+	@State var dict: [LocalName: [MomentRecord]] = [:]
+	let localNames = LocalName.allCases
 	
 	var body: some View {
 		Map(bounds: .init(MapCameraBounds(maximumDistance: 1600000)), interactionModes: .all) {
 			// 딕셔너리가 비어있지 않을 때
-			if !mainMapVM.dict.isEmpty {
+			if !dict.isEmpty {
 				// 딕셔너리의 키값으로 배열을 매핑 후 순회
-				ForEach(mainMapVM.dict.map { $0.key }, id: \.self) { local in
-					if let data = mainMapVM.dict[local]?.first,
-                       let count = mainMapVM.dict[local]?.count,
-                       let bookRecordList = mainMapVM.dict[local] {
+				ForEach(dict.map { $0.key }, id: \.self) { local in
+					if let data = dict[local]?.first, let count = dict[local]?.count, let bookRecordList = dict[local] {
                         let bookISBNList = Set(bookRecordList.map { $0.bookISBN }).map { $0 }
 						Annotation("", coordinate: local.coodinate, anchor: .bottom) {
 							NavigationLink {
@@ -36,10 +36,17 @@ struct MainMapView: View {
 									RoundRectBalloon()
 										.fill(.white)
 										.frame(width: 65, height: 65)
-									Image(systemName: "square.and.arrow.up.circle") // data.photos.first 를 보여주는게 맞음
-										.resizable()
-										.frame(width: 60, height: 60)
-										.clipShape(.rect(cornerRadius: 8))
+									if let photo = data.photos.first, let uiImage = UIImage(data: photo) {
+										Image(uiImage: uiImage)
+											.resizable()
+											.frame(width: 60, height: 60)
+											.clipShape(.rect(cornerRadius: 8))
+									} else {
+										Image("defaultImage")
+											.resizable()
+											.frame(width: 60, height: 60)
+											.clipShape(.rect(cornerRadius: 8))
+									}
 								}
 								.overlay {
 									NotificationCount(value: count)
@@ -51,18 +58,36 @@ struct MainMapView: View {
 			}
 		}
 		.onAppear {
-			Task {
-				await mainMapVM.fetchLocalData(recordList: recordList)
-			}
+			fetchLocalData()
 		}
 		.onChange(of: recordList) {
 			Task {
-				await mainMapVM.fetchLocalData(recordList: recordList)
+				print(recordList)
+				fetchLocalData()
+				print(dict)
 			}
+		}
+	}
+	
+	func fetchLocalData() {
+		DispatchQueue.main.async {
+			dict = Dictionary(grouping: recordList) { record in
+				if let localName = localNames.first(where: { $0.rawValue == record.localName }) {
+					return localName
+				} else {
+					return LocalName.defaultCase
+				}
+			}
+			.compactMapValues { records in
+				records.reduce(into: []) { result, record in
+					result.append(record)
+				}
+			}
+			print("디스패치큐우", dict)
 		}
 	}
 }
 
-#Preview {
-	MainMapView(recordList: .constant(UserData.mangjaeData.recordList))
-}
+//#Preview {
+//	MainMapView(recordList: .constant(UserData.mangjaeData.recordList))
+//}

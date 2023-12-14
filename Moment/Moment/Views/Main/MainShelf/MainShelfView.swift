@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainShelfView: View {
-	@Binding var bookList: [MyBook]
+	@Binding var bookList: [MomentBook]
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -36,6 +37,6 @@ struct MainShelfView: View {
     }
 }
 
-#Preview {
-	MainShelfView(bookList: .constant(UserData.mangjaeData.bookList))
-}
+//#Preview {
+//	MainShelfView(bookList: .constant(UserData.mangjaeData.bookList))
+//}

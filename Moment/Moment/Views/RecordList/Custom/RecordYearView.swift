@@ -32,6 +32,7 @@ struct RecordBookTitleView: View {
             .background(Color.offBrown)
             .cornerRadius(10)
             .fixedSize(horizontal: false, vertical: false)
+			.lineLimit(1)
     }
 }
 

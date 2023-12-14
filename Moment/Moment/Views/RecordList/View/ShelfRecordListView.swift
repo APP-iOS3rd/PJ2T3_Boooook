@@ -6,18 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ShelfRecordListView: View {
 	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+	// SwiftData Query
+	@Query var bookList: [MomentBook]
+	@Query var recordList: [MomentRecord]
+	
     let bookISBN: String
-    var bookRecordList: [MyRecord] {
-        UserData.mangjaeData.recordList.filter { $0.bookISBN == self.bookISBN }
-    }
-    var recordYearList: [Int] {
-        Set(bookRecordList.map { $0.year }).sorted { $0 > $1 }
-    }
-	var bookData: MyBook? {
-		UserData.mangjaeData.bookList.first { $0.bookISBN == bookISBN }
+	var bookRecordList: [MomentRecord] {
+		recordList.filter { $0.bookISBN == self.bookISBN }
+	}
+	var recordYearList: [Int] {
+		Set(bookRecordList.map { $0.year }).sorted { $0 > $1 }
+	}
+	var bookData: MomentBook? {
+		bookList.first { $0.bookISBN == bookISBN }
 	}
 	
 	@State var showDialog = false
@@ -34,6 +39,7 @@ struct ShelfRecordListView: View {
 							CustomListDivider()
 							NavigationLink {
 								RecordDetailView(recordID: record.id)
+								Text("")
 							} label: {
 								ShelfRecordCellView(recordId: record.id)
 							}
@@ -63,6 +69,7 @@ struct ShelfRecordListView: View {
 					Text(bookData.title)
 						.fontWeight(.semibold)
 						.foregroundStyle(Color.darkBrown)
+						.lineLimit(1)
 				}
 			}
 			ToolbarItem(placement: .topBarTrailing) {

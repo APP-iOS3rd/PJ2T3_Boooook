@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectedBookCell: View {
-    var bookInfo: Book
+    var bookInfo: SelectedBook
     var body: some View {
         VStack(spacing: 20) {
             HStack(alignment: .top, spacing: 20) {
