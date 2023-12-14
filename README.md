@@ -15,12 +15,11 @@
 <br>
 <br>
 
-# Moment:  그 날, 그 곳, 그 구절(리드미용)
+# Moment:  그 날, 그 곳, 그 구절
+<br>
 
 ## 📚Moment는,
 ![Vectary_texture](https://github.com/APP-iOS3rd/PJ2T3_Boooook/assets/75058050/a80f25bb-5e3e-4985-a7e6-9834b03bba93)
-
-
 
 안녕하세요.  ‘**Moment:  그 날, 그 곳, 그 구절’** 앱은
 
