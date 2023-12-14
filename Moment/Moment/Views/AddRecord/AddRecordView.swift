@@ -1,14 +1,6 @@
-//
-//  AddRecordMain.swift
-//  Moment
-//
-//  Created by 정인선 on 12/11/23.
-//
-
 import SwiftUI
 
 struct AddRecordView: View {
-    @Environment(\.dismiss) private var dismiss
     @State private var showPickerMap: Bool = false
     // 사용자 위치 정보
     @State private var place: String = "부산광역시 수영구 민락수변로 12-1 (민락동)"
@@ -21,10 +13,12 @@ struct AddRecordView: View {
     @State private var photoData: [UIImage?] = [
         nil, nil, nil
     ]
-    
+//    @Binding var path: NavigationPath
+//    @State private var navigationPath = NavigationPath()
+    @State var showMainView: Bool = false
     // 책 정보
     let bookInfo: SelectedBook
-    @State private var navigationPath = NavigationPath()
+    @EnvironmentObject var router: Router
     private var dataIsEmpty: Bool {
         if [placeAlias, paragraph, plot].contains("") || page == nil || photoData[0] == nil {
             return true
@@ -41,8 +35,6 @@ struct AddRecordView: View {
                 // MARK: - 책 정보
                 Text(bookInfo.title)
                     .font(.bold20)
-                    .lineLimit(2)
-                    .padding(.horizontal, 20)
                 
                 fetchImage(url: bookInfo.theCoverOfBook)
                 
@@ -106,7 +98,7 @@ struct AddRecordView: View {
                         )
                         .textInputAutocapitalization(.never)
                         .keyboardType(.default)
-                    
+                
                     ImageSelectHorizontalScrollView(photoDummyData: $photoData)
                         .padding(.vertical)
                     
@@ -119,40 +111,42 @@ struct AddRecordView: View {
                     } label: {
                         Text(dataIsEmpty ? "아직 다 작성되지 않았어요" : "기록 저장하기")
                             .font(.regular16)
-                        
+                            
                     }
                     .buttonStyle(.customProminent(color: dataIsEmpty ? .gray3 : .lightBrown))
                     .alert("기록할까요?", isPresented: $showingAlert) {
                         Button("아니요") {}
-                        NavigationLink {
-                            MainView()
+                        Button {
+                            divideRecordTime()
+                            showMainView = true
+                            router.clear()
                         } label: {
                             Text("네")
                         }
-                        
-                        
                     } message: {
                         Text("기록은 수정할 수 없어요...🥲")
                     }
                 }
                 .padding(20)
             }
-            .navigationBarBackButtonHidden(true)
         }
+        .navigationDestination(isPresented: $showMainView, destination: {
+            MainView()
+        })
         .onTapGesture {
             hideKeyboard()
         }
-        
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .aspectRatio(contentMode: .fit)
-                }
-            }
-        }
+    }
+    
+    func divideRecordTime() {
+//        let dividedTime = DivideTimeStruct.init(date: Date())
+//        UserData.mangjaeData.recordList[0].year = dividedTime.changeYearToString()
+//        UserData.mangjaeData.recordList[0].monthAndDay = dividedTime.changeDayToString()
+//        UserData.mangjaeData.recordList[0].time = dividedTime.changeTimeToString()
+//        //망재 데이터에 임의로 추가하게끔
+//        //UserData.mangjaeData.recordList[0].commentary = "dhkdkdkdkdkdkr"
+//
+//        print(UserData.mangjaeData.recordList[0])
     }
     func fetchImage(url: String) -> some View {
         AsyncImage(url: URL(string: url)) { image in
@@ -162,14 +156,43 @@ struct AddRecordView: View {
         }
         .frame(width: 70, height: 87)
     }
+    
 }
 
+//MARK: RecordDataStruct - 더미데이터 삭제할 때 그쪽의 구조 지우기
+//struct DivideTimeStruct {
+//    var date: Date
+//
+//    func changeDayToString() -> String {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MM월 dd일"
+//        let changeDateFormatting = formatter.string(from: date)
+//
+//        return changeDateFormatting
+//    }
+//
+//    func changeYearToString() -> Int {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "YYYY"
+//        let changeDateFormatting = formatter.string(from: date)
+//
+//        return Int(changeDateFormatting) ?? 2023
+//    }
+//
+//    func changeTimeToString() -> String {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "HHmm"
+//        let changeDivideFormatting = formatter.string(from: date)
+//
+//        return changeDivideFormatting
+//    }
+//}
 
 // MARK: - 키보드 내리기
 extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
+  func hideKeyboard() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+  }
 }
 
 //#Preview {

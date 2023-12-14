@@ -14,9 +14,10 @@ struct MainView: View {
 	@State var bookList: [MyBook] = UserData.mangjaeData.bookList
 	@State var recordList: [MyRecord] = UserData.mangjaeData.recordList
 	@FocusState var isSearchFocused: Bool
-    @State private var navigationPath = NavigationPath()
+    @StateObject var router = Router()
+//    @State private var path = NavigationPath()
 	var body: some View {
-		NavigationStack(path: $navigationPath) {
+		NavigationStack(path: $router.path) {
 			VStack(spacing: 0) {
 				if selectedOption == 0 {
 					VStack(spacing: 20) {
@@ -25,7 +26,7 @@ struct MainView: View {
 								  isSearchFocused: _isSearchFocused)
 						.padding(.horizontal)
 						SegmentBar(preselectedIndex: $selectedOption)
-						MainShelfView(bookList: $bookList)
+                        MainShelfView(bookList: $bookList, recordSearchText: $recordSearchText, isSearchFocused: _isSearchFocused)
 					}
 				} else if selectedOption == 1 {
 					ZStack(alignment: .top) {
@@ -51,8 +52,9 @@ struct MainView: View {
 					bookList = UserData.mangjaeData.bookList
 				}
 			}
-            .navigationBarBackButtonHidden(true)
+//            .navigationBarBackButtonHidden(true)
 		}
+        .environmentObject(router)
 		.tint(.darkBrown)
 	}
 	
@@ -71,8 +73,8 @@ struct MainView: View {
 		return result
 	}
 }
-
-#Preview {
-	MainView()
-}
+//
+//#Preview {
+//	MainView()
+//}
 

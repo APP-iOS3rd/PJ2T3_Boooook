@@ -48,7 +48,7 @@ struct SelectedBooktoAPIView: View {
 	@State private var searchBookText = ""
 	@State var showBool = false
 	@State var noResults = false
-	
+    @EnvironmentObject var router: Router
 	var body: some View {
 		VStack(spacing: -30) {
 			BookApiSearchBar(searchBookText: $searchBookText, searchResults: $searchResults, showBool: $showBool, noResults: $noResults)
@@ -62,7 +62,7 @@ struct SelectedBooktoAPIView: View {
 						ScrollView {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(UserData.mangjaeData.bookList, id: \.self) { book in
-									NavigationLink(destination: AddRecordView(bookInfo: book)) {
+                                    NavigationLink(destination: AddRecordView(bookInfo: book)) {
 										SelectedBookDummyCell(bookInfo: book)
 									}
 									CustomListDivider()
@@ -90,7 +90,7 @@ struct SelectedBooktoAPIView: View {
 						ScrollView {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(searchResults, id: \.self) { book in
-									NavigationLink(destination: AddRecordView(bookInfo: book)) {
+                                    NavigationLink(destination: AddRecordView(bookInfo: book)) {
 										SelectedBookCell(bookInfo: book)
 									}
 									CustomListDivider()
@@ -120,6 +120,6 @@ struct SelectedBooktoAPIView: View {
 	}
 }
 
-#Preview {
-	SelectedBooktoAPIView()
-}
+//#Preview {
+//	SelectedBooktoAPIView()
+//}
