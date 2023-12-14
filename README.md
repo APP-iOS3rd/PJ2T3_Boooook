@@ -1,7 +1,7 @@
 
 
 
-## 팀소개
+# 팀소개
 <div align="center">
   
   |👑|||||
@@ -10,6 +10,10 @@
   |[홍세희](https://github.com/SAY-Hong)|[김민재](https://github.com/bdrsky2010)|[백대홍](https://github.com/DevLarva)|[이창준](https://github.com/Phangg)|[정인선](https://github.com/withseon)|
 
 </div>
+
+
+<br>
+<br>
 
 # Moment:  그 날, 그 곳, 그 구절(리드미용)
 
@@ -71,9 +75,10 @@
 
 
 
+
 ### 3. 독서 기록
-    - Naver 도서 API를 이용한 독서 기록장
-    - 기억하고 싶은 장소, 인용구를 함께 작성하여 그 날, 그 곳, 그 장소를 기록해보세요.
+ - Naver 도서 API를 이용한 독서 기록장
+    - 기억하고 싶은 장소, 인용구를 함께 작성하여 그 날, 그 곳, 그 장소를 기록해보세요.   
 
 ![337shots_so](https://github.com/APP-iOS3rd/PJ2T3_Boooook/assets/75058050/0b67ec17-8bdf-4947-85c2-47c047f2da49)
 
@@ -81,7 +86,12 @@
 ---
 
 
-### 앱 개발 환경
+### 앱 개발 환경 및 주요 스택
 - Xcode Version 15.1 (15A507)
 - SwiftUI, iOS 17.0
+- API: Naver 도서 검색
+
+### 프레임워크
+- 위치 기록: MapKit
+- 데이터 저장: SwiftData
 
