@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainShelfView: View {
-    @Binding var bookList: [MyBook]
+	@Binding var bookList: [MomentBook]
     @Binding var recordSearchText: String
+	
+	@State var showShlefListView: Bool = false
+	
     @FocusState var isSearchFocused: Bool
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             if bookList.isEmpty {
@@ -21,17 +26,17 @@ struct MainShelfView: View {
                     ContentShelfView(bookList: $bookList)
                 }
             }
-            NavigationLink(value: Route.SelectedBook) {
-                // SelectView 이동
-                
-                Image(systemName: "plus")
-                    .font(.system(size: 30))
-                    .fontWeight(.medium)
-                
-                    .buttonStyle(.circled(color: .lightBrown, size: 30))
-                    .padding([.bottom, .trailing], 30)
-            }
-            .navigationDestination(for: Route.self) { _ in
+            
+			Button(action: {
+				showShlefListView = true
+			}, label: {
+				Image(systemName: "plus")
+					.font(.system(size: 30))
+					.fontWeight(.medium)
+			})
+			.buttonStyle(.circled(color: .lightBrown, size: 30))
+			.padding([.bottom, .trailing], 30)
+            .navigationDestination(isPresented: $showShlefListView) {
                 SelectedBooktoAPIView()
             }
             .onDisappear {

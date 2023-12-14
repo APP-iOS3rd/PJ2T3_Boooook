@@ -11,7 +11,7 @@ import SwiftUI
 struct BookInfodialog: View {
     @State private var offset: CGFloat = 1000
     @Binding var isActive: Bool
-    let bookInfo: MyBook
+    let bookInfo: MomentBook
 
     var body: some View {
         ZStack {

@@ -6,18 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MapToRecordListView: View {
+	@Query var bookList: [MomentBook]
+	
     @Environment(\.dismiss) private var dismiss
+	
     let bookISBNList: [String]
-    let recordList: [MyRecord]
+    let recordList: [MomentRecord]
     let localName: String // 지역명 (네비 타이틀)
     
     var body: some View {
         ScrollView {
             ForEach(bookISBNList, id: \.self) { isbn in
                 let bookRecordList = recordList.filter { $0.bookISBN == isbn }
-                let bookTitle = UserData.mangjaeData.bookList.first { $0.bookISBN == isbn }?.title
+                let bookTitle = bookList.first { $0.bookISBN == isbn }?.title
                 VStack(alignment: .leading, spacing: -20) {
                     RecordBookTitleView(title: bookTitle ?? "")
                         .padding(20)
