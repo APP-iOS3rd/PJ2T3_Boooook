@@ -1,9 +1,13 @@
 import SwiftUI
+import MapKit
 
 struct AddRecordView: View {
     @State private var showPickerMap: Bool = false
     // 사용자 위치 정보
-    @State private var place: String = "부산광역시 수영구 민락수변로 12-1 (민락동)"
+    @State private var latitude: Double = 0
+    @State private var longitude: Double = 0
+    @State private var localName: String = ""
+    @State private var place: String = ""
     // TextField 입력 정보
     @State private var placeAlias: String = ""
     @State private var paragraph: String = ""
@@ -65,7 +69,10 @@ struct AddRecordView: View {
                             }
                             .sheet(isPresented: $showPickerMap) {
                                 LocationPickerMapView(showPickerMap: $showPickerMap,
-                                                      locationAddress: $place)
+                                                      latitude: $latitude,
+                                                      longitude: $longitude,
+                                                      localName: $localName,
+                                                      place: $place)
                             }
                         }
                         .padding(10)
@@ -111,7 +118,6 @@ struct AddRecordView: View {
                     } label: {
                         Text(dataIsEmpty ? "아직 다 작성되지 않았어요" : "기록 저장하기")
                             .font(.regular16)
-                            
                     }
                     .buttonStyle(.customProminent(color: dataIsEmpty ? .gray3 : .lightBrown))
                     .alert("기록할까요?", isPresented: $showingAlert) {
@@ -130,9 +136,17 @@ struct AddRecordView: View {
                 .padding(20)
             }
         }
+
         .navigationDestination(isPresented: $showMainView, destination: {
             MainView()
         })
+
+        .onAppear {
+            Task {
+                await fetchLocation()
+            }
+        }
+
         .onTapGesture {
             hideKeyboard()
         }
@@ -148,6 +162,37 @@ struct AddRecordView: View {
 //
 //        print(UserData.mangjaeData.recordList[0])
     }
+    
+    func getLocationManager() async -> CLLocationManager {
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        return manager
+    }
+    
+    func fetchLocation() async {
+        let manager = await getLocationManager()
+        guard let location = manager.location else { return }
+        self.latitude = location.coordinate.latitude
+        self.longitude = location.coordinate.longitude
+        let cllocation = CLLocation(latitude: self.latitude, longitude: self.longitude)
+        let geocoder = CLGeocoder()
+        let locale = Locale(identifier: "ko-KR")
+        do {
+            let placemarks = try await geocoder.reverseGeocodeLocation(cllocation, preferredLocale: locale)
+            if let address = placemarks.last {
+                DispatchQueue.main.async {
+                    self.place += address.country ?? ""
+                    self.place += address.locality ?? ""
+                    self.place += address.name ?? ""
+                    self.localName = address.administrativeArea ?? ""
+                }
+            }
+        } catch let error {
+            print("Geocoding error: \(error.localizedDescription)")
+        }
+    }
+    
     func fetchImage(url: String) -> some View {
         AsyncImage(url: URL(string: url)) { image in
             image.resizable()
