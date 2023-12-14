@@ -9,9 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct MapToRecordListView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-	
 	@Query var bookList: [MomentBook]
+	
+    @Environment(\.dismiss) private var dismiss
 	
     let bookISBNList: [String]
     let recordList: [MomentRecord]
@@ -41,7 +41,7 @@ struct MapToRecordListView: View {
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
 				Button {
-					self.presentationMode.wrappedValue.dismiss()
+					dismiss()
 				} label: {
 					 Image(systemName: "chevron.left")
 						.aspectRatio(contentMode: .fit)

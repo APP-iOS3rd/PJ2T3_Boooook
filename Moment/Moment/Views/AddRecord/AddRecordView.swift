@@ -1,16 +1,10 @@
-//
-//  AddRecordMain.swift
-//  Moment
-//
-//  Created by 정인선 on 12/11/23.
-//
-
 import SwiftUI
 import SwiftData
 import MapKit
 
 struct AddRecordView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+	@Environment(\.dismiss) private var dismiss
+	
     @State private var showPickerMap: Bool = false
     // 사용자 위치 정보
     @State private var latitude: Double = 0
@@ -26,13 +20,17 @@ struct AddRecordView: View {
     @State private var photoData: [UIImage?] = [
         nil, nil, nil
     ]
+
 	//
 	@State private var year: Int = 0
 	@State private var monthAndDay: String = ""
 	@State private var time: String = ""
+
+    @State var showMainView: Bool = false
+
     // 책 정보
     let bookInfo: SelectedBook
-    
+    @EnvironmentObject var router: Router
     private var dataIsEmpty: Bool {
         if [myLocation, paragraph, commentary].contains("") || page == nil || photoData[0] == nil {
             return true
@@ -52,8 +50,6 @@ struct AddRecordView: View {
                 // MARK: - 책 정보
                 Text(bookInfo.title)
                     .font(.bold20)
-					.lineLimit(2)
-					.padding(.horizontal, 20)
                 
                 fetchImage(url: bookInfo.theCoverOfBook)
                 
@@ -141,6 +137,8 @@ struct AddRecordView: View {
 							Task {
 								await swiftDataInsert()
 							}
+                            showMainView = true
+                            router.clear()
                         }
                     } message: {
                         Text("기록은 수정할 수 없어요...🥲")
@@ -152,16 +150,25 @@ struct AddRecordView: View {
 		.task {
 			await fetchLocation()
 		}
+        .navigationDestination(isPresented: $showMainView, destination: {
+            MainView()
+        })
+
+        .onAppear {
+            Task {
+                await fetchLocation()
+            }
+        }
         .onTapGesture {
             hideKeyboard()
         }
-		.navigationBarBackButtonHidden(true)
+		.navigationBarBackButtonHidden()
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
 				Button {
-					self.presentationMode.wrappedValue.dismiss()
+					dismiss()
 				} label: {
-					 Image(systemName: "chevron.left")
+					Image(systemName: "chevron.left")
 						.aspectRatio(contentMode: .fit)
 				}
 			}
@@ -278,7 +285,6 @@ struct FormattedTime {
 		return changeDivideFormatting
 	}
 }
-
 
 // MARK: - 키보드 내리기
 extension View {

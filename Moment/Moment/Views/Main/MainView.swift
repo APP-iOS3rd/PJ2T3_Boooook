@@ -20,9 +20,10 @@ struct MainView: View {
 	@State var mainRecordList: [MomentRecord] = []
 	
 	@FocusState var isSearchFocused: Bool
+    @StateObject var router = Router()
 
 	var body: some View {
-		NavigationStack {
+		NavigationStack(path: $router.path) {
 			VStack(spacing: 0) {
 				if selectedOption == 0 {
 					VStack(spacing: 20) {
@@ -31,7 +32,8 @@ struct MainView: View {
 								  isSearchFocused: _isSearchFocused)
 						.padding(.horizontal)
 						SegmentBar(preselectedIndex: $selectedOption)
-						MainShelfView(bookList: $mainBookList)
+
+                        MainShelfView(bookList: $mainBookList, recordSearchText: $recordSearchText, isSearchFocused: _isSearchFocused)
 					}
 				} else if selectedOption == 1 {
 					ZStack(alignment: .top) {
@@ -61,7 +63,9 @@ struct MainView: View {
 				mainBookList = bookList
 				mainRecordList = recordList
 			}
+            .navigationBarBackButtonHidden(true)
 		}
+        .environmentObject(router)
 		.tint(.darkBrown)
 		.onAppear {
 			mainBookList = bookList
@@ -84,8 +88,8 @@ struct MainView: View {
 		return result
 	}
 }
-
-#Preview {
-	MainView()
-}
+//
+//#Preview {
+//	MainView()
+//}
 

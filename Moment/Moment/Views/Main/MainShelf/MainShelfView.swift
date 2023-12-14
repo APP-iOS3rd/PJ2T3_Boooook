@@ -10,10 +10,15 @@ import SwiftData
 
 struct MainShelfView: View {
 	@Binding var bookList: [MomentBook]
-    
+    @Binding var recordSearchText: String
+	
+	@State var showShlefListView: Bool = false
+	
+    @FocusState var isSearchFocused: Bool
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-			if bookList.isEmpty {
+            if bookList.isEmpty {
                 NoContentView()
                     .padding()
             } else {
@@ -21,17 +26,23 @@ struct MainShelfView: View {
                     ContentShelfView(bookList: $bookList)
                 }
             }
-            NavigationLink {
-                // SelectView 이동
+            
+			Button(action: {
+				showShlefListView = true
+			}, label: {
+				Image(systemName: "plus")
+					.font(.system(size: 30))
+					.fontWeight(.medium)
+			})
+			.buttonStyle(.circled(color: .lightBrown, size: 30))
+			.padding([.bottom, .trailing], 30)
+            .navigationDestination(isPresented: $showShlefListView) {
                 SelectedBooktoAPIView()
-                
-            } label: {
-                Image(systemName: "plus")
-                    .font(.system(size: 30))
-                    .fontWeight(.medium)
             }
-            .buttonStyle(.circled(color: .lightBrown, size: 30))
-            .padding([.bottom, .trailing], 30)
+            .onDisappear {
+                recordSearchText = ""
+                isSearchFocused = false
+            }
         }
         .ignoresSafeArea()
     }

@@ -9,7 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct SelectedBooktoAPIView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+	@Environment(\.dismiss) private var dismiss
+	@EnvironmentObject var router: Router
+	
 	@StateObject var network = BookAPI.shared
 	
 	@Query var bookList: [MomentBook]
@@ -32,9 +34,9 @@ struct SelectedBooktoAPIView: View {
 						ScrollView {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(bookList, id: \.self) { book in
-                                    NavigationLink{
-                                        AddRecordView(bookInfo: book)
-                                    } label: {
+									NavigationLink{
+										AddRecordView(bookInfo: book)
+									} label: {
 										SelectedBookCell(bookInfo: book)
 									}
 									CustomListDivider()
@@ -62,9 +64,9 @@ struct SelectedBooktoAPIView: View {
 						ScrollView {
 							VStack(alignment: .leading, spacing: -30) {
 								ForEach(searchResults, id: \.self) { book in
-                                    NavigationLink {
-                                        AddRecordView(bookInfo: book)
-                                    } label: {
+									NavigationLink {
+										AddRecordView(bookInfo: book)
+									} label: {
 										SelectedBookCell(bookInfo: book)
 									}
 									CustomListDivider()
@@ -79,9 +81,9 @@ struct SelectedBooktoAPIView: View {
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
 				Button {
-					self.presentationMode.wrappedValue.dismiss()
+					dismiss()
 				} label: {
-					 Image(systemName: "chevron.left")
+					Image(systemName: "chevron.left")
 						.aspectRatio(contentMode: .fit)
 				}
 			}
@@ -94,6 +96,7 @@ struct SelectedBooktoAPIView: View {
 	}
 }
 
-#Preview {
-	SelectedBooktoAPIView()
-}
+//#Preview {
+//    SelectedBooktoAPIView()
+//}
+

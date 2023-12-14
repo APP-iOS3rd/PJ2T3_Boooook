@@ -9,11 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct ShelfRecordListView: View {
-	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 	// SwiftData Query
 	@Query var bookList: [MomentBook]
 	@Query var recordList: [MomentRecord]
 	
+    @Environment(\.dismiss) private var dismiss
+
     let bookISBN: String
 	var bookRecordList: [MomentRecord] {
 		recordList.filter { $0.bookISBN == self.bookISBN }
@@ -58,7 +59,7 @@ struct ShelfRecordListView: View {
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
 				Button {
-					self.presentationMode.wrappedValue.dismiss()
+					dismiss()
 				} label: {
 					 Image(systemName: "chevron.left")
 						.aspectRatio(contentMode: .fit)

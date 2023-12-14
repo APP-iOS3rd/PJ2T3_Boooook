@@ -10,8 +10,8 @@ import MapKit
 import SwiftData
 
 struct RecordDetailView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-	
+    @Environment(\.dismiss) private var dismiss
+
     @State private var showingAlert = false
 	
 	@Environment(\.modelContext) private var modelContext
@@ -66,7 +66,7 @@ struct RecordDetailView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        self.presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     } label: {
                          Image(systemName: "chevron.left")
                             .aspectRatio(contentMode: .fit)
