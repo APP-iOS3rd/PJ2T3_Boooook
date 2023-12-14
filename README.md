@@ -1,22 +1,18 @@
 
 
+# Moment:  그 날, 그 곳, 그 구절
+<img width="240" height="240" border:0px src="https://github.com/APP-iOS3rd/PJ2T3_Boooook/assets/103061387/f5665848-b4f4-4e48-a69b-3a50d1f1f766"/>
 
-# 팀소개
-<div align="center">
+## 팀 소개
+
   
   |👑|||||
   | :-----: | :-----: | :-----: | :-----: | :-----: |
   |<img width="120" height="120" border:0px src="https://avatars.githubusercontent.com/u/103061387?v=4"/>|<img width="120" height="120" border:0px src="https://avatars.githubusercontent.com/u/80156515?v=4"/>|<img width="120" height="120" border:0px src="https://avatars.githubusercontent.com/u/75058050?v=4"/>|<img width="120" height="120" border:0px src="https://avatars.githubusercontent.com/u/109324421?v=4"/>|<img width="120" height="120" border:0px src="https://avatars.githubusercontent.com/u/120158212?v=4"/>|
   |[홍세희](https://github.com/SAY-Hong)|[김민재](https://github.com/bdrsky2010)|[백대홍](https://github.com/DevLarva)|[이창준](https://github.com/Phangg)|[정인선](https://github.com/withseon)|
 
-</div>
-
-
-<br>
 <br>
 
-# Moment:  그 날, 그 곳, 그 구절
-<br>
 
 ## 📚Moment는,
 ![Vectary_texture](https://github.com/APP-iOS3rd/PJ2T3_Boooook/assets/75058050/a80f25bb-5e3e-4985-a7e6-9834b03bba93)
@@ -30,6 +26,14 @@
 내가 인상깊게 읽은 책의 ‘**구절**’은 무엇인지,
 
 나만의 책장에 저장하고 나만의 지도에서 기록이 남겨진 곳이 어디인지 확인할 수 있는 앱입니다. 
+
+<br>
+<br>
+
+🔗**더 자세히 알아보기**
+- [Moment 프로젝트 노션](https://glacier-coneflower-d58.notion.site/Moment-f97396505f86478a8d26c25d891b91cf?pvs=4)
+- [Figma](https://www.figma.com/file/1UzNLAqUxy6OkCSJ9lNxID/BOOOOOK?type=design&node-id=0%3A1&mode=design&t=NiwmFAYS2dh1v3IH-1)
+<br>
 
 ## 📚Moment를 소개합니다.
 
