@@ -21,8 +21,9 @@ struct MiniMapView: View {
 		)
 		self.geo = geo
 	}
+    
     var body: some View {
-        Map(position: $region) {
+        Map(position: $region, interactionModes: [.pan, .pitch, .zoom]) {
 			Annotation(locationName, coordinate: self.coordinate) {
                 ZStack {
                     Circle()
