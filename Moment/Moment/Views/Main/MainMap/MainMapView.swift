@@ -22,7 +22,7 @@ struct MainMapView: View {
 	
 	var body: some View {
         Map(initialPosition: MapCameraPosition.region(region),
-            bounds: .init(MapCameraBounds(maximumDistance: 1600000)), interactionModes: .all) {
+            bounds: .init(MapCameraBounds(maximumDistance: 1600000)), interactionModes: [.pan, .pitch, .zoom]) {
 			// 딕셔너리가 비어있지 않을 때
 			if !dict.isEmpty {
 				// 딕셔너리의 키값으로 배열을 매핑 후 순회
