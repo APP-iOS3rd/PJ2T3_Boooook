@@ -37,9 +37,11 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
     
     // 위치 권한 여부 확인, 요청
     func configureLocationManager() {
+        mapView.isRotateEnabled = false
+        
         mapView.delegate = self
         manager.delegate = self
-        
+
         let status = manager.authorizationStatus
         if status == .notDetermined {
             manager.requestAlwaysAuthorization()
