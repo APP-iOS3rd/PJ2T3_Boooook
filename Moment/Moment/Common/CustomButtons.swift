@@ -86,7 +86,7 @@ struct CustomProminentButton: ButtonStyle {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(color)
             )
-            .foregroundStyle(Color.black)
+            .foregroundStyle(Color.white)
             .opacity(configuration.isPressed ? 0.6 : 1.0)
     }
 }
