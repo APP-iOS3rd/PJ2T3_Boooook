@@ -42,11 +42,6 @@ struct MainShelfView: View {
             .navigationDestination(isPresented: $showShlefListView) {
                 SelectedBooktoAPIView()
             }
-            .onDisappear {
-                // TODO: 서치바에서 검색한 상태에서 add하고 나와서 list 갔다 왔을 때 서치바 텍스트 안 지워짐 ?
-//                recordSearchText = ""
-//                isSearchFocused = false
-            }
         }
         .ignoresSafeArea()
     }

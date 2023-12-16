@@ -49,6 +49,10 @@ struct MainView: View {
                         }
                     }
                 }
+                //MARK: [추후 업데이트] 문제3 수정
+                .onDisappear(perform: {
+                    recordSearchText = ""
+                })
                 .onChange(of: isTapSearchButton) {
                     if isTapSearchButton && !recordSearchText.isEmpty {
                         mainRecordList = recordSearch(bookSearch: bookSearch)
