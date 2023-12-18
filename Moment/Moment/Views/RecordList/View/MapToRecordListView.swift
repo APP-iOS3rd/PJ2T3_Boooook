@@ -22,9 +22,9 @@ struct MapToRecordListView: View {
             ForEach(bookISBNList, id: \.self) { isbn in
                 let bookRecordList = recordList.filter { $0.bookISBN == isbn }
                 let bookTitle = bookList.first { $0.bookISBN == isbn }?.title
-                VStack(alignment: .leading, spacing: -20) {
+                VStack(alignment: .leading) {
                     RecordBookTitleView(title: bookTitle ?? "")
-                        .padding(20)
+                        .padding(.horizontal, 20)
                     ForEach(bookRecordList, id: \.id) { record in
                         CustomListDivider()
 						NavigationLink {
@@ -34,8 +34,10 @@ struct MapToRecordListView: View {
 						}
                     }
                 }
+                .padding(.bottom, 40)
             }
         }
+        .padding(.top, 20)
         .navigationBarTitleDisplayMode(.inline)
 		.navigationBarBackButtonHidden(true)
 		.toolbar {
