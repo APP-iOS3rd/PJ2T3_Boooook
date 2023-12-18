@@ -14,7 +14,9 @@ struct SelectedBooktoAPIView: View {
 	
 	@StateObject var network = BookAPI.shared
 	
-	@Query var bookList: [MomentBook]
+	// 기록된 책 리스트 이름순으로 정렬해서 쿼리 가져오는 프로퍼티
+	@Query(sort: \MomentBook.title) var bookList: [MomentBook]
+//	@Query var bookList: [MomentBook]
 	
 	@State private var searchResults: [Book] = []
 	@State private var searchBookText = ""
