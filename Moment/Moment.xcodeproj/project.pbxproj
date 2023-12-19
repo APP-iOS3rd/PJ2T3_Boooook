@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		095131622B31216200F6BC4C /* FormattedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095131612B31216200F6BC4C /* FormattedTime.swift */; };
+		095131782B3195FE00F6BC4C /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095131772B3195FE00F6BC4C /* APIKEY.plist */; };
 		09731F772B26C5780045F6B4 /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F762B26C5780045F6B4 /* DataTest.swift */; };
 		09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */; };
 		09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		095131612B31216200F6BC4C /* FormattedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTime.swift; sourceTree = "<group>"; };
+		095131772B3195FE00F6BC4C /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		09731F762B26C5780045F6B4 /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
 		09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
 		09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHorizontalScrollView.swift; sourceTree = "<group>"; };
