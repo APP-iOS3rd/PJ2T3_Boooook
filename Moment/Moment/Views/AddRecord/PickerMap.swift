@@ -42,6 +42,8 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         mapView.delegate = self
         manager.delegate = self
 
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        
         let status = manager.authorizationStatus
         if status == .notDetermined {
             manager.requestAlwaysAuthorization()

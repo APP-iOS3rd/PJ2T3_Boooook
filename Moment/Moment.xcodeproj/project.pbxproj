@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095131442B30885500F6BC4C /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095131432B30885500F6BC4C /* APIKEY.plist */; };
+		095131622B31216200F6BC4C /* FormattedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095131612B31216200F6BC4C /* FormattedTime.swift */; };
 		09731F772B26C5780045F6B4 /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F762B26C5780045F6B4 /* DataTest.swift */; };
 		09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */; };
 		09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */; };
@@ -71,6 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095131432B30885500F6BC4C /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
+		095131612B31216200F6BC4C /* FormattedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTime.swift; sourceTree = "<group>"; };
 		09731F762B26C5780045F6B4 /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
 		09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
 		09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHorizontalScrollView.swift; sourceTree = "<group>"; };
@@ -187,8 +191,7 @@
 				09AB7CE72B26A1370073EAD5 /* Assets.xcassets */,
 				09AB7CF12B26A1660073EAD5 /* Colors.xcassets */,
 				09AB7D1A2B26A82B0073EAD5 /* Info.plist */,
-				7B8811722B30897E00968C60 /* APIKEY.plist */,
-				B16731952B2BFA3E00FE03E7 /* APIKEY.plist */,
+				095131432B30885500F6BC4C /* APIKEY.plist */,
 				09AB7CE92B26A1370073EAD5 /* Preview Content */,
 			);
 			path = Moment;
@@ -231,6 +234,7 @@
 				09731F872B26D0050045F6B4 /* BookInfoDialog.swift */,
 				2CA6BED82B2733E0002E3589 /* CustomTextField.swift */,
 				ACF5657D2B29469400B1E150 /* SearchBar.swift */,
+				095131612B31216200F6BC4C /* FormattedTime.swift */,
 				ACB0F0E12B2AD6A000DB0DA7 /* Router.swift */,
 			);
 			path = Common;
@@ -454,7 +458,7 @@
 				09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */,
 				09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */,
 				09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */,
-				2C2F55752B30884B00A0FBE3 /* APIKEY.plist in Resources */,
+				095131442B30885500F6BC4C /* APIKEY.plist in Resources */,
 				09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */,
 				09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */,
 				09AB7D132B26A73C0073EAD5 /* Pretendard-Light.otf in Resources */,
@@ -499,6 +503,7 @@
 				09AB7CE62B26A1350073EAD5 /* ContentView.swift in Sources */,
 				09731F8C2B26D1500045F6B4 /* ButtonStyle +.swift in Sources */,
 				09731F772B26C5780045F6B4 /* DataTest.swift in Sources */,
+				095131622B31216200F6BC4C /* FormattedTime.swift in Sources */,
 				AC72AD2A2B284FC90082A9DB /* NetworkErrorCase.swift in Sources */,
 				B1C9385D2B27E2E8006EFB70 /* ShelfRecordListView.swift in Sources */,
 				B1C9387C2B28401F006EFB70 /* NaverBookAPI.swift in Sources */,
@@ -680,7 +685,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Booook.Moment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Boooook.Moment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -716,7 +721,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Booook.Moment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Boooook.Moment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
