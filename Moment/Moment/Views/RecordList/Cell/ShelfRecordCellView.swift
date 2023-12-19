@@ -18,7 +18,7 @@ struct ShelfRecordCellView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            HStack(alignment: .top) {
+            HStack(alignment: .top, spacing: 15) {
                 if let recordData = self.recordData {
 					if let photoData = recordData.photos.first, let uiImage = UIImage(data: photoData) {
 						Image(uiImage: uiImage)
@@ -56,7 +56,7 @@ struct ShelfRecordCellView: View {
                 }
             }
         }
-        .padding()
+        .padding(.horizontal, 20)
         
     }
     

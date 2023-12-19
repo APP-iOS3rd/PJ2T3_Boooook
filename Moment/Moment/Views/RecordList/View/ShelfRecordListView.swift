@@ -33,9 +33,9 @@ struct ShelfRecordListView: View {
 			ScrollView {
 				ForEach(recordYearList, id: \.self) { year in
 					let bookRecordList = bookRecordList.filter { $0.year == year }
-					VStack(alignment: .leading, spacing: -20) {
+					VStack(alignment: .leading) {
 						RecordYearView(year: year)
-							.padding(20)
+                            .padding(.horizontal, 20)
 						ForEach(bookRecordList, id: \.id) { record in
 							CustomListDivider()
 							NavigationLink {
@@ -44,11 +44,12 @@ struct ShelfRecordListView: View {
 							} label: {
 								ShelfRecordCellView(recordId: record.id)
 							}
-							
 						}
 					}
+                    .padding(.bottom, 40)
 				}
 			}
+            .padding(.top, 20)
 			if showDialog {
 				if let bookData = bookData {
 					BookInfodialog(isActive: $showDialog, bookInfo: bookData)

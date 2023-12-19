@@ -14,7 +14,7 @@ struct RecordYearView: View {
         Text(String(year))
             .foregroundColor(Color.mainBrown)
             .multilineTextAlignment(.leading)
-            .padding(.horizontal, 10)
+            .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
             .background(Color.offBrown)
             .cornerRadius(10)
             .fixedSize(horizontal: false, vertical: false)
@@ -28,7 +28,7 @@ struct RecordBookTitleView: View {
         Text(title)
             .foregroundColor(Color.mainBrown)
             .multilineTextAlignment(.leading)
-            .padding(.horizontal, 10)
+            .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
             .background(Color.offBrown)
             .cornerRadius(10)
             .fixedSize(horizontal: false, vertical: false)
@@ -37,5 +37,6 @@ struct RecordBookTitleView: View {
 }
 
 #Preview {
-    RecordYearView(year: 2023)
+//    RecordYearView(year: 2023)
+    RecordBookTitleView(title: "책제목")
 }

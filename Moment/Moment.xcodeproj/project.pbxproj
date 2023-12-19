@@ -37,6 +37,7 @@
 		09D774FB2B283C2100D45EE6 /* PickerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774FA2B283C2100D45EE6 /* PickerMap.swift */; };
 		09D774FD2B283C7500D45EE6 /* LocationPickerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D774FC2B283C7500D45EE6 /* LocationPickerMapView.swift */; };
 		09D7750F2B296F2D00D45EE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7750E2B296F2D00D45EE6 /* MainView.swift */; };
+		2C2F55752B30884B00A0FBE3 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F55742B30884B00A0FBE3 /* APIKEY.plist */; };
 		2C6588FD2B2B575500C8BB93 /* View +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6588FC2B2B575500C8BB93 /* View +.swift */; };
 		2CA6BED32B26DF46002E3589 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED22B26DF46002E3589 /* AddRecordView.swift */; };
 		2CA6BED92B2733E0002E3589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6BED82B2733E0002E3589 /* CustomTextField.swift */; };
@@ -47,6 +48,7 @@
 		7B39C0C72B2ADC7400460278 /* UIImage +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39C0C62B2ADC7400460278 /* UIImage +.swift */; };
 		7B39C0C92B2ADCE000460278 /* SwiftDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39C0C82B2ADCE000460278 /* SwiftDataModel.swift */; };
 		7B39C0CB2B2AFCC700460278 /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39C0CA2B2AFCC700460278 /* APIDataModel.swift */; };
+		7B8811732B30897E00968C60 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B8811722B30897E00968C60 /* APIKEY.plist */; };
 		7BE6E0B72B2820FC00D8842D /* RecordLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6E0B62B2820FC00D8842D /* RecordLocalData.swift */; };
 		AC4CA6752B26CFCA0066E9EB /* BookApiSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6742B26CFCA0066E9EB /* BookApiSearchBar.swift */; };
 		AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */; };
@@ -103,6 +105,7 @@
 		09D774FA2B283C2100D45EE6 /* PickerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerMap.swift; sourceTree = "<group>"; };
 		09D774FC2B283C7500D45EE6 /* LocationPickerMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerMapView.swift; sourceTree = "<group>"; };
 		09D7750E2B296F2D00D45EE6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2C2F55742B30884B00A0FBE3 /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		2C6588FC2B2B575500C8BB93 /* View +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View +.swift"; sourceTree = "<group>"; };
 		2CA6BED22B26DF46002E3589 /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
 		2CA6BED82B2733E0002E3589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 		7B39C0C62B2ADC7400460278 /* UIImage +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage +.swift"; sourceTree = "<group>"; };
 		7B39C0C82B2ADCE000460278 /* SwiftDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataModel.swift; sourceTree = "<group>"; };
 		7B39C0CA2B2AFCC700460278 /* APIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
+		7B8811722B30897E00968C60 /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = APIKEY.plist; path = "../../../../../../../.Trash/PJ2T3_Boooook 오후 11.04.04/Moment/Moment/APIKEY.plist"; sourceTree = "<group>"; };
 		7BE6E0B62B2820FC00D8842D /* RecordLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLocalData.swift; sourceTree = "<group>"; };
 		AC4CA6742B26CFCA0066E9EB /* BookApiSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookApiSearchBar.swift; sourceTree = "<group>"; };
 		AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBar.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		09AB7CD72B26A1350073EAD5 = {
 			isa = PBXGroup;
 			children = (
+				2C2F55742B30884B00A0FBE3 /* APIKEY.plist */,
 				09AB7CE22B26A1350073EAD5 /* Moment */,
 				09AB7CE12B26A1350073EAD5 /* Products */,
 			);
@@ -459,6 +464,7 @@
 				09AB7D132B26A73C0073EAD5 /* Pretendard-Light.otf in Resources */,
 				09AB7D142B26A73C0073EAD5 /* Pretendard-Regular.otf in Resources */,
 				09AB7CEB2B26A1370073EAD5 /* Preview Assets.xcassets in Resources */,
+				7B8811732B30897E00968C60 /* APIKEY.plist in Resources */,
 				09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
