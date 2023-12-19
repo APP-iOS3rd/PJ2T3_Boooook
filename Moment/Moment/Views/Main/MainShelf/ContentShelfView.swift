@@ -57,7 +57,7 @@ struct ContentShelfView: View {
 				.resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: (geo.size.width - 140) / 2)
-				.shadow(radius: 5, x: 5, y: -2)
+				.shadow(radius: 3, x: -3, y: -2)
 		} placeholder: {
 			ProgressView()
 		}

@@ -51,7 +51,7 @@ struct MiniMapView: View {
         }
         .frame(height: max(geo.size.height * 0.2, 0))
         .clipShape(.rect(cornerRadius: 10))
-        .padding(20)
+        .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20))
     }
 }
 

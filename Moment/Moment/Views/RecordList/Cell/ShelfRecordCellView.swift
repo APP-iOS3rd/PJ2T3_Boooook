@@ -38,7 +38,7 @@ struct ShelfRecordCellView: View {
 							)
 					}
                     VStack(alignment: .leading, spacing: 10) {
-                        HStack(alignment: .bottom) {
+                        HStack(alignment: .lastTextBaseline) {
                             Text(recordData.monthAndDay)
                                 .font(.medium16)
                                 .foregroundStyle(Color.darkBrown)

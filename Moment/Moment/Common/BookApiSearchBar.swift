@@ -44,7 +44,7 @@ struct BookApiSearchBar: View {
                     .frame(width: 100,height: 40)
                     .background(Color.mainBrown)
                     .foregroundColor(Color.white)
-                    .clipShape(.rect(bottomTrailingRadius: 10, topTrailingRadius: 10))
+                    .clipShape(.rect(bottomTrailingRadius: 12, topTrailingRadius: 12))
             }
         }
         .frame(height: 40, alignment: .leading)
