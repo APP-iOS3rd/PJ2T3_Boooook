@@ -51,11 +51,13 @@ struct AddRecordView: View {
                 // MARK: - 책 정보
                 Text(bookInfo.title)
                     .font(.bold20)
+                    .padding(.horizontal, 20)
                 
                 fetchImage(url: bookInfo.theCoverOfBook)
                 
                 Text(bookInfo.author)
                     .font(.regular16)
+                    .padding(.horizontal, 20)
                 
                 // MARK: - 텍스트 필드 입력
                 VStack(alignment: .leading) {
@@ -149,17 +151,11 @@ struct AddRecordView: View {
                 .padding(20)
             }
         }
-		.task {
-			await fetchLocation()
+        .task {
+            await getLocationManager()
 		}
-        .navigationDestination(isPresented: $showMainView, destination: {
+        .navigationDestination(isPresented: $showMainView) {
             MainView()
-        })
-
-        .onAppear {
-            Task {
-                await fetchLocation()
-            }
         }
         .onTapGesture {
             hideKeyboard()
@@ -176,16 +172,26 @@ struct AddRecordView: View {
 			}
 		}
     }
-    
-    func getLocationManager() async -> CLLocationManager {
+
+    func getLocationManager() async {
         let manager = CLLocationManager()
-        manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
-        return manager
+        await withCheckedContinuation { continuation in
+            Task {
+                // 위치 정보 동의가 이루어질 때까지 대기
+                while manager.authorizationStatus == .notDetermined {
+                    try await Task.sleep(nanoseconds: 100_000_000)  // 0.1초
+                }
+                if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
+                    manager.desiredAccuracy = kCLLocationAccuracyBest
+                    await fetchLocation(manager: manager)
+                }
+                continuation.resume()
+            }
+        }
     }
     
-    func fetchLocation() async {
-        let manager = await getLocationManager()
+    func fetchLocation(manager: CLLocationManager) async {
         guard let location = manager.location else { return }
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
@@ -195,12 +201,8 @@ struct AddRecordView: View {
         do {
             let placemarks = try await geocoder.reverseGeocodeLocation(cllocation, preferredLocale: locale)
             if let address = placemarks.last {
-                DispatchQueue.main.async {
-                    self.place += "\(address.country ?? "") "
-                    self.place += "\(address.locality ?? "") "
-                    self.place += address.name ?? ""
-                    self.localName = address.administrativeArea ?? ""
-                }
+                self.place = "\(address.country ?? "") \(address.locality ?? "") \(address.name ?? "")"
+                self.localName = address.administrativeArea ?? ""
             }
         } catch let error {
             print("Geocoding error: \(error.localizedDescription)")
@@ -260,31 +262,6 @@ struct AddRecordView: View {
 		year = dividedTime.formattedYearToInt()
 		monthAndDay = dividedTime.formattedDayToString()
 		time = dividedTime.formattedTimeToString()
-	}
-}
-
-struct FormattedTime {
-	var date: Date
-	
-	func formattedYearToInt() -> Int {
-		let formatter = DateFormatter()
-		formatter.dateFormat = "YYYY"
-		let changeDateFormatting = formatter.string(from: date)
-		return Int(changeDateFormatting) ?? 2023
-	}
-	
-	func formattedDayToString() -> String {
-		let formatter = DateFormatter()
-		formatter.dateFormat = "MM월 dd일"
-		let changeDateFormatting = formatter.string(from: date)
-		return changeDateFormatting
-	}
-	
-	func formattedTimeToString() -> String {
-		let formatter = DateFormatter()
-		formatter.dateFormat = "HHmm"
-		let changeDivideFormatting = formatter.string(from: date)
-		return changeDivideFormatting
 	}
 }
 
