@@ -97,11 +97,11 @@ struct AddRecordView: View {
                         .padding(.bottom, 20)
                         .textInputAutocapitalization(.never)
                     
-                    // MARK: 기록
-                    Text("나의 기록")
+                    // MARK: 기억
+                    Text("기억할 내용")
                         .font(.regular16)
                     
-                    TextField("책에서 기록하고자 하는 문장을 적어주세요.", text: $paragraph)
+                    TextField("책에서 기억하고자 하는 문장을 적어주세요.", text: $paragraph)
                         .textFieldStyle(BorderedTextFieldStyle())
                         .textInputAutocapitalization(.never)
                     
@@ -130,13 +130,13 @@ struct AddRecordView: View {
                             showingAlert.toggle()
                         }
                     } label: {
-                        Text(dataIsEmpty ? "아직 다 작성되지 않았어요" : "기록 저장하기")
+                        Text(dataIsEmpty ? "아직 다 작성되지 않았어요" : "기억 저장하기")
                             .font(.medium16)
                     }
                     .buttonStyle(.customProminent(color: dataIsEmpty ? .gray3 : .lightBrown))
-                    .alert("기록을 남길까요?", isPresented: $showingAlert) {
+                    .alert("기억을 남길까요?", isPresented: $showingAlert) {
                         Button("돌아가기") {}
-                        Button("기록하기") {
+                        Button("저장하기") {
                             isRecord = true
 							Task {
 								await swiftDataInsert()
@@ -145,12 +145,13 @@ struct AddRecordView: View {
                             router.clear()
                         }
                     } message: {
-                        Text("기억은 수정할 수 없어요...🥲")
+                        Text("저장된 기억은 수정할 수 없어요...🥲")
                     }
                 }
                 .padding(20)
             }
         }
+        .scrollDismissesKeyboard(.immediately)
         .task {
             await getLocationManager()
 		}

@@ -10,7 +10,7 @@ import SwiftUI
 struct NoContentView: View {
     var body: some View {
         VStack {
-            Text("책장에 등록된 책이 없습니다...\n책 기록을 시작해보세요.")
+            Text("책장이 비어있어요.\n 기억 속에 책을 남겨보세요.")
                 .font(Font.medium18)
                 .foregroundStyle(Color.lightBrown)
                 .multilineTextAlignment(.center)

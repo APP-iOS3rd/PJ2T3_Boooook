@@ -22,7 +22,7 @@ struct MainShelfView: View {
         ZStack(alignment: .bottomTrailing) {
             if bookList.isEmpty {
                 NoContentView()
-                    .padding([.horizontal, .bottom])
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 60, trailing: 20))
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     ContentShelfView(bookList: $bookList, geo: geo)

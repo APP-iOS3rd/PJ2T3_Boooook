@@ -27,6 +27,6 @@ struct OnboardingCardView: View {
     }
 }
 
-#Preview {
-    OnboardingCardView(onboarding: OnboardingData(title: "모멘트와 함께\n기억 속에 남겨두고 싶은\n책의 내용을 기록해보세요.", image: "Group 331"))
-}
+//#Preview {
+//    OnboardingCardView(onboarding: OnboardingData(title: "모멘트와 함께\n기억 속에 남겨두고 싶은\n책의 내용을 기록해보세요.", image: "Group 331"))
+//}

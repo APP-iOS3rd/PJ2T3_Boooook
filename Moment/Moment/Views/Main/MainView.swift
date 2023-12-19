@@ -13,7 +13,7 @@ struct MainView: View {
 	@Query var recordList: [MomentRecord]
 	
 	@State var selectedOption = 0 // 세그먼트 인덱스 저장 프로퍼티
-	@State var recordSearchText = "" // 기록 검색 텍스트 저장 프로퍼티
+	@State var recordSearchText = "" // 기억 검색 텍스트 저장 프로퍼티
 	@State var isTapSearchButton = false // 검색 버튼탭 여부 저장 프로퍼티
 	
 	@State var mainBookList: [MomentBook] = []

@@ -53,7 +53,7 @@ struct RecordDetailView: View {
 							HStack(spacing: 0) {
 								Text(recordInfo.myLocation)
 									.font(.semibold16)
-								Text(" 에서의 기록이에요")
+								Text(" 에서의 기억이에요")
 									.font(.regular16)
 							}
 						}
@@ -89,7 +89,7 @@ struct RecordDetailView: View {
                     }
                 }
             }
-            .alert("기록을 삭제할까요?", isPresented: $showingAlert) {
+            .alert("기억을 삭제할까요?", isPresented: $showingAlert) {
                 Button("삭제", role: .destructive) {
                     showingAlert = false
 					if let recordInfo = recordInfo {

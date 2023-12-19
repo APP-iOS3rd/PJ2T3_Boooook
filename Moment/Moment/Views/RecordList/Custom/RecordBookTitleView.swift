@@ -1,26 +1,26 @@
 //
-//  RecordYearView.swift
+//  RecordBookTitleView.swift
 //  Moment
 //
-//  Created by phang on 12/13/23.
+//  Created by 정인선 on 12/19/23.
 //
 
 import SwiftUI
 
-struct RecordYearView: View {
-    let year: Int
+struct RecordBookTitleView: View {
+    let title: String
     
     var body: some View {
-        Text(String(year))
+        Text(title)
             .foregroundColor(Color.mainBrown)
             .multilineTextAlignment(.leading)
             .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
             .background(Color.offBrown)
             .cornerRadius(10)
             .fixedSize(horizontal: false, vertical: false)
+            .lineLimit(1)
     }
 }
-
 #Preview {
-    RecordYearView(year: 2023)
+    RecordBookTitleView(title: "책제목")
 }
