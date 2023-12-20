@@ -20,6 +20,7 @@ struct RecordDetailView: View {
 	@Query var bookList: [MomentBook]
 	
 	let recordID: UUID
+    
 	var recordInfo: MomentRecord? {
 		recordList.first { $0.id == recordID }
 	}
@@ -96,11 +97,15 @@ struct RecordDetailView: View {
 						if isLastBook, let book = book {
 							modelContext.delete(recordInfo.self)
 							modelContext.delete(book.self)
+    
+                            //dismiss()
+                            goMainView = true
 						} else {
 							modelContext.delete(recordInfo.self)
                             dismiss()
 						}
-                        goMainView = true
+                        // MARK: [추후 기능 업데이트 및 수정] 1번
+//                        goMainView = true
                     }
                 }
                 Button("돌아가기", role: .cancel) {

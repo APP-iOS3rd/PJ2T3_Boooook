@@ -50,16 +50,17 @@ struct MainView: View {
                     }
                 }
                 //MARK: [추후 업데이트] 문제3 수정
-                .onDisappear(perform: {
-                    recordSearchText = ""
-                })
+//                .onAppear(perform: {
+//                    recordSearchText = ""
+//                })
                 .onChange(of: isTapSearchButton) {
                     if isTapSearchButton && !recordSearchText.isEmpty {
                         mainRecordList = recordSearch(bookSearch: bookSearch)
                     }
+                    isTapSearchButton = false
                 }
                 .onChange(of: recordSearchText) {
-                    if !isSearchFocused && recordSearchText.isEmpty {
+                    if recordSearchText.isEmpty {
                         mainRecordList = recordList
                         mainBookList = bookList
                     }
@@ -87,7 +88,6 @@ struct MainView: View {
 		let result = self.mainBookList.reduce(into: [MomentRecord]()) { recordList, book in
 			recordList += self.recordList.filter { $0.bookISBN == book.bookISBN }
 		}
-		isTapSearchButton = false
 		return result
 	}
 	
