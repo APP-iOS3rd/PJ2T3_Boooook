@@ -51,7 +51,7 @@ struct SearchBar: View {
 		}
 		.frame(height: 40, alignment: .leading)
 		.background(Color.white)
-		.cornerRadius(10)
+		.cornerRadius(15)
 		.overlay(
 			RoundedRectangle(cornerRadius: 15)
 				.stroke(Color.mainBrown, lineWidth: 2)

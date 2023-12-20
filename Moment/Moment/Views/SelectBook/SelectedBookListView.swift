@@ -86,6 +86,12 @@ struct SelectedBooktoAPIView: View {
                 isRecord = false
             }
         }
+		.onChange(of: searchBookText) {
+			if searchBookText.isEmpty {
+				searchResults = []
+				showBool = false
+			}
+		}
 		.navigationBarBackButtonHidden(true)
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {

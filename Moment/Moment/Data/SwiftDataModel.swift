@@ -42,7 +42,7 @@ class MomentRecord: Identifiable {
 
 @Model
 class MomentBook: SelectedBook, Hashable {
-	var bookISBN: String
+	@Attribute(.unique) var bookISBN: String
 	var theCoverOfBook: String
 	var title: String
 	var author: String
