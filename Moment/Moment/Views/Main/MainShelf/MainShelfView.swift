@@ -40,7 +40,7 @@ struct MainShelfView: View {
 			.buttonStyle(.circled(color: .lightBrown, size: 30))
 			.padding([.bottom, .trailing], 30)
             .navigationDestination(isPresented: $showShlefListView) {
-                SelectedBooktoAPIView()
+				SelectedBooktoAPIView()
             }
         }
         .ignoresSafeArea()
