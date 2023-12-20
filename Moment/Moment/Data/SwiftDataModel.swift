@@ -58,3 +58,13 @@ class MomentBook: SelectedBook, Hashable {
 		self.plot = plot
 	}
 }
+
+extension MomentBook {
+    static func == (lhs: MomentBook, rhs: MomentBook) -> Bool {
+        return lhs.bookISBN == rhs.bookISBN
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(bookISBN)
+    }
+}

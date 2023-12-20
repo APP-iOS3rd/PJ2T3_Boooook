@@ -97,7 +97,6 @@ struct RecordDetailView: View {
 						if isLastBook, let book = book {
 							modelContext.delete(recordInfo.self)
 							modelContext.delete(book.self)
-    
                             //dismiss()
                             goMainView = true
 						} else {
