@@ -21,6 +21,7 @@ struct BookInfodialog: View {
                 HStack(alignment: .top) {
                     Text(bookInfo.title)
                         .font(.bold20)
+                        .lineLimit(2)
                     Spacer()
                     Button {
                         withAnimation(.spring()) {

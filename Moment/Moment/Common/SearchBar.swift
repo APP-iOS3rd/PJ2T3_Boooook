@@ -30,6 +30,7 @@ struct SearchBar: View {
 			if !searchText.isEmpty {
 				Button(action: {
 					searchText = ""
+                    isSearchFocused = true
 				}, label: {
 					Image(systemName: "xmark")
 						.foregroundStyle(.mainBrown)

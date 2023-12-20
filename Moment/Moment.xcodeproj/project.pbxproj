@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		095131622B31216200F6BC4C /* FormattedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095131612B31216200F6BC4C /* FormattedTime.swift */; };
+		0951317E2B32CDA300F6BC4C /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0951317D2B32CDA300F6BC4C /* APIKEY.plist */; };
 		09731F772B26C5780045F6B4 /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F762B26C5780045F6B4 /* DataTest.swift */; };
 		09731F7D2B26C5980045F6B4 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */; };
 		09731F842B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */; };
@@ -47,7 +48,6 @@
 		7B39C0C72B2ADC7400460278 /* UIImage +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39C0C62B2ADC7400460278 /* UIImage +.swift */; };
 		7B39C0C92B2ADCE000460278 /* SwiftDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39C0C82B2ADCE000460278 /* SwiftDataModel.swift */; };
 		7B39C0CB2B2AFCC700460278 /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39C0CA2B2AFCC700460278 /* APIDataModel.swift */; };
-		7B649C072B31F01000586040 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B649C062B31F01000586040 /* APIKEY.plist */; };
 		7BE6E0B72B2820FC00D8842D /* RecordLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6E0B62B2820FC00D8842D /* RecordLocalData.swift */; };
 		AC4CA6752B26CFCA0066E9EB /* BookApiSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6742B26CFCA0066E9EB /* BookApiSearchBar.swift */; };
 		AC4CA6772B26CFFA0066E9EB /* SegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */; };
@@ -73,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		095131612B31216200F6BC4C /* FormattedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTime.swift; sourceTree = "<group>"; };
+		0951317D2B32CDA300F6BC4C /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = APIKEY.plist; path = "../../ㅇㄴㅁㅇ/Moment/APIKEY.plist"; sourceTree = "<group>"; };
+		0951317F2B32CDA500F6BC4C /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		09731F762B26C5780045F6B4 /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
 		09731F7C2B26C5980045F6B4 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
 		09731F832B26C8AB0045F6B4 /* ImageHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHorizontalScrollView.swift; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 		7B39C0C62B2ADC7400460278 /* UIImage +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage +.swift"; sourceTree = "<group>"; };
 		7B39C0C82B2ADCE000460278 /* SwiftDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataModel.swift; sourceTree = "<group>"; };
 		7B39C0CA2B2AFCC700460278 /* APIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
-		7B649C062B31F01000586040 /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = APIKEY.plist; path = "../../../../../../../.Trash/PJ2T3_Boooook 오전 12.33.04/Moment/Moment/APIKEY.plist"; sourceTree = "<group>"; };
 		7BE6E0B62B2820FC00D8842D /* RecordLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLocalData.swift; sourceTree = "<group>"; };
 		AC4CA6742B26CFCA0066E9EB /* BookApiSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookApiSearchBar.swift; sourceTree = "<group>"; };
 		AC4CA6762B26CFFA0066E9EB /* SegmentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBar.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		09AB7CD72B26A1350073EAD5 = {
 			isa = PBXGroup;
 			children = (
+				0951317D2B32CDA300F6BC4C /* APIKEY.plist */,
 				09AB7CE22B26A1350073EAD5 /* Moment */,
 				09AB7CE12B26A1350073EAD5 /* Products */,
 			);
@@ -188,7 +190,7 @@
 				09AB7CE72B26A1370073EAD5 /* Assets.xcassets */,
 				09AB7CF12B26A1660073EAD5 /* Colors.xcassets */,
 				09AB7D1A2B26A82B0073EAD5 /* Info.plist */,
-				7B649C062B31F01000586040 /* APIKEY.plist */,
+				0951317F2B32CDA500F6BC4C /* APIKEY.plist */,
 				09AB7CE92B26A1370073EAD5 /* Preview Content */,
 			);
 			path = Moment;
@@ -456,12 +458,12 @@
 				09AB7CF22B26A1660073EAD5 /* Colors.xcassets in Resources */,
 				09AB7D162B26A73C0073EAD5 /* Pretendard-Bold.otf in Resources */,
 				09AB7D192B26A73C0073EAD5 /* Pretendard-Medium.otf in Resources */,
+				0951317E2B32CDA300F6BC4C /* APIKEY.plist in Resources */,
 				09AB7D182B26A73C0073EAD5 /* Pretendard-Thin.otf in Resources */,
 				09AB7D122B26A73C0073EAD5 /* Pretendard-SemiBold.otf in Resources */,
 				09AB7D132B26A73C0073EAD5 /* Pretendard-Light.otf in Resources */,
 				09AB7D142B26A73C0073EAD5 /* Pretendard-Regular.otf in Resources */,
 				09AB7CEB2B26A1370073EAD5 /* Preview Assets.xcassets in Resources */,
-				7B649C072B31F01000586040 /* APIKEY.plist in Resources */,
 				09AB7CE82B26A1370073EAD5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,7 +665,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moment/Preview Content\"";
-				DEVELOPMENT_TEAM = T62JF6T7Q4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
@@ -683,7 +685,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.kmj.Moment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Boooook.Moment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -699,7 +701,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moment/Preview Content\"";
-				DEVELOPMENT_TEAM = T62JF6T7Q4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moment/Info.plist;
@@ -719,7 +721,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.kmj.Moment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Boooook.Moment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
